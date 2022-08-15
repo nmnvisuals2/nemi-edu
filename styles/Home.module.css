@@ -213,3 +213,18 @@
         opacity: 1;
     }
 }
+
+@media only screen and (max-width:968px) {
+    .heading {
+        width: 100vw;
+        font-size: 26px;
+        padding: 10px 20px;
+    }
+    .panel p {
+        text-align: center;
+        width: 100%;
+    }
+    .loader {
+        width: 80vw;
+    }
+}
