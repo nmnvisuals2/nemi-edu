@@ -1,0 +1,40 @@
+.section {
+    width: 100%;
+    position: relative;
+}
+
+.full {
+    min-height: 100vh;
+}
+
+.blue {
+    background-color: var(--brand-col1);
+    min-height: 30vh;
+    overflow: hidden;
+}
+
+.blue_inner {
+    padding: 120px 8vw;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.margin {
+    padding: 0 8vw;
+    overflow: hidden;
+}
+
+@media only screen and (max-width:968px) {
+    .blue_inner {
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+}

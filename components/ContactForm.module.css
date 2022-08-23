@@ -1,0 +1,67 @@
+.form_holder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.form_holder input,
+.form_holder textarea {
+    width: 100%;
+    background-color: #e6e6e6;
+    border: 1px solid rgb(163, 163, 163);
+    font-size: 12px;
+    padding: 7px;
+    margin-top: 12px;
+    outline: 2px solid transparent;
+    border: 0px solid transparent;
+    transition: all .7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.form_holder input:focus,
+.form_holder input:hover,
+.form_holder textarea:focus,
+.form_holder textarea:hover {
+    outline: 2px solid var(--brand-col1);
+    border: 0px solid;
+    background-color: rgb(219, 233, 255);
+}
+
+.form_holder h2 {
+    font-size: 3vw;
+    width: 70%;
+    font-weight: bold;
+    font-family: Modernist;
+    color: var(--brand-col1);
+    line-height: 3.3vw;
+}
+
+.form_holder a {
+    background: rgb(250, 162, 48);
+    background: linear-gradient(274deg, rgba(250, 162, 48, 1) 0%, rgba(251, 191, 70, 1) 100%);
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.form_holder a:hover {
+    transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 2px 2px 12px -2px rgba(247, 142, 4, 0.637);
+    border: 1px solid white;
+    color: white;
+}
+
+@media only screen and (max-width:968px) {
+    .form_holder h2 {
+        font-size: 8vw;
+        width: 70%;
+        line-height: 10vw;
+    }
+}

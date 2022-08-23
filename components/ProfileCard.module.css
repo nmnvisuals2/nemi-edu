@@ -1,0 +1,168 @@
+.profile_wrapper {
+    position: relative;
+    width: 32%;
+    min-height: 50vh;
+    background-color: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 9;
+    flex: 1;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: scale(1);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+.profile_wrapper:hover {
+    transform: scale(1.1);
+    box-shadow: 20px 20px 22px -9px rgba(0, 0, 0, 0.027);
+}
+
+.content a {
+    height: auto;
+    width: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateX(100px);
+    opacity: 1;
+}
+
+.content a img {
+    width: 34px;
+    height: 34px;
+    position: relative;
+    display: block;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    z-index: 0;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: grayscale(1);
+}
+
+.profile_wrapper:hover .image {
+    filter: grayscale(0);
+}
+
+.content {
+    padding: 20px;
+    width: 100%;
+    min-height: 10vh;
+    z-index: 2;
+    background-color: #f2f2f2;
+}
+
+.content h2 {
+    font-size: 1.4vw;
+    line-height: 1.7vw;
+    font-family: Modernist;
+    font-weight: bold;
+    color: black;
+}
+
+.content p {
+    color: var(--brand-col1);
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.profile_wrapper:hover .content p {
+    color: var(--brand-col2);
+}
+
+.profile_wrapper:hover .content a {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.badge {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 200px;
+    border: 0px solid;
+    outline: 0px solid;
+    background-color: var(--brand-col1);
+    padding: 6px;
+}
+
+.open {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 200px;
+    border: 0px solid;
+    outline: 0px solid;
+    background-color: var(--brand-col2);
+    padding: 6px;
+}
+
+@media only screen and (max-width:1200px) {
+    .content h2 {
+        font-size: 1.8vw;
+        line-height: 2.2vw;
+    }
+    .content p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:968px) {
+    .badge {
+        width: 44px;
+        height: 44px;
+    }
+    .profile_wrapper {
+        width: 100%;
+    }
+    .content h2 {
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+    .content p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .profile_wrapper {
+        width: 100%;
+    }
+    .content h2 {
+        font-size: 6vw;
+        line-height: 8vw;
+    }
+    .content p {
+        font-size: 14px;
+    }
+    .content img {
+        right: 5vw;
+        bottom: 5vw;
+    }
+}

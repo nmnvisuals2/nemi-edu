@@ -1,0 +1,52 @@
+.heading {
+    font-size: 6vw;
+    font-family: Modernist;
+    font-weight: bold;
+    color: var(--brand-col2);
+    filter: drop-shadow(2px 2px 0px var(--brand-col2-accent2));
+    text-align: center;
+    width: 100%;
+}
+
+.stat_container p {
+    width: 100%;
+    font-size: 1.5vw;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media only screen and (max-width:968px) {
+    .heading {
+        font-size: 8vw;
+        font-family: Modernist;
+        font-weight: bold;
+        color: var(--brand-col2);
+        filter: drop-shadow(2px 2px 0px var(--brand-col2-accent2));
+        text-align: center;
+        width: 100%;
+    }
+    .stat_container p {
+        font-size: 2.5vw;
+    }
+    .stat_container {
+        gap: 30px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .heading {
+        font-size: 12vw;
+        font-family: Modernist;
+        font-weight: bold;
+        color: var(--brand-col2);
+        filter: drop-shadow(2px 2px 0px var(--brand-col2-accent2));
+        text-align: center;
+        width: 100%;
+    }
+    .stat_container p {
+        font-size: 4vw;
+    }
+    .stat_container {
+        gap: 20px;
+    }
+}
