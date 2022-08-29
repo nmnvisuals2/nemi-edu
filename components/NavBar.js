@@ -24,7 +24,7 @@ function handleNav(){
     
     return(<nav className={styles.nav_wrapper}>
 <div className={styles.nav_inner}>
-<img src='/nemi-logo.svg' className={styles.logo + " " + (props.scrolled? styles.logo_active : '')} />
+<img src='/nemi_registered.svg' className={styles.logo + " " + (props.scrolled? styles.logo_active : '')} />
 {props.device > 2 ? 
 <div className={styles.links + " " + (props.scrolled? styles.active_links : '')}>
 <Link href="/"><a>Home</a></Link> 

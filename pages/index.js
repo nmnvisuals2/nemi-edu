@@ -241,7 +241,7 @@ getPos();
   
   <div className={styles.hero}>
 
-    <h2 className={styles.hero_heading}>India's first research based <br/><span>&nbsp; &nbsp; Edtech company ™</span></h2>
+    <h2 className={styles.hero_heading}>India's first research based <br/><span>&nbsp; &nbsp; Edtech company <circ>™</circ></span></h2>
     <Switcher features={features}/>
   
   <a className={styles.btn} href=" " onClick={(e)=>{e.preventDefault(),ModalHandler(true)}}><button>Dive In Now</button></a>
