@@ -271,7 +271,7 @@ getPos();
   <ul className={styles.journey}>
 <li>Founded in <rv>December 2020</rv></li>
 <li>Students started Enrolling in <rv>April 2021</rv></li>
-<li>E-Diploma course started in <rv>June 2021</rv></li>
+<li>E-Diploma course batch started in <rv>June 2021</rv></li>
 <li>More than 50% of them secured a job in <rv>November 2021</rv></li>
 <li>Website & App deployed during <rv>2022 Q2 & Q3</rv> </li>
 <li>More to come..... will be available on our <rv>Roadmap shortly</rv></li>
