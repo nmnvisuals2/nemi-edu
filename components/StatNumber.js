@@ -5,7 +5,7 @@ function StatNumber(props){
 
 const [counter,setCounter] = useState(0);
 const { ref, inView } = useInView({
-    threshold: 0
+    threshold: 1
   });
 
 

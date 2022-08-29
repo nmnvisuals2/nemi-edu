@@ -22,7 +22,7 @@ setExtra(true);
 
         },2500)
         if(t >= props.features.length){
-            console.log('done');
+            
             t = 0;
             setCounter(0);
             t = 0;

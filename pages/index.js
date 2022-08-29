@@ -72,7 +72,7 @@ if(window.scrollY > 200){
   setScrolled(false)
 }
 
-setTopper(window.scrollY);
+/* setTopper(window.scrollY);
    if(timer === null){
      scroller = 0;
      trigger = 0;
@@ -93,7 +93,7 @@ setTopper(window.scrollY);
 
 
 
-   }, 250);
+   }, 250); */
      
       
 
@@ -241,7 +241,7 @@ getPos();
   
   <div className={styles.hero}>
 
-    <h2 className={styles.hero_heading}>India's first research based <br/><span>&nbsp; &nbsp;  Edutech company ™</span></h2>
+    <h2 className={styles.hero_heading}>India's first research based <br/><span>&nbsp; &nbsp; Edtech company ™</span></h2>
     <Switcher features={features}/>
   
   <a className={styles.btn} href=" " onClick={(e)=>{e.preventDefault(),ModalHandler(true)}}><button>Dive In Now</button></a>
@@ -267,8 +267,13 @@ getPos();
 
   <h2>About <span className={styles.blue}>nEmi</span></h2>
   <p><b>nEmi</b> is a word that emerged from <y>Sanskrit language</y> which means <b>‘Chord’</b> in English. It was chosen by the founders itself keeping the vision of developing <y>educational harmony</y> in mind for which nEmi turned out to be the perfect word. Now nEmi is recognized by various <y>government organizations</y> as an emerging <b>Edtech company</b>. It is being mentored by <b>Military Veterans</b> and a lot of more experienced personalities. We at nEmi strive to utilize the best technologies in an educational manner for a better ecosystem of <y>learning & skill development.</y></p>
-  <h2>Our <span className={styles.blue}>Journey</span></h2>
-  <ul className={styles.journey}>
+  <h2>How are we solving<span className={styles.blue}> Real World Edtech Problems?</span></h2>
+
+  <p>We have thoroughly observed problems in the current Edtech Industry. The Edtech Industry is growing rapidly and is very beneficial for our country but it lacks a <b>research driven education model</b> with <b>Job Assurance</b> which we are going to solve with our innovative Modern Tech based learning platform bundled with <b>Job Assurance</b> and <b>Seamless Experience</b>.
+<br/><br/>
+On our platform we are trying to bring revolutionary features which will not only shape <b>Student’s Personality & Skills</b> but also help trainers or guides to interact with students. Involving <b>AI & Machine Learning</b> to develop an automated model for serving required knowledge to students.
+</p>
+  {/* <ul className={styles.journey}>
 <li>Founded in <rv>December 2020</rv></li>
 <li>Students started Enrolling in <rv>April 2021</rv></li>
 <li>E-Diploma course batch started in <rv>June 2021</rv></li>
@@ -277,7 +282,7 @@ getPos();
 <li>More to come..... will be available on our <rv>Roadmap shortly</rv></li>
 
 
-  </ul>
+  </ul> */}
   <h2>What makes us <span className={styles.blue}>different?</span></h2>
   
     <ul className={styles.different}>
