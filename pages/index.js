@@ -16,6 +16,7 @@ import Modal from '../components/Modal'
 import ContactForm from '../components/ContactForm'
 import IconGrid from '../components/IconGrid'
 import { supabase } from '../utils/supabaseClient'
+import Switcher from '../components/Switcher'
 export default function Home() {
 
 
@@ -30,6 +31,12 @@ export default function Home() {
   const [isModalTwoOpen,setModalTwoOpen] = useState(false);
   const [cs,setCS] = useState(true);
   const [pass,setPass] = useState(true);
+
+
+  const features = [<>Courses with<span className={styles.blue}>&nbsp;Job Assurance</span></>,<>Mentored by<span className={styles.blue}>&nbsp;Military Veterans</span></>,<><span className={styles.blue}>AI Powered</span>&nbsp;Career Guidance</>,<><span className={styles.blue}>Blockchain</span>&nbsp;integrated Certification</>,<>Recognised by<span className={styles.blue}>&nbsp;Ministry of Commerce</span></>]
+
+const accredited = "nEmi is backed by Skill Development Council Canada with Certification, Learning, Skill Development etc. which makes our certificates internationally recognized. This not only raises the value of education but also helps students to get better opportunities. nEmi courses follow guidelines provided by Skill Development Council to validate the quality control throughout the education pipeline.";
+
   function DoSet(){
     if(window.innerWidth < 768){
       setMobile(1)
@@ -235,7 +242,8 @@ getPos();
   <div className={styles.hero}>
 
     <h2 className={styles.hero_heading}>India's first research based <br/><span>&nbsp; &nbsp;  Edutech company ™</span></h2>
-  <p>Courses with<span className={styles.blue}>&nbsp;Job Assurance</span></p>
+    <Switcher features={features}/>
+  
   <a className={styles.btn} href=" " onClick={(e)=>{e.preventDefault(),ModalHandler(true)}}><button>Dive In Now</button></a>
 
 
@@ -258,11 +266,32 @@ getPos();
 <div className={styles.about_wrapper}><div className={styles.about_image}></div><div className={styles.about_content}>
 
   <h2>About <span className={styles.blue}>nEmi</span></h2>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+  <p><b>nEmi</b> is a word that emerged from <y>Sanskrit language</y> which means <b>‘Chord’</b> in English. It was chosen by the founders itself keeping the vision of developing <y>educational harmony</y> in mind for which nEmi turned out to be the perfect word. Now nEmi is recognized by various <y>government organizations</y> as an emerging <b>Edtech company</b>. It is being mentored by <b>Military Veterans</b> and a lot of more experienced personalities. We at nEmi strive to utilize the best technologies in an educational manner for a better ecosystem of <y>learning & skill development.</y></p>
   <h2>Our <span className={styles.blue}>Journey</span></h2>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-  <h2>What makes us <span className={styles.blue}>distinct?</span></h2>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+  <ul className={styles.journey}>
+<li>Founded in <rv>December 2020</rv></li>
+<li>Students started Enrolling in <rv>April 2021</rv></li>
+<li>E-Diploma course started in <rv>June 2021</rv></li>
+<li>More than 50% of them secured a job in <rv>November 2021</rv></li>
+<li>Website & App deployed during <rv>2022 Q2 & Q3</rv> </li>
+<li>More to come..... will be available on our <rv>Roadmap shortly</rv></li>
+
+
+  </ul>
+  <h2>What makes us <span className={styles.blue}>different?</span></h2>
+  
+    <ul className={styles.different}>
+    <li>Job Assurance in well known brands across the country</li>
+      <li>Mentoring sessions by Military Veterans</li>
+      <li>AI powered Career Guidance and Education Ecosystem</li>
+      <li>Blockchain integrated Certification System</li>
+      <li>Utilizing Modern Education Technology for Seamless Learning Experience</li>
+      <li>Recognized by Ministry of Commerce, MSME , Startup India and many more renowned government organizations </li>
+      <li>Research based Evaluation & Learning Pipeline</li>
+      <li>Internationally recognised certification , Backed by Skill Development Council Canada</li>
+      
+    </ul>
+  
 </div>
 </div>
 
@@ -273,7 +302,7 @@ getPos();
   <div className={styles.acc}></div>
   <div className={styles.acc_content}>
     <h2>"Accredited" by Skill Development Council Canada</h2>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+    <p>{accredited}</p>
     <a className={styles.acc_btn} onClick={(e)=>{e.preventDefault(),ModalHandler2(true)}}><button>Learn More</button></a>
   </div>
 </Section>
@@ -282,7 +311,7 @@ getPos();
 
 <div className={styles.grid_four}>
 
-<div className={styles.grid}><div className={styles.line_two}></div><h1>Range of <span className={styles.blue}>Courses</span></h1><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p></div>
+<div className={styles.grid}><div className={styles.line_two}></div><h1>Range of <span className={styles.blue}>Courses</span></h1><p>Our wide variety of courses are divided into categories to cater everyone with their choice of course category. We have Diploma courses , Certification courses and University Tie-Up Programs etc. at the moment and more special categories are likely to be added in upcoming months. <br/> Each course includes International & Blockchain based Certification , Full Assistance, Seamless Course Completion Experience, AI based Career Guidance and a lot  more.</p></div>
 <div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/elisa-calvet-b-S3nUOqDmUvc-unsplash.jpg')"}}>
   
  
@@ -290,14 +319,19 @@ getPos();
 
 <h2>
   Diploma Courses
-</h2><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</h2><p>
+Diploma Courses are very well known for their demand in the industry for getting placed along with a good package. It is suitable for students who are willing to gain a skill along with a Diploma. 
+
+</p>
 </div></a></div>
 <div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/kevin-bhagat-zNRITe8NPqY-unsplash.jpg')"}}><a href='#'>
 <div className={styles.inner_grid_content}>
 
 <h2>
   University Tie-Up Programs
-</h2><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</h2><p>
+University Tip-Up Programs consist of Bachelors/Masters Degree Courses such as B.Tech/M.Tech , B.Com/M.Com etc. When you enroll using nEmi platform you get all the benefits which nEmi claims to provide and access to exclusive content/learning platform for better personality development.
+</p>
 </div>
   
   </a></div>
@@ -308,7 +342,10 @@ getPos();
 
 <h2>
   Certification Courses
-</h2><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</h2><p>
+  
+In Certification Courses students are provided with a wide variety of professional courses to choose from. Students receive a Blockchain Minted & Internationally recognised Certificate.
+</p>
 </div>
   </a></div>
 
@@ -350,18 +387,18 @@ getPos();
 
 <Section id={"team"} full={false} marginned={true}>
   <h1 className={styles.team_heading}>SuperHuman Team <br/>behind <span className={styles.blue}>nEmi</span></h1>
-  <div className={styles.team_content}><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p></div>
+  <div className={styles.team_content}><p>nEmi is being operated by team of superhumans who have years of Experience in various fields.<br/>With an Innovative Mindset, nEmi team tries to achieve limitless solutions for modern edtech and bring a revolutionary change</p></div>
 <div className={styles.columns}>
 
-  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Akshay Bajpayee'} role="Founder & CEO" image="/image1.jpg" badge="/badge.svg"></ProfileCard>
-  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Colonel(Retd.) Niraj Nayan Bajpayee'} role="Chief Mentor" image="/image5.jpg" badge="/badge2.svg"></ProfileCard>
+  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Akshay Bajpayee'} role="Founder & CEO" image="/team01.jpg" badge="/badge.svg"></ProfileCard>
+  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Colonel(Retd.) Niraj Nayan Bajpayee'} role="Chief Mentor" image="/team02.jpg" badge="/badge2.svg"></ProfileCard>
   <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Diwakar Pratap Singh'} role="Executive Director" image="/image2.jpg" badge="/badge3.svg"></ProfileCard>
 </div>
 
 </Section>
 <Section id={"hiring_partners"} full={false} marginned={true}>
 <h1 className={styles.team_heading}>Our <span className={styles.blue}>Placements</span></h1>
-  <div className={styles.team_content}><p>Some of our prominent hiring partners from pool of <span className={styles.yellow}>4000</span></p></div>
+  <div className={styles.team_content}><p>Some of the brands where our students secured placements.</p></div>
   <Marquee gradient={true} pauseOnClick={true} gradientWidth={mobile < 3 ? 50 : 200}>
 
     <LogoGrid image1={'/1.jpg'} image2={'/2.jpg'} image3={'/3.jpg'} image4={'/4.jpg'}></LogoGrid>
@@ -389,7 +426,7 @@ getPos();
 
 <div className={styles.media_container}>
 <h1 className={styles.team_heading}>Media <span className={styles.blue}>Exposure</span></h1>
-  <div className={styles.team_content}><p>National News Channels where nEmi is featured</p></div>
+  <div className={styles.team_content}><p>National News Channels where nEmi is featured. nEmi has been gaining media exposure for so long for its flawless work in the education industry. Despite being in a competitive market, nEmi managed to conquer with its research driven Education Technology which is helping students to get better opportunities from global brands.</p></div>
   <Marquee gradient={true}>
   <div className={styles.media_grid}><img src='/big-news-network.png'/><img src='/maharashtra_news.png'/></div>
   <div className={styles.media_grid}><img src='/default-logo.png'/><img src='/MP-Chronicle.png'/></div>

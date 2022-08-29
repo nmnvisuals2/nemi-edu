@@ -260,6 +260,110 @@
     justify-content: flex-end;
 }
 
+.about_content p b {
+    color: var(--brand-col1);
+}
+
+.different li {
+    margin: auto 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 32px;
+    padding-left: 20px;
+    position: relative;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.different li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background-color: rgb(245, 245, 245);
+    left: 0;
+    bottom: 0px;
+}
+
+.different li::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--brand-col2);
+    left: 0;
+    top: 10px;
+    border-radius: 3px;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.journey li {
+    margin: auto 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 32px;
+    padding-left: 20px;
+    position: relative;
+    z-index: 2;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.journey li::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--brand-col1);
+    left: 0;
+    top: 10px;
+    border-radius: 23px;
+    transform: scale(1);
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.journey li::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: var(--brand-col2);
+    left: 5px;
+    top: 0px;
+    border-radius: 3px;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.journey li:hover::after {
+    transform: scale(3);
+    opacity: 0.4;
+}
+
+.journey,
+.different {
+    padding: 20px 0;
+}
+
+.journey li rv {
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.journey li:hover rv {
+    color: #0B4290;
+    font-weight: bold;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.different li:hover::before {
+    background-color: var(--brand-col1);
+}
+
+.different li:hover {
+    background-color: #0071f315;
+}
+
+.about_content p y {
+    color: var(--brand-col2);
+}
+
 .inner_grid_content h2 {
     color: white;
     font-size: 42px;

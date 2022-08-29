@@ -25,6 +25,7 @@
     align-content: center;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 
 .images img {
@@ -234,6 +235,39 @@
     color: var(--brand-col2);
 }
 
+.images::before {
+    content: 'Recognized by';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+    height: auto;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 999;
+    opacity: 0;
+    color: white;
+    background-color: #0b4290;
+    border-radius: 10px;
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.images:hover img {
+    border: 1px solid #aaa;
+    border-radius: 10px;
+}
+
+.images:hover::before {
+    left: 0px;
+    top: -80px;
+    width: 300px;
+    height: auto;
+    padding: 15px 0;
+    z-index: 999;
+    opacity: 1;
+    border-radius: 10px;
+}
+
 @media only screen and (max-width:968px) {
     .footer_nav {
         gap: 50px;
@@ -250,10 +284,12 @@
     .images {
         flex-direction: row;
         text-align: center;
+        position: relative;
     }
     .images img {
         width: auto;
         height: 50px;
+        position: relative;
     }
     .footer_nav .ytb,
     .footer_nav .bbb {
