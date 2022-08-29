@@ -71,8 +71,8 @@ if(window.scrollY > 200){
 }else{
   setScrolled(false)
 }
-
-/* setTopper(window.scrollY);
+setTopper(window.scrollY);
+/*
    if(timer === null){
      scroller = 0;
      trigger = 0;
