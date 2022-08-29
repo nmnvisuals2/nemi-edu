@@ -317,7 +317,7 @@ On our platform we are trying to bring revolutionary features which will not onl
 <div className={styles.grid_four}>
 
 <div className={styles.grid}><div className={styles.line_two}></div><h1>Range of <span className={styles.blue}>Courses</span></h1><p>Our wide variety of courses are divided into categories to cater everyone with their choice of course category. We have Diploma courses , Certification courses and University Tie-Up Programs etc. at the moment and more special categories are likely to be added in upcoming months. <br/> Each course includes International & Blockchain based Certification , Full Assistance, Seamless Course Completion Experience, AI based Career Guidance and a lot  more.</p></div>
-<div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/elisa-calvet-b-S3nUOqDmUvc-unsplash.jpg')"}}>
+<div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses03.jpg')"}}>
   
  
   <a href='#'> <div className={styles.inner_grid_content}>
@@ -329,7 +329,7 @@ Diploma Courses are very well known for their demand in the industry for getting
 
 </p>
 </div></a></div>
-<div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/kevin-bhagat-zNRITe8NPqY-unsplash.jpg')"}}><a href='#'>
+<div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses01.jpg')"}}><a href='#'>
 <div className={styles.inner_grid_content}>
 
 <h2>
@@ -341,7 +341,7 @@ University Tip-Up Programs consist of Bachelors/Masters Degree Courses such as B
   
   </a></div>
   <div className={styles.line_two + " " + styles.two}></div>
-<div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/vasily-koloda-8CqDvPuo_kI-unsplash.jpg')"}}><a href='#'>
+<div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses02.jpg')"}}><a href='#'>
   
 <div className={styles.inner_grid_content}>
 
