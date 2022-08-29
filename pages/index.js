@@ -203,13 +203,13 @@ getPos();
 
   const containerRef = useRef(null);
   return (<>
-  <Modal closeable={false} open={cs} extra={true} handleModal={ModalHandler3}>
+  {/* <Modal closeable={false} open={cs} extra={true} handleModal={ModalHandler3}>
 <div className={styles.cs}>
   <h2>nEmi is Coming Soon for public !! </h2>
   <p>Registered Beta Users can view website</p>
     <input type={"password"} placeholder={"enter password to view website"} onChange={e=>{setPass(e.target.value)}}></input>
     <button onClick={handleAuth}>Submit</button></div>
-  </Modal>
+  </Modal> */}
     <NavBar scrolled={scrolled} device={mobile} handleStudentLogin={handleStudentLogin} handleContactPopup={e=>ModalHandler(true)}></NavBar>
     <Modal closeable={true} open={isModalOpen} handleModal={ModalHandler}>
       
