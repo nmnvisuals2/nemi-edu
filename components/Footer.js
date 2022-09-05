@@ -53,7 +53,7 @@ Subscribe to our <br/>
 <img src="/moc.svg" />
     <img src="/msme.svg" />
    
-    <img src="/startupindia.svg" width={300}/>
+    <img src="/Skill-India-Color.svg" style={{filter:"grayscale(1)"}} width={300}/>
     </div>
     <p>2022 © nEmi Education | All Rights Reserved</p>
 </div>
