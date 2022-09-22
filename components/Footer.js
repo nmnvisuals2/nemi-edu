@@ -16,9 +16,9 @@ const [email,setEmail] = useState()
     <div className={styles.sec1}>
 <h2>Explore<span className={styles.bro}>.</span></h2>
                 <ul className={styles.navlist}>
-                <li><a href="" onClick={(e)=>{e.preventDefault(),props.handleStudentLogin()}}>Diploma Courses</a></li>
-                <li><a href="" onClick={(e)=>{e.preventDefault(),props.handleStudentLogin()}}>Certification Courses</a></li>
-                    <li><a href="" onClick={(e)=>{e.preventDefault(),props.handleStudentLogin()}}>University Tie-Up Programs</a></li>
+                <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(1)}}>Diploma Courses</a></li>
+                <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(2)}}>Certification Courses</a></li>
+                    <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(3)}}>University Tie-Up Programs</a></li>
                     </ul>                                                                                                                                                                      
     </div>
     <div className={styles.sec2}>
@@ -31,16 +31,16 @@ Subscribe to our <br/>
 </h3>
 <input placeholder='Enter your E-mail
 ' name='email' type='email' value={email}  onChange={(e)=>{setEmail(e.target.value)}} className={styles.email_input}/>
-<button className={styles.submit} type="submit" onClick={()=>props.handleSubmit(email)}>SUBSCRIBE</button>
+<button className={styles.submit} type="submit" onClick={()=>props.handleSubmit(email)}>SUBSCRIBE{props.loader ? <div className={styles.loader}><span className={styles.p1}></span><span className={styles.p2}></span></div>:''}</button>
     </div>
     <div className={styles.sec3}>
 
 <ul className={styles.main_nav}>
 <li><Link href="/"><a>Home</a></Link> </li>
 <li>  <Link href="#courses"><a onClick={props.handleStudentLogin} >Courses</a></Link> </li>
-<li> <Link href=""><a onClick={props.handleStudentLogin} >Roadmap</a></Link> </li>
-<li> <Link href="#about"><a >About</a></Link> </li>
-<li> <a onClick={e=>{e.preventDefault(),props.handleContactPopup()}} >Contact</a></li>
+<li> <a onClick={e=>props.handleModal(true)} >Roadmap</a></li>
+<li> <Link href="/#about"><a >About</a></Link> </li>
+<li> <a onClick={e=>{e.preventDefault(),props.handleContactPopup(true)}} >Contact</a></li>
                     
     
 </ul>

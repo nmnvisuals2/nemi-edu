@@ -455,6 +455,7 @@
     -webkit-text-fill-color: transparent;
     border-radius: 200px;
     position: relative;
+    font-size: 44px;
 }
 
 .hero_heading circ::before {
@@ -1197,6 +1198,26 @@
         width: 100%;
         text-align: left;
         font-size: 14px;
+    }
+    .hero_heading circ {
+        background: rgb(6, 37, 98);
+        background: linear-gradient(3deg, rgba(6, 37, 98, 1) 0%, rgba(19, 115, 228, 1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-radius: 200px;
+        position: relative;
+        font-size: 6vw;
+    }
+    .hero_heading circ::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 70%;
+        width: 100%;
+        transform: translate(-48%, -60%) scale(1.2);
+        border-radius: 200px;
+        border: 1.5px solid rgba(19, 115, 228, 1);
     }
 }
 

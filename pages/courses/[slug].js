@@ -2,6 +2,9 @@ import styles from './Courses.module.css'
 import {useRouter} from 'next/router'
 import { useEffect, useState } from 'react';
 import { supabase } from '../../utils/supabaseClient';
+import DefaultLayout from '../../layout/DefaultLayout';
+import useRazorpay from "react-razorpay";
+import { useCallback } from "react";
 function CourseSingle({data}){
 
 
@@ -36,12 +39,43 @@ useEffect(()=>{
 
 
 
+const Razorpay = useRazorpay();
+
+const handlePayment = useCallback(async() => {
+    const order = await createOrder(params);
+
+    const options = {
+      key: "rzp_test_cCfgFh9m0sK1Oz",
+      amount: "3000",
+      currency: "INR",
+      name: "Acme Corp",
+      description: "Test Transaction",
+      order_id: order.id,
+      handler: (res) => {
+        console.log(res);
+      },
+      prefill: {
+        name: "Piyush Garg",
+        email: "youremail@example.com",
+        contact: "9999999999",
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+
+    const rzpay = new Razorpay(options);
+    rzpay.open();
+  }, [Razorpay]);
 
 
 
 
-    return(<div>
-        
+    return(
+        <DefaultLayout><div className={styles.main_container}>
         {!loading ? 
         <ul>
         
@@ -51,7 +85,14 @@ useEffect(()=>{
         <li>{courseData.description}</li>
         <li>{courseData.duration}</li>
         
-        </ul>:''}</div>)
+        </ul>:''}
+        
+        <button onClick={handlePayment}>Make Payment</button>
+        </div>
+
+
+        </DefaultLayout>
+        )
 }
 
 

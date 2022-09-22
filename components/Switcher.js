@@ -40,11 +40,15 @@ Caller();
 
     return(<div className={styles.switcher}>
      
-        {counter == 0 ? <p key={counter} className={(active ? styles.active : '') }>{props.features[0]}</p>:''}
+        {/* {counter == 0 ? <p key={counter} className={(active ? styles.active : '') }>{props.features[0]}</p>:''}
         {counter == 1 ? <p key={counter} className={(active ? styles.active : '') }>{props.features[1]}</p>:''}
         {counter == 2 ? <p key={counter} className={(active ? styles.active : '') }>{props.features[2]}</p>:''}
         {counter == 3 ? <p key={counter} className={(active ? styles.active : '') }>{props.features[3]}</p>:''}
-        {counter == 4 ? <p key={counter} className={(active ? styles.active : '') }>{props.features[4]}</p>:''}
+        {counter == 4 ? <p key={counter} className={(active ? styles.active : '') }>{props.features[4]}</p>:''} */}
+        {props? props.features.map((item,index)=>{
+return(<>{counter == index ? <p key={index} className={(active ? styles.active : '') }>{item}</p>:''}</>)
+
+        }):''}
        
         </div>)
 }

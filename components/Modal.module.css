@@ -24,6 +24,7 @@
     animation: fadeIn .6s normal cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-fill-mode: forwards;
     box-shadow: 12px 12px 26px -2px #00000022;
+    perspective: 30px;
 }
 
 .close {

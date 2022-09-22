@@ -3,8 +3,6 @@ import Image from 'next/image'
 import { useEffect, useState, useRef } from 'react'
 
 
-import Footer from '../components/Footer'
-import NavBar from '../components/NavBar'
 import Notifications from '../components/Notifications'
 import Section from '../components/Section'
 import styles from '../styles/Home.module.css'
@@ -13,10 +11,11 @@ import ProfileCard from '../components/ProfileCard'
 import LogoGrid from '../components/LogoGrid'
 import StatNumber from '../components/StatNumber'
 import Modal from '../components/Modal'
-import ContactForm from '../components/ContactForm'
+
 import IconGrid from '../components/IconGrid'
 import { supabase } from '../utils/supabaseClient'
 import Switcher from '../components/Switcher'
+import DefaultLayout from '../layout/DefaultLayout'
 export default function Home() {
 
 
@@ -29,11 +28,18 @@ export default function Home() {
   const [scrolled,setScrolled] = useState(false);
   const [isModalOpen,setModalOpen] = useState(false);
   const [isModalTwoOpen,setModalTwoOpen] = useState(false);
+  const [isOpen,setIsOpen] = useState(false);
   const [cs,setCS] = useState(true);
   const [pass,setPass] = useState(true);
+  const [isContactOpen,setIsContactOpen] = useState(false);
+  const [activeItem,setActiveItem] = useState({
+
+    index:null,
+    isOpen:false,
+  });
 
 
-  const features = [<>Courses with<span className={styles.blue}>&nbsp;Job Assurance</span></>,<>Mentored by<span className={styles.blue}>&nbsp;Military Veterans</span></>,<><span className={styles.blue}>AI Powered</span>&nbsp;Career Guidance</>,<><span className={styles.blue}>Blockchain</span>&nbsp;integrated Certification</>,<>Recognised by<span className={styles.blue}>&nbsp;Ministry of Commerce</span></>]
+  const features = [<>Courses with<span className={styles.blue}>&nbsp;Job Assurance</span></>,<>Mentored by<span className={styles.blue}>&nbsp;Military Veterans</span></>,<><span className={styles.blue}>AI Powered</span>&nbsp;Career Guidance</>,<><span className={styles.blue}>Blockchain</span>&nbsp;integrated Certification</>,<>Recognised by<span className={styles.blue}>&nbsp;Ministry of Commerce</span></>,<>Backed by<span className={styles.blue}>&nbsp;AKTU</span></>]
 
 const accredited = "nEmi is backed by Skill Development Council Canada with Certification, Learning, Skill Development etc. which makes our certificates internationally recognized. This not only raises the value of education but also helps students to get better opportunities. nEmi courses follow guidelines provided by Skill Development Council to validate the quality control throughout the education pipeline.";
 
@@ -107,6 +113,7 @@ setTopper(window.scrollY);
 
   })
 
+
   function easeNow(){
     clearInterval()
     distance = stop - start;
@@ -129,17 +136,6 @@ if(trigger === 1 || window.scrollY !== stop){
 }
 
 
-async function submitter(data){
- await supabase
-  .from('subscriptions')
-  .insert([
-    { email: data, subscribed: true },
-  ]).then(response=>{
-    if(!response.error && response.status === 201){
-      setNotification('Thanks, Successfully Subscribed to Newsletters','success')
-    }
-  })
-}
 
 
 function handleStudentLogin(){
@@ -160,6 +156,10 @@ function setOverlayActive(boo){
   setOverlay(boo);
 }
 
+function handleSetItem(data){
+setActiveItem(data)
+}
+
 
 function ModalHandler(data){
 setModalOpen(data);
@@ -170,17 +170,7 @@ function ModalHandler2(data){
   function ModalHandler3(data){
    
     }
-async function ContactFormSubmit(name,email,phone,message){
 
-  await supabase
-  .from('contact_requests')
-  .insert([
-    { name : name, email : email , phone : phone , message: message },
-  ]).then(response=>{if(!response.error && response.status === 201){
-    setNotification('Thanks , You will be contacted shortly','success')
-    ModalHandler(false);
-  }})
-}
 
 function handleAuth(){
 
@@ -199,8 +189,23 @@ getPos();
 
 
   },[])
+ 
+  function handleOpener(){
 
+    
+  setIsOpen(true);
+  }
 
+  
+  function ContactFormHandler(data){
+    setIsContactOpen(false);
+    setTimeout(e=>setIsContactOpen(data),20)
+    
+      }
+function handleClose(data){
+
+  setIsOpen(false)
+}
   const containerRef = useRef(null);
   return (<>
   {/* <Modal closeable={false} open={cs} extra={true} handleModal={ModalHandler3}>
@@ -210,12 +215,9 @@ getPos();
     <input type={"password"} placeholder={"enter password to view website"} onChange={e=>{setPass(e.target.value)}}></input>
     <button onClick={handleAuth}>Submit</button></div>
   </Modal> */}
-    <NavBar scrolled={scrolled} device={mobile} handleStudentLogin={handleStudentLogin} handleContactPopup={e=>ModalHandler(true)}></NavBar>
-    <Modal closeable={true} open={isModalOpen} handleModal={ModalHandler}>
-      
-
-      <ContactForm handleSubmitForm={ContactFormSubmit} heading={"Get in Touch with Us!!"}></ContactForm>
-    </Modal>
+  <DefaultLayout opener={isOpen} Closer={handleClose} activatedItem={activeItem} contactPop={isContactOpen}>
+    {/* <NavBar scrolled={scrolled} device={mobile} handleStudentLogin={handleStudentLogin} handleContactPopup={e=>ModalHandler(true)}></NavBar> */}
+    
 
 
 
@@ -229,10 +231,10 @@ getPos();
     </Modal>
     <div className={styles.container}>
       <Head>
-      <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
+      
         <title>Nemi Education</title>
-        <meta name="description" content="#1 Education Platform" />
-        <link rel="icon" href="/nemi-favicon.svg" />
+        
+       
       </Head>
    
       <main className={styles.main} data-scroll-container ref={containerRef}>
@@ -244,7 +246,7 @@ getPos();
     <h2 className={styles.hero_heading}>India's first research based <br/><span>&nbsp; &nbsp; Edtech company <circ>™</circ></span></h2>
     <Switcher features={features}/>
   
-  <a className={styles.btn} href=" " onClick={(e)=>{e.preventDefault(),ModalHandler(true)}}><button>Dive In Now</button></a>
+  <a className={styles.btn} href=" " onClick={(e)=>{e.preventDefault(),handleOpener()}}><button>Dive In Now</button></a>
 
 
 
@@ -317,10 +319,10 @@ On our platform we are trying to bring revolutionary features which will not onl
 <div className={styles.grid_four}>
 
 <div className={styles.grid}><div className={styles.line_two}></div><h1>Range of <span className={styles.blue}>Courses</span></h1><p>Our wide variety of courses are divided into categories to cater everyone with their choice of course category. We have Diploma courses , Certification courses and University Tie-Up Programs etc. at the moment and more special categories are likely to be added in upcoming months. <br/> Each course includes International & Blockchain based Certification , Full Assistance, Seamless Course Completion Experience, AI based Career Guidance and a lot  more.</p></div>
-<div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses03.jpg')"}}>
+<div className={styles.grid + " " + styles.blue} onClick={e=>{handleSetItem(1),handleOpener()}} style={{backgroundImage:"url('/courses03.jpg')"}}>
   
  
-  <a href='#'> <div className={styles.inner_grid_content}>
+  <a> <div className={styles.inner_grid_content}>
 
 <h2>
   Diploma Courses
@@ -329,7 +331,7 @@ Diploma Courses are very well known for their demand in the industry for getting
 
 </p>
 </div></a></div>
-<div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses01.jpg')"}}><a href='#'>
+<div onClick={e=>{handleSetItem(3),handleOpener()}} className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses01.jpg')"}}><a >
 <div className={styles.inner_grid_content}>
 
 <h2>
@@ -341,7 +343,7 @@ University Tip-Up Programs consist of Bachelors/Masters Degree Courses such as B
   
   </a></div>
   <div className={styles.line_two + " " + styles.two}></div>
-<div className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses02.jpg')"}}><a href='#'>
+<div className={styles.grid + " " + styles.blue} onClick={e=>{handleSetItem(2),handleOpener()}} style={{backgroundImage:"url('/courses02.jpg')"}}><a >
   
 <div className={styles.inner_grid_content}>
 
@@ -384,8 +386,8 @@ In Certification Courses students are provided with a wide variety of profession
 <h3 className={styles.d_h3}>Enroll into</h3>
 <h2 className={styles.d_h2}>Job/Internship Assurance based Courses</h2>
 <div className={styles.button_wrapper}>
-  <a className={styles.acc_btn} onClick={e=>{e.preventDefault(),setNotification("Application Form will be available soon","success")}}><button>Apply Now</button></a>
-  <a onClick={e=>{e.preventDefault(),ModalHandler(true)}}><button>Get in Touch</button></a>
+  <a className={styles.acc_btn} onClick={(e)=>{e.preventDefault(),handleOpener()}}><button>Apply Now</button></a>
+  <a onClick={e=>{e.preventDefault(),ContactFormHandler(true)}}><button>Get in Touch</button></a>
 </div></div>
 </Section>
 
@@ -454,8 +456,8 @@ In Certification Courses students are provided with a wide variety of profession
 
    
     </div>
-    <Footer device={mobile} handleSubmit={submitter} handleStudentLogin={handleStudentLogin} handleContactPopup={e=>ModalHandler(true)}></Footer>
-    
+{/*     <Footer device={mobile} handleSubmit={submitter} handleStudentLogin={handleStudentLogin} handleContactPopup={e=>ModalHandler(true)}></Footer> */}
+    </DefaultLayout>
     {nottext && nottext.text.length > 2 ? <Notifications type={nottext.type} text={nottext.text}/>: ''}
     </>
   )

@@ -14,6 +14,7 @@ function ContactForm(props){
         <input type="text" name='phone' placeholder="Enter your Phone Number" onChange={(e)=>setPhone(e.target.value)}></input>
         <textarea name='name' placeholder="Write a message...." onChange={(e)=>setMessage(e.target.value)}></textarea>
         <a onClick={(e)=>{e.preventDefault(),props.handleSubmitForm(fullName,email,phone,message)}}>SUBMIT</a>
+        {props.loader ? <div className={styles.loader}><span className={styles.p1}></span><span className={styles.p2}></span></div>:''}
         
     </div>)
 }

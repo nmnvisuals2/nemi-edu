@@ -142,8 +142,10 @@
 }
 
 .nav_active .menu_wrapper {
-    min-width: 300px;
+    min-width: 330px;
+    width: fit-content;
     right: 0px;
+    padding-top: 60px;
     top: 0px;
     position: absolute;
     min-height: 400px;
@@ -219,4 +221,112 @@
     user-select: none;
     /* Non-prefixed version, currently
                                         supported by Chrome, Edge, Opera and Firefox */
+}
+
+.sub_item {
+    width: fit-content;
+    height: auto;
+    padding: 20px;
+    position: fixed;
+    border-radius: 20px;
+    background-color: white;
+    z-index: 9999999999;
+    box-shadow: 2px 2px 12px -3px #00000044;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sub_item li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.activeItem {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.sub_item_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+.sub_item_button svg {
+    transform: rotate(180deg);
+    transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sub_item_button.active_button svg,
+.sub_item_button:hover svg {
+    transform: rotate(0deg);
+}
+
+.sub_item_button.active_button {
+    color: var(--brand-col2);
+}
+
+.sub_item_button.active_button svg path,
+.sub_item_button:hover svg path {
+    fill: var(--brand-col2);
+}
+
+@media only screen and (max-width:968px) {
+    .sub_item {
+        display: none;
+    }
+}
+
+.sub_sub_sub {
+    overflow: hidden;
+    max-height: 0px;
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sub_sub_sub li {
+    text-align: right;
+    padding: 5px 0;
+}
+
+.sub_sub_sub.active_sub {
+    max-height: 200px;
+}
+
+.sub_sub_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: center;
+    padding: 10px 0;
+}
+
+.sub_sub_item svg {
+    transform: rotate(180deg);
+    transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sub_sub_item.active_item {
+    color: var(--brand-col1);
+}
+
+.sub_sub_item.active_item svg {
+    transform: rotate(0deg);
+}
+
+.sub_sub_item.active_item svg path {
+    fill: var(--brand-col1);
+}
+
+.toggler {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.toggler.active_toggle {
+    max-height: 300px;
 }

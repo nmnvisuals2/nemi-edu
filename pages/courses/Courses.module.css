@@ -1,0 +1,9 @@
+.main_container {
+    width: 100%;
+    min-height: 60vh;
+    max-height: 100vh;
+    height: 100%;
+    display: block;
+    position: relative;
+    padding: 200px 100px 0px 100px;
+}

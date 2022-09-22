@@ -1,0 +1,48 @@
+{
+    "categories": [
+
+        {
+            "title": "Diploma Courses",
+            "courses": [{
+                    "title": "Office Management",
+                    "link": "/courses/office-management"
+                },
+                {
+                    "title": "Project Management",
+                    "link": "/courses/project-management"
+                }
+            ]
+        },
+        {
+            "title": "Certification Courses",
+            "courses": [{
+                    "title": "Digital Marketing",
+                    "link": "/courses/digital-marketing"
+                },
+                {
+                    "title": "Graphic Design",
+                    "link": "/courses/graphic-design"
+                },
+                {
+                    "title": "Excel",
+                    "link": "/courses/excel"
+                }
+            ]
+        },
+        {
+            "title": "University Tie-Up Programs",
+            "courses": [{
+                    "title": "Bachelors Program",
+                    "link": "/courses/bachelors"
+                },
+                {
+                    "title": "Masters Program",
+                    "link": "/courses/masters"
+                }
+            ]
+        }
+    ]
+
+
+
+}
