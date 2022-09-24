@@ -1,9 +1,337 @@
 .main_container {
     width: 100%;
     min-height: 60vh;
-    max-height: 100vh;
     height: 100%;
     display: block;
     position: relative;
-    padding: 200px 100px 0px 100px;
+    padding: 300px 0px 0px 0px;
+}
+
+.section {
+    width: 100%;
+    position: relative;
+    padding: 0 0 100px 0;
+    opacity: 0;
+    animation: reveal 1s normal cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-fill-mode: forwards;
+}
+
+.top {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 0 150px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 9;
+}
+
+.col1,
+.col2 {
+    flex: 1 1 50%;
+    width: 50%;
+}
+
+.col1 img {
+    min-height: 20vh;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.col2 {
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.yellow {
+    color: var(--brand-col2);
+}
+
+.checkout_info {
+    width: 80%;
+    padding: 20px 0;
+    color: white;
+    font-family: Modernist;
+    position: relative;
+}
+
+.bottom {
+    width: 100%;
+    background-color: var(--brand-col1);
+    position: absolute;
+    height: calc(220px + 100px);
+    left: 0;
+    bottom: 0;
+}
+
+.over {
+    mix-blend-mode: color-dodge;
+    opacity: 0.9;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.courseName {
+    font-size: 4vw;
+    font-family: Modernist;
+    color: var(--brand-col1);
+    font-weight: bold;
+    margin: 0;
+}
+
+.star {
+    width: 14px;
+    height: 14px;
+}
+
+.specs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.specs p {
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: white;
+}
+
+.rating_holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    gap: 5px;
+}
+
+.category {
+    width: fit-content;
+    padding: 10px 30px;
+    font-family: Modernist;
+    margin: 5px 0;
+    border-radius: 200px;
+    font-size: 20px;
+    background-color: var(--brand-col2);
+}
+
+.price_holder {
+    width: fit-content;
+    padding: 10px 30px;
+    font-family: Poppins;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 40px 0;
+    font-weight: 600;
+    color: var(--brand-col1);
+    font-size: 36px;
+    background-color: white;
+}
+
+.original {
+    display: inline;
+    font-weight: 400;
+    text-decoration: line-through;
+    font-size: 26px;
+    color: #666;
+    margin-left: 10px;
+}
+
+.wrapped {
+    padding: 0 150px;
+}
+
+.modules {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.wrapped .colwrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.smallhead {
+    font-size: 26px;
+    font-weight: 600;
+    font-family: Modernist;
+    margin-bottom: 10px;
+}
+
+.overview {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.colwrapper .col2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.modules li {
+    padding: 0 10px;
+    box-shadow: 4px 4px 12px -3px #00000011;
+    border-radius: 10px;
+    padding: 20px 20px;
+    display: flex;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1);
+    background-color: white;
+}
+
+.modules li:hover {
+    box-shadow: 6px 6px 22px -8px #00000044;
+    transform: scale(1.02);
+}
+
+.loadwrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.main_image {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.enrollNow {
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 6px 6px 22px -5px #ffffff22;
+    font-weight: 500;
+    font-size: 20px;
+    background: var(--brand-col2);
+    background: linear-gradient(90deg, var(--brand-col2) 0%, var(--brand-col2-accent) 100%);
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.breadCrumbs {
+    display: none;
+}
+
+@media only screen and (max-width:968px) {
+    .breadCrumbs {
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        padding: 5px 0 10px 0;
+    }
+    .wrapped {
+        padding: 0 50px;
+    }
+    .top {
+        padding: 0 50px;
+        flex-direction: column;
+        gap: 23px;
+    }
+    .top .col1,
+    .top .col2 {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    .main_container {
+        padding-top: 150px;
+    }
+    .col2 {
+        padding: 0;
+    }
+    .bottom {
+        height: calc(220px + 100px);
+    }
+    .courseName {
+        font-size: 48px;
+    }
+    .category {
+        font-size: 14px;
+        padding: 5px 20px;
+    }
+    .specs {
+        margin-top: 10px;
+    }
+    .wrapped .colwrapper {
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .colwrapper .col1,
+    .colwrapper .col2 {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+    .wrapped .courseName {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .wrapped {
+        padding: 0 30px;
+    }
+    .top {
+        padding: 0 30px;
+    }
 }
