@@ -16,6 +16,7 @@ import IconGrid from '../components/IconGrid'
 import { supabase } from '../utils/supabaseClient'
 import Switcher from '../components/Switcher'
 import DefaultLayout from '../layout/DefaultLayout'
+import { loadGetInitialProps } from 'next/dist/shared/lib/utils'
 export default function Home() {
 
 
@@ -191,9 +192,9 @@ getPos();
   },[])
  
   function handleOpener(){
-
-    
-  setIsOpen(true);
+     setIsOpen(false);
+    setTimeout(()=>{setIsOpen(true)},50)
+  
   }
 
   
@@ -331,7 +332,7 @@ Diploma Courses are very well known for their demand in the industry for getting
 
 </p>
 </div></a></div>
-<div onClick={e=>{handleSetItem(3),handleOpener()}} className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses01.jpg')"}}><a >
+<div onClick={e=>{handleSetItem(2),handleOpener()}} className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses01.jpg')"}}><a >
 <div className={styles.inner_grid_content}>
 
 <h2>
@@ -343,7 +344,7 @@ University Tip-Up Programs consist of Bachelors/Masters Degree Courses such as B
   
   </a></div>
   <div className={styles.line_two + " " + styles.two}></div>
-<div className={styles.grid + " " + styles.blue} onClick={e=>{handleSetItem(2),handleOpener()}} style={{backgroundImage:"url('/courses02.jpg')"}}><a >
+<div className={styles.grid + " " + styles.blue} onClick={e=>{handleSetItem(0),handleOpener()}} style={{backgroundImage:"url('/courses02.jpg')"}}><a >
   
 <div className={styles.inner_grid_content}>
 
