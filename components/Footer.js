@@ -17,8 +17,8 @@ const [email,setEmail] = useState()
 <h2>Explore<span className={styles.bro}>.</span></h2>
                 <ul className={styles.navlist}>
                 <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(1)}}>Diploma Courses</a></li>
-                <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(2)}}>Certification Courses</a></li>
-                    <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(3)}}>University Tie-Up Programs</a></li>
+                <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(0)}}>Certification Courses</a></li>
+                    <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(2)}}>University Tie-Up Programs</a></li>
                     </ul>                                                                                                                                                                      
     </div>
     <div className={styles.sec2}>

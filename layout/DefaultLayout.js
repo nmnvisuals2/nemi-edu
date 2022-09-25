@@ -20,6 +20,7 @@ function DefaultLayout(props){
   const [modalOpenFour,setModalOpenFour] = useState(false);
   const [modalOpenFive,setModalOpenFive] = useState(false);
   const [courseData,setCourseData] = useState();
+  const [selector,setSelector] = useState();
   function DoSet(){
     if(window.innerWidth < 768){
       setMobile(1)
@@ -185,6 +186,7 @@ setModalOpenFive(true);
 setActiveCourse(data);
 setModalOpenFive(true);
 
+
   }
 useEffect(()=>{
 
@@ -201,7 +203,7 @@ useEffect(()=>{
 <Modal closeable={true} open={modalOpenFive} handleModal={e=>{ModalHandler5(),setModalOpenFive(false)}}>
 
 
-<CourseSelector courseData={courseData} handleClose={e=>setModalOpenFive(false)}></CourseSelector>
+<CourseSelector courseData={courseData} handleClose={e=>setModalOpenFive(false)} selector={activeCourse}></CourseSelector>
 
 </Modal>
 <Modal closeable={true} open={modalOpenFour} handleModal={ModalHandler4}>
