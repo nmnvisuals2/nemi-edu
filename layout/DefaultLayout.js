@@ -6,6 +6,7 @@ import Notifications from "../components/Notifications";
 import Modal from "../components/Modal";
 import ContactForm from "../components/ContactForm";
 import styles from './DefaultLayout.module.css'
+import CourseSelector from "../components/CourseSelector";
 function DefaultLayout(props){
 
     const [mobile,setMobile] = useState();
@@ -159,7 +160,11 @@ setModalOpen(props.contactPop)
 
   },[props.contactPop])
 
+function courseClickHandler(data){
 
+setActiveCourse(data);
+setModalOpenFive(true);
+}
   function openModalFooter(data){
 setActiveCourse(data);
 setModalOpenFive(true);
@@ -177,10 +182,10 @@ useEffect(()=>{
 
     return(<>
 
-<Modal closeable={true} open={modalOpenFive} handleModal={e=>{ModalHandler5(),props.Closer()}}>
+<Modal closeable={true} open={true} handleModal={e=>{ModalHandler5(),props.Closer()}}>
 
 
-<p>Coming Soon</p>
+<CourseSelector></CourseSelector>
 
 </Modal>
 <Modal closeable={true} open={modalOpenFour} handleModal={ModalHandler4}>
@@ -201,7 +206,7 @@ useEffect(()=>{
       <ContactForm loader={loader} handleSubmitForm={ContactFormSubmit} heading={"Get in Touch with Us!!"}></ContactForm>
     </Modal>
     {nottext && nottext.text.length > 2 ? <Notifications type={nottext.type} text={nottext.text}/>: ''}
-<NavBar scrolled={scrolled} device={mobile} handleStudentLogin={props.handleStudentLogin} handleModal={ModalHandler4} handleContactPopup={ModalHandler}></NavBar><>{props.children}</>
+<NavBar courseClick={courseClickHandler} scrolled={scrolled} device={mobile} handleStudentLogin={props.handleStudentLogin} handleModal={ModalHandler4} handleContactPopup={ModalHandler}></NavBar><>{props.children}</>
 <Footer loader={loader} onListClick={openModalFooter} device={mobile} modal={e=>ModalHandler(true)} handleSubmit={submitter} handleModal={ModalHandler4} handleCoursePopup={coursePopup} handleContactPopup={ModalHandler}></Footer></>)
 }
 
