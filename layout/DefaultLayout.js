@@ -19,6 +19,7 @@ function DefaultLayout(props){
   const [submitterLoading,setSubmitterLoad] = useState(false);
   const [modalOpenFour,setModalOpenFour] = useState(false);
   const [modalOpenFive,setModalOpenFive] = useState(false);
+  const [courseData,setCourseData] = useState();
   function DoSet(){
     if(window.innerWidth < 768){
       setMobile(1)
@@ -48,7 +49,21 @@ function DefaultLayout(props){
   }
   
 })}
+
+async function getCourses(){
+
+  await supabase
+  .from('courses')
+  .select('*')
+  .eq('isActive',true)
+  .then(res=>{
+
+    setCourseData(res.data)
+  })
+}
   
+
+
 
 
   function ModalHandler(data){
@@ -152,6 +167,7 @@ function DefaultLayout(props){
 getPose();
     DoSet();
     getRoadMaps();
+    getCourses();
   },[]);
 
 
@@ -182,10 +198,10 @@ useEffect(()=>{
 
     return(<>
 
-<Modal closeable={true} open={true} handleModal={e=>{ModalHandler5(),props.Closer()}}>
+<Modal closeable={true} open={modalOpenFive} handleModal={e=>{ModalHandler5(),setModalOpenFive(false)}}>
 
 
-<CourseSelector></CourseSelector>
+<CourseSelector courseData={courseData} handleClose={e=>setModalOpenFive(false)}></CourseSelector>
 
 </Modal>
 <Modal closeable={true} open={modalOpenFour} handleModal={ModalHandler4}>
