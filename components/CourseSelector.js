@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './CourseSelector.module.css';
-
+import Select from 'react-select'
 function CourseSelector(props){
 
 const [activeBtn,setActiveBtn] = useState(0);

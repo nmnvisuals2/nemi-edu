@@ -7,7 +7,8 @@ import useRazorpay from "react-razorpay";
 import { useCallback } from "react";
 import Loader from '../../components/Loader';
 import Link from 'next/link';
-
+import ContactForm from '../../components/ContactForm';
+import Notifications from '../../components/Notifications';
 function CourseSingle({data}){
 
 
@@ -17,6 +18,16 @@ const router = useRouter()
   const [slug,setSlug] = useState('');
   const [courseData,setCourseData] = useState('');
   const [loading,setLoading] = useState(true);
+  const [loader,setLoader] = useState(false);
+  const [nottext,setNotText] = useState();
+
+
+  function setNotification(text,type){
+         
+    setNotText({text:text,type:type});
+    setTimeout(()=>{setNotText({text:""})},2000)
+  
+  }
 async function findCourse(){
 
     await supabase
@@ -24,7 +35,23 @@ async function findCourse(){
     .select('*')
     .eq('courseSlug',slug).then(response=>{setCourseData(response.data[0]),setLoading(false),console.log(response.data);})
 }
+async function ContactFormSubmiter(name,email,phone){
+    
+    setLoader(true);
+      await supabase
+      .from('contact_requests')
+      .insert([
+        { name : name, email : email , phone : phone , message: `Enquiry Regarding for ${courseData.courseName}` },
+      ]).then(response=>{if(!response.error && response.status === 201){
+        setNotification('Thanks , You will be contacted shortly','success')
+        
+        setLoader(false);
+        
+      }}).catch((err)=>{
 
+        
+      })
+    }
 
 
 useEffect(()=>{
@@ -40,11 +67,14 @@ useEffect(()=>{
 },[slug])
 
 
+function ContactFormSubmit(){}
 
 
 
     return(
-        <DefaultLayout><div className={styles.main_container}>
+        <DefaultLayout>
+            {nottext && nottext.text.length > 2 ? <Notifications type={nottext.type} text={nottext.text}/>: ''}
+            <div className={styles.main_container}>
 {!loading & courseData != undefined && courseData.isActive? <>
            <div className={styles.section}>
                <div className={styles.top}>
@@ -62,9 +92,9 @@ useEffect(()=>{
                    
                    </div>
 
-                   <div className={styles.price_holder}>₹{courseData.salePrice && courseData.coursePrice > courseData.salePrice ? courseData.salePrice : courseData.coursePrice  }{courseData.salePrice && courseData.coursePrice > courseData.salePrice ? <p className={styles.original}>₹{courseData.coursePrice}</p>:''}</div>
-                   <h2 className={styles.checkout_info}>For Smoothest Enrollment Experience, Click the <span className={styles.yellow}>Enroll Button</span> Now and start your journey with nEmi.</h2>
-                   <Link href={`https://app.nemiedu.com/checkout/${courseData.courseSlug}`}><a className={styles.enrollNow}>Enroll Now</a></Link>
+                 {courseData && !courseData.category == "University" ?   <div className={styles.price_holder}>₹{courseData.salePrice && courseData.coursePrice > courseData.salePrice ? courseData.salePrice : courseData.coursePrice  }{courseData.salePrice && courseData.coursePrice > courseData.salePrice ? <p className={styles.original}>₹{courseData.coursePrice}</p>:''}</div>:''}
+                {courseData && courseData.category == "University"?  <div className={styles.form_holder}><ContactForm special={true} loader={loader} handleSubmitForm={ContactFormSubmiter} heading={"Get in Touch with Us!!"}></ContactForm>{/* <a className={styles.enrollNow} onClick={e=>{handleContact}}>Enquire Now</a> */}</div> : <> <h2 className={styles.checkout_info}>For Smoothest Enrollment Experience, Click the <span className={styles.yellow}>Enroll Button</span> Now and start your journey with nEmi.</h2>
+                   <Link href={`https://app.nemiedu.com/checkout/${courseData.courseSlug}`}><a className={styles.enrollNow}>Enroll Now</a></Link></>} 
                    </div>
                </div>
                <div className={styles.bottom}><img className={styles.over} src='/inndesign.svg'/></div>

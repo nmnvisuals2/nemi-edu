@@ -258,6 +258,15 @@
     background: linear-gradient(90deg, var(--brand-col2) 0%, var(--brand-col2-accent) 100%);
 }
 
+.form_holder {
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 12px -3px #00000044;
+}
+
 @keyframes reveal {
     0% {
         opacity: 0;
