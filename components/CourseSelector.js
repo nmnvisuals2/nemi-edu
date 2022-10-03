@@ -230,7 +230,7 @@ return(<div className={styles.toggler_button + " " + (activeCourse == i ? styles
 
         {props.courseData ? props.courseData.map((item,index)=>{
 if(item.category == categories[activeCourse]){
-return(<Link href={`/courses/${item.courseSlug}`}><div key={index} onClick={props.handleClose} className={styles.courseCard}><img src={item.imageLink}/>{item.courseName}</div></Link>)}
+return(<Link href={`/courses/${item.courseSlug}`}><div key={index} onClick={props.handleClose} className={styles.courseCard}><img className={styles.imageLink} src={item.imageLink}/>{item.courseName}</div></Link>)}
             }) : ''}
         </div></>:''}
 
