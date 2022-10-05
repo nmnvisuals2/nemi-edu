@@ -53,6 +53,7 @@
     position: relative;
     outline: 2px solid transparent;
     transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-color: white;
 }
 
 .indicator:hover,
