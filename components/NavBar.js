@@ -70,7 +70,7 @@ return(<li onMouseEnter={e=>{setIsHovering(true)}} key={index} onMouseOver={e=>{
 <div className={styles.links + " " + (props.scrolled? styles.active_links : '')}>
 <Link href="/"><a>Home</a></Link> 
     <a className={styles.sub_item_button} onClick={e=>{props.courseClick(0)}} >Courses</a>
-    <a onClick={e=>props.handleModal(true)} >Roadmap</a> 
+    {/* <a onClick={e=>props.handleModal(true)} >Roadmap</a>  */}
     <Link href="/#about"><a >About</a></Link> 
     <a onClick={e=>{e.preventDefault(),props.handleContactPopup(true)}} >Contact</a>
     <a className={styles.student_login} href="https://app.nemiedu.com/login">Student Login</a>
@@ -91,7 +91,7 @@ return(<><li className={styles.sub_sub_item + " "+(activeSubItem === index ?styl
 
 }) : ""}</ul> */}
    
-    <a onClick={e=>props.handleModal(true)} >Roadmap</a>
+   {/*  <a onClick={e=>props.handleModal(true)} >Roadmap</a> */}
     <Link href="/#about"><a>About</a></Link> 
     <a onClick={e=>{e.preventDefault(),props.handleContactPopup(true)}} >Contact</a>
     <a className={styles.student_login} href="https://app.nemiedu.com/login">Student Login</a></>

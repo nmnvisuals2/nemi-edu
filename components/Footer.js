@@ -38,7 +38,7 @@ Subscribe to our <br/>
 <ul className={styles.main_nav}>
 <li><Link href="/"><a>Home</a></Link> </li>
 <li>  <Link href="#courses"><a onClick={props.handleStudentLogin} >Courses</a></Link> </li>
-<li> <a onClick={e=>props.handleModal(true)} >Roadmap</a></li>
+{/* <li> <a onClick={e=>props.handleModal(true)} >Roadmap</a></li> */}
 <li> <Link href="/#about"><a >About</a></Link> </li>
 <li> <a onClick={e=>{e.preventDefault(),props.handleContactPopup(true)}} >Contact</a></li>
                     
