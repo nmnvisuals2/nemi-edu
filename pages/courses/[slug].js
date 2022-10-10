@@ -117,8 +117,9 @@ function ContactFormSubmit(){}
         </ul>:''}</div>
         
         <div className={styles.col2}>
-        <h1 className={styles.smallhead}>Course Features</h1><ul className={st.different}>
-        {courseData ? courseData.features.map((item,index)=>{
+        {courseData && courseData.features ? <h1 className={styles.smallhead}>Course Features</h1>: ''}
+        <ul className={st.different}> 
+        {courseData && courseData.features ? courseData.features.map((item,index)=>{
 
           return(<li>{item.text}</li>)
         }) : ''}</ul>
