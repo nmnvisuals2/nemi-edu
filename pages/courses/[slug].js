@@ -34,7 +34,7 @@ async function findCourse(){
     await supabase
     .from('courses')
     .select('*')
-    .eq('courseSlug',slug).then(response=>{setCourseData(response.data[0]),setLoading(false),console.log(response.data);})
+    .eq('courseSlug',slug).then(response=>{setCourseData(response.data[0]),setLoading(false)})
 }
 async function ContactFormSubmiter(name,email,phone){
     
