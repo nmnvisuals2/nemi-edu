@@ -7,6 +7,8 @@ import Modal from "../components/Modal";
 import ContactForm from "../components/ContactForm";
 import styles from './DefaultLayout.module.css'
 import CourseSelector from "../components/CourseSelector";
+
+
 function DefaultLayout(props){
 
     const [mobile,setMobile] = useState();
@@ -207,7 +209,7 @@ useEffect(()=>{
 
 </Modal>
 <Modal closeable={true} open={modalOpenFour} handleModal={ModalHandler4}>
-<h1 className={styles.head}>Roadmaps</h1>
+<h1 className={styles.head}>Easy Enrollment Process</h1>
 {modalOpenFour ?<div className={styles.roadmap_scroller}>
 
 {roadmaps ? roadmaps.map((item,index)=>{

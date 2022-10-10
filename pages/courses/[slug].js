@@ -9,6 +9,7 @@ import Loader from '../../components/Loader';
 import Link from 'next/link';
 import ContactForm from '../../components/ContactForm';
 import Notifications from '../../components/Notifications';
+import st from '../../styles/Home.module.css'
 function CourseSingle({data}){
 
 
@@ -116,7 +117,14 @@ function ContactFormSubmit(){}
         </ul>:''}</div>
         
         <div className={styles.col2}>
+        <h1 className={styles.smallhead}>Course Features</h1><ul className={st.different}>
+        {courseData ? courseData.features.map((item,index)=>{
+
+          return(<li>{item.text}</li>)
+        }) : ''}</ul>
+       
         <h1 className={styles.smallhead}>Course Description</h1>
+
         <p className={styles.overview}><span dangerouslySetInnerHTML={{ __html:courseData.overview}}></span></p>
         <h1 className={styles.smallhead}>Course Keywords</h1>
         <div className={styles.specs}>
