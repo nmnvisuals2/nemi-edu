@@ -197,7 +197,7 @@ useEffect(()=>{
 useEffect(()=>{
    setActiveCourse(props.activatedItem);
    
-  console.log(props.activatedItem);
+  
 },[props.activatedItem])
 
     return(<>

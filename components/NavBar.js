@@ -44,7 +44,7 @@ function Mouser(ret){
 }
 
 useEffect(()=>{
-    console.log(data);
+    
 
     Mouser();
 
