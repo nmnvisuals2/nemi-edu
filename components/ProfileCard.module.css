@@ -1,12 +1,12 @@
 .profile_wrapper {
     position: relative;
-    width: 32%;
+    width: auto;
     min-height: 50vh;
     background-color: #ddd;
     border-radius: 20px;
     overflow: hidden;
     z-index: 9;
-    flex: 1;
+    flex: 0 1 26%;
     transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
     transform: scale(1);
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);

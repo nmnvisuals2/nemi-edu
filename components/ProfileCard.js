@@ -10,7 +10,7 @@ function ProfileCard(props){
         <div className={styles.content}>
 <h2>{props.name}</h2>
 <p>{props.role}</p>
-<a href={props.link}><img src="/open_arrow.svg" className={styles.open}/></a>
+{/* <a href={props.link}><img src="/open_arrow.svg" className={styles.open}/></a> */}
         </div>
     </div>)
 }

@@ -396,11 +396,15 @@ In Certification Courses students are provided with a wide variety of profession
 <Section id={"team"} full={false} marginned={true}>
   <h1 className={styles.team_heading}>SuperHuman Team <br/>behind <span className={styles.blue}>nEmi</span></h1>
   <div className={styles.team_content}><p>nEmi is being operated by team of superhumans who have years of Experience in various fields.<br/>With an Innovative Mindset, nEmi team tries to achieve limitless solutions for modern edtech and bring a revolutionary change</p></div>
-<div className={styles.columns}>
+<div className={styles.columns + " " + styles.extraresp}>
 
   <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Akshay Bajpayee'} role="Founder & CEO" image="/team01.jpg" badge="/badge.svg"></ProfileCard>
+  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Akanksha Bajpayee'} role="Co-Founder" image="/co-founder.jpeg" badge="/badge3.svg"></ProfileCard>
   <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Colonel(Retd.) Niraj Nayan Bajpayee'} role="Chief Mentor" image="/team02.jpg" badge="/badge2.svg"></ProfileCard>
   <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Diwakar Pratap Singh'} role="Executive Director" image="/image2.jpg" badge="/badge3.svg"></ProfileCard>
+  
+  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Mr. Mahendra Dwivedi'} role="Subject & Personality Development Expert" image="/mahendra.jpeg" badge="/badge3.svg"></ProfileCard>
+  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Mr. Amit Mishra'} role="Personality Developement & Placement Expert" image="/ed.jpeg" badge="/badge3.svg"></ProfileCard>
 </div>
 
 </Section>

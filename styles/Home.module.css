@@ -28,6 +28,12 @@
     flex-grow: 1;
 }
 
+
+/* 
+.extraresp {
+    justify-content: flex-start !important;
+} */
+
 .title a {
     color: #0070f3;
     text-decoration: none;
