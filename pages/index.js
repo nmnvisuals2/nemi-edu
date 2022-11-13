@@ -40,7 +40,7 @@ export default function Home() {
   });
 
 
-  const features = [<>Courses with<span className={styles.blue}>&nbsp;Job Assurance</span></>,<>Mentored by<span className={styles.blue}>&nbsp;Military Veterans</span></>,<><span className={styles.blue}>AI Powered</span>&nbsp;Career Guidance</>,<><span className={styles.blue}>Blockchain</span>&nbsp;integrated Certification</>,<>Recognised by<span className={styles.blue}>&nbsp;Ministry of Commerce</span></>,<>Backed by<span className={styles.blue}>&nbsp;Dr. Abdul Kalam Technical University</span></>]
+  const features = [<>Courses with<span className={styles.blue}>&nbsp;Job Assurance</span></>,<>Mentoring by<span className={styles.blue}>&nbsp;Military Veterans</span></>,<><span className={styles.blue}>AI Powered</span>&nbsp;Career Guidance</>,<><span className={styles.blue}>Blockchain</span>&nbsp;integrated Certification</>,<>Recognised by<span className={styles.blue}>&nbsp;Ministry of Commerce</span></>,<>Backed by<span className={styles.blue}>&nbsp;Dr. Abdul Kalam Technical University</span></>]
 
 const accredited = "nEmi is backed by Skill Development Council Canada with Certification, Learning, Skill Development etc. which makes our certificates internationally recognized. This not only raises the value of education but also helps students to get better opportunities. nEmi courses follow guidelines provided by Skill Development Council to validate the quality control throughout the education pipeline.";
 
