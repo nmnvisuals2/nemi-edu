@@ -34,8 +34,12 @@
     flex-wrap: nowrap;
     align-content: center;
     align-items: center;
-    gap: 10px;
+    margin: -5px;
     position: relative;
+}
+
+.images img {
+    margin: 5px;
 }
 
 .images img {
@@ -308,8 +312,14 @@
 
 @media only screen and (max-width:968px) {
     .footer_nav {
-        gap: 50px;
+        margin: 0px;
         padding: 30px 8vw;
+    }
+    .footer_nav>div {
+        margin: 12px 0;
+    }
+    .footer_nav>div>* {
+        margin: 10px 0;
     }
     .credits {
         flex-wrap: wrap;

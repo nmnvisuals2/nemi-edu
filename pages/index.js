@@ -265,7 +265,7 @@ function handleClose(data){
   </div>
   
 </Section>
-<Section id={"about"} full={true} marginned={true}>
+<Section  id={"about"} full={true} marginned={true}>
 <div className={styles.about_wrapper}><div className={styles.about_image}></div><div className={styles.about_content}>
 
   <h2>About <span className={styles.blue}>nEmi</span></h2>
@@ -304,7 +304,7 @@ On our platform we are trying to bring revolutionary features which will not onl
 </div>
 
 </Section>
-<Section id={"accredited"}  full={false} blue={true}>
+<Section minus={true} id={"accredited"}  full={false} blue={true}>
 <img src='/bbp.svg' className={styles.acc_bgb}/>
 <img src='/tbp.svg' className={styles.acc_bgt}/>
   <div className={styles.acc}></div>

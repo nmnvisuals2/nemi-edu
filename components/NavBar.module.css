@@ -109,11 +109,14 @@
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 30px;
-    gap: 20px;
     justify-content: center;
     align-content: flex-start;
     overflow: hidden;
     align-items: flex-end;
+}
+
+.menu_wrapper a {
+    margin: 10px 0;
 }
 
 .nav_btn .svg_one {

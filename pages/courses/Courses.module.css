@@ -25,12 +25,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     z-index: 9;
+    margin: -10px;
 }
 
 .col1,
 .col2 {
-    flex: 1 1 50%;
+    flex: 1 1 48%;
     width: 50%;
+    margin: 10px;
 }
 
 .col1 img {
@@ -101,13 +103,14 @@
     align-items: center;
     align-content: center;
     justify-content: flex-start;
-    gap: 10px;
+    margin: -5px;
     cursor: pointer;
     user-select: none;
 }
 
 .specs p {
     font-size: 14px;
+    margin: 5px;
     padding: 5px 10px;
     border: 1px solid #ddd;
     border-radius: 10px;

@@ -23,8 +23,11 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
-    gap: 40px;
     align-items: stretch;
+}
+
+.neg {
+    margin: -40px;
 }
 
 .margin {

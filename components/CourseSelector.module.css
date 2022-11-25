@@ -15,7 +15,11 @@
     height: auto;
     padding: 0px 10px 0 0;
     display: flex;
-    gap: 10px;
+    margin: -10px;
+}
+
+.button_wrapper>* {
+    margin: 10px;
 }
 
 .button_wrapper .selector {
@@ -37,8 +41,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 20px;
+    margin: -20px;
     align-items: flex-start;
+}
+
+.course_container>div {
+    margin: 20px;
 }
 
 .toggle {
@@ -51,14 +59,14 @@
     border-radius: 100px;
     padding: 5px;
     background-color: rgb(250, 250, 250);
-    gap: 10px;
-    margin: 10px 0;
+    margin: 25px 0;
 }
 
 .toggler_button {
     display: flex;
     padding: 10px 20px;
     border-radius: 100px;
+    margin: 5px 0;
     transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: 2px solid transparent;
     cursor: pointer;
@@ -86,8 +94,8 @@
 }
 
 .courseCard {
-    min-height: 150px;
-    flex: 1 1 30%;
+    min-height: 250px;
+    flex: 1 0 28%;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -106,7 +114,9 @@
 
 .courseCard img {
     width: 100%;
-    height: 200px;
+    min-height: 150px;
+    max-height: 250px;
+    height: auto;
     object-position: top;
     object-fit: cover;
     background-color: #ddd;
@@ -273,6 +283,7 @@
         flex-wrap: nowrap;
     }
     .container {
+        justify-content: flex-start;
         padding: 10px;
     }
 }

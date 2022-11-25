@@ -1,12 +1,16 @@
 .icon_holder {
-    width: 46%;
+    width: 45%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 20px;
+    margin: 25px;
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+.icon_holder>* {
+    margin-right: 20px;
 }
 
 .icon_holder img {
