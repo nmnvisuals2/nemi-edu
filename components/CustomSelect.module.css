@@ -100,6 +100,11 @@
     padding: 10px;
 }
 
+.full {
+    width: 100%;
+    padding: 10px 0px;
+}
+
 @media only screen and (max-width:968px) {
     .wrapper {
         width: clamp(50vw, 250px, 70vw);

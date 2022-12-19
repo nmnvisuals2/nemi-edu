@@ -18,7 +18,7 @@
 }
 
 .links {
-    width: 700px;
+    width: 800px;
     display: flex;
     gap: 10px;
     flex-wrap: nowrap;
@@ -180,6 +180,10 @@
 
 .nav_active .menu_wrapper a:nth-child(6) {
     animation-delay: 500ms;
+}
+
+.nav_active .menu_wrapper a:nth-child(7) {
+    animation-delay: 700ms;
 }
 
 @keyframes slidein {

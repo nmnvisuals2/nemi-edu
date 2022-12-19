@@ -1,0 +1,353 @@
+.maincont {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    min-height: 100vh;
+    margin-top: 20vh;
+}
+
+.col1 {
+    flex: 0 0 50%;
+    width: 50%;
+}
+
+.spacer {
+    display: block;
+    height: 50px;
+    width: 100%;
+}
+
+.col2 {
+    width: 50%;
+    background-color: white;
+    flex: 0 0 50%;
+    border-radius: 20px;
+    box-shadow: 4px 4px 22px -5px #00000033;
+    padding: 30px;
+    z-index: 9;
+}
+
+.cont {
+    width: 100%;
+    margin: -10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.item {
+    width: 50%;
+    margin: 10px;
+    background-color: var(--brand-col1);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    color: white;
+    border-radius: 20px;
+    padding: 30px 10%;
+    font-size: 24px;
+    text-align: center;
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.item:hover {
+    background-color: var(--brand-col2);
+    color: black;
+    box-shadow: 4px 4px 12px -6px var(--brand-col2);
+}
+
+.holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.block {
+    flex: 1 1 40%;
+    background-color: rgb(245, 245, 245);
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.block h3 {
+    font-size: 3rem;
+    color: var(--brand-col1);
+}
+
+.gra {
+    color: var(--brand-col1);
+}
+
+.mainhead {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 4.1rem;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    padding: 20px 40px;
+    position: relative;
+    margin: 50px 0;
+}
+
+.inner {
+    border-radius: 30px;
+    background-color: rgb(241, 241, 241);
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.b {
+    color: var(--brand-col1);
+}
+
+.h {
+    margin: 25px 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.input:focus,
+.input:hover {
+    outline: 0;
+    border: 1px solid var(--brand-col2);
+}
+
+.input {
+    font-family: Modernist;
+    width: 100%;
+    box-shadow: 4px 4px 12px -5px #00000022;
+    padding: 1.5vh;
+    border-radius: 10px;
+    border: 0;
+    font-size: 12px;
+    margin: 5px 0;
+    position: relative;
+    border: 1px solid transparent;
+    border: 1px solid #ddd;
+}
+
+.inner a,
+.submit {
+    cursor: pointer;
+    background-color: var(--brand-col2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.submit {
+    margin: 10px 0;
+    display: block;
+    width: 150px;
+    text-align: center;
+}
+
+.submit:hover {
+    filter: brightness(1.1);
+}
+
+.inner div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 60%;
+}
+
+.inner h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5%;
+}
+
+.inner a:hover {
+    background-color: var(--brand-col1);
+    color: white;
+}
+
+.inner img {
+    width: 100px;
+    background-color: #ddd;
+    border-radius: 200px;
+}
+
+.hiring {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.team_heading {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.fixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 10px 20px;
+    width: 100%;
+    z-index: 999;
+}
+
+.phone {
+    width: 300px;
+    text-align: center;
+    color: white;
+    border-radius: 200px;
+    box-shadow: 4px 4px 12px -6px var(--brand-col1);
+    padding: 10px 20px;
+    background-color: var(--brand-col1);
+    margin: 5px auto;
+    position: relative;
+}
+
+.callbtn {
+    width: 100%;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    opacity: 0;
+    height: auto;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    transition: all .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+    pointer-events: none;
+    background-color: #00000022;
+}
+
+.register {
+    width: 100%;
+    position: relative;
+    background-color: #f3f3f3;
+    padding: 20px 30px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.col1 {
+    padding-right: 20px;
+}
+
+.hiring {
+    margin: 25px 0;
+}
+
+.active .callbtn {
+    opacity: 1;
+    pointer-events: all;
+    bottom: 50px;
+}
+
+.active .chev {
+    transform: translateY(50%) rotate(180deg);
+}
+
+.chev {
+    transition: all .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: absolute;
+    right: 8%;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.callbtn a {
+    box-shadow: 4px 4px 12px -6px var(--brand-col2);
+    margin: 5px 0;
+    background-color: var(--brand-col2);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+@media only screen and (max-width:968px) {
+    .mainhead {
+        font-size: 2rem;
+        text-align: center;
+        margin: 25px 0;
+        line-height: 2.1rem;
+    }
+    .cont {
+        flex-direction: column;
+    }
+    .item {
+        width: 100%;
+    }
+    .spacer {
+        display: none;
+        height: 50px;
+        width: 100%;
+    }
+    .input {
+        width: 100%;
+        margin: 15px auto;
+        display: block;
+    }
+    .block {
+        font-size: 14px;
+        flex: 1;
+    }
+    .block h3 {
+        font-size: 26px;
+    }
+    .maincont {
+        margin-top: 20vh;
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+    }
+    .container {
+        padding: 50px 0;
+    }
+    .inner {
+        flex-direction: column;
+    }
+    .inner div {
+        width: 100%;
+    }
+    .inner img {
+        width: 20%;
+    }
+    .col1,
+    .col2 {
+        width: 100%;
+        flex: 1;
+    }
+}

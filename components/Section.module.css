@@ -13,6 +13,10 @@
     overflow: hidden;
 }
 
+.visible {
+    overflow: visible !important;
+}
+
 .blue_inner {
     padding: 120px 8vw;
     width: 100%;
