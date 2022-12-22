@@ -141,7 +141,8 @@ const faqs =[
 <div className={styles2.maincont}>
 <div className={styles2.col1}>
     
-    <h1 className={styles2.mainhead}>Enroll into our Program with <span className={styles2.gra}>100% Job Placement</span></h1>
+    <h1 className={styles2.mainhead}>Enroll into our Program with <span className={styles2.gra}>100% Job Assurance*</span></h1>
+    <p>•Minimum of 5 Interviews Scheduled</p>
 <h1 className={styles2.hiring}>Our <span className={styles2.blue}>Top Hiring Partners</span></h1>
 <Marquee gradient={true} pauseOnClick={true} gradientWidth={mobile < 3 ? 50 : 200}>
 
