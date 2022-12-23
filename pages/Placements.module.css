@@ -130,6 +130,7 @@
 }
 
 .input {
+    user-select: all;
     font-family: Modernist;
     width: 100%;
     background-color: white;
