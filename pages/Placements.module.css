@@ -132,6 +132,8 @@
 .input {
     font-family: Modernist;
     width: 100%;
+    background-color: white;
+    color: black;
     box-shadow: 4px 4px 12px -5px #00000022;
     padding: 1.5vh;
     border-radius: 10px;
