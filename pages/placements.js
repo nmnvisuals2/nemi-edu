@@ -43,6 +43,7 @@ async function SubmitContact(){
         name:formData.fullname,
         email:formData.email,
         phone:formData.phone,
+        isLanding:true,
         message:`City : ${formData.city} | Qualifications : ${formData.qualifications}`
     }])
 
