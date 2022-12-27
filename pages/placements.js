@@ -173,13 +173,18 @@ const faqs =[
 </div>
 <h1 className={styles2.hiring}>Payment Options</h1>
 <div className={styles2.cont}>
+    <div className={styles2.itemparent}>
+        <p>Option 1</p>
     <div className={styles2.item}>
+        
     ₹35,000/- for Course
-    </div>
-
+    </div></div>
+<div className={styles2.itemparent}>
+    <p>Option 2</p>
     <div className={styles2.item}>
+    
     ₹15,000/- + 08% of CTC
-    </div>
+    </div></div>
 </div>
 
 </div>
