@@ -95,7 +95,7 @@
 
 .courseCard {
     min-height: 250px;
-    flex: 1 0 28%;
+    flex: 0 0 28%;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -281,6 +281,8 @@
     .courseCard {
         flex-direction: column;
         flex-wrap: nowrap;
+        margin: 20px auto;
+        width: 90%;
     }
     .container {
         justify-content: flex-start;
