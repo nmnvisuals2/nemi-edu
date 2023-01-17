@@ -7,7 +7,7 @@ import Modal from "../components/Modal";
 import ContactForm from "../components/ContactForm";
 import styles from './DefaultLayout.module.css'
 import CourseSelector from "../components/CourseSelector";
-
+import Link from 'next/link'
 
 function DefaultLayout(props){
 
@@ -17,6 +17,9 @@ function DefaultLayout(props){
   const [scrolled,setScrolled] = useState(false);
   const [isModalOpen,setModalOpen] = useState(false);
   const [roadmaps,setRoadMaps] = useState(false);
+  const phone = "7460002675";
+  const [wa,setWa] = useState();
+  const [active,setActive] = useState('');
   const [activeCourse,setActiveCourse]= useState();
   const [submitterLoading,setSubmitterLoad] = useState(false);
   const [modalOpenFour,setModalOpenFour] = useState(false);
@@ -226,7 +229,27 @@ useEffect(()=>{
       <ContactForm loader={loader} handleSubmitForm={ContactFormSubmit} heading={"Get in Touch with Us!!"}></ContactForm>
     </Modal>
     {nottext && nottext.text.length > 2 ? <Notifications type={nottext.type} text={nottext.text}/>: ''}
-<NavBar courseClick={courseClickHandler} scrolled={scrolled} device={mobile} handleStudentLogin={props.handleStudentLogin} handleModal={ModalHandler4} handleContactPopup={ModalHandler}></NavBar><>{props.children}</>
+<NavBar courseClick={courseClickHandler} scrolled={scrolled} device={mobile} handleStudentLogin={props.handleStudentLogin} handleModal={ModalHandler4} handleContactPopup={ModalHandler}></NavBar>
+ <Link href="https://instagram.com/nemieducation"  target={"_blank"}><img src="/ig.svg" className={styles.instagram}/></Link>
+
+
+
+
+<div className={styles.wa}>
+    
+<div className={styles.waicon + " " + (active?styles.activeIcon:'')} onClick={()=>{active ? setActive(false) : setActive(true)}}>
+    <img src="/WhatsApp.svg"/>
+    {active? <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.883 3.007 12 3a1 1 0 0 1 .993.883L13 4v7h7a1 1 0 0 1 .993.883L21 12a1 1 0 0 1-.883.993L20 13h-7v7a1 1 0 0 1-.883.993L12 21a1 1 0 0 1-.993-.883L11 20v-7H4a1 1 0 0 1-.993-.883L3 12a1 1 0 0 1 .883-.993L4 11h7V4a1 1 0 0 1 .883-.993L12 3l-.117.007Z" fill="white"/></svg>:''}
+</div>
+
+{active? 
+<div className={styles.wawin}>
+    <input value={wa} onChange={(e)=>{setWa(e.target.value)}} placeholder="Send Blank or Enter your Message"></input>
+    <Link href={`https://wa.me/91${phone}?text=${wa && wa.length > 2 ? encodeURIComponent(wa) : encodeURIComponent('Hi! Want to Enquire.')}`} target={"_blank"} ><button><svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.815 12.197-7.532 1.256a.5.5 0 0 0-.386.318L2.3 20.728c-.248.64.421 1.25 1.035.943l18-9a.75.75 0 0 0 0-1.342l-18-9c-.614-.307-1.283.304-1.035.943l2.598 6.957a.5.5 0 0 0 .386.319l7.532 1.255a.2.2 0 0 1 0 .394Z" fill="white"/></svg></button></Link>
+</div>:''}
+</div>
+
+<>{props.children}</>
 <Footer loader={loader} onListClick={openModalFooter} device={mobile} modal={e=>ModalHandler(true)} handleSubmit={submitter} handleModal={ModalHandler4} handleCoursePopup={coursePopup} handleContactPopup={ModalHandler}></Footer></>)
 }
 
