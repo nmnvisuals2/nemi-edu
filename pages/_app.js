@@ -11,6 +11,8 @@ function MyApp({ Component, pageProps }) {
         <title>Nemi Education</title>
         <meta name="description" content="#1 Education Platform" />
         <link rel="icon" href="/nemi-favicon.svg" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11044015265"></script>
+        <script dangerouslySetInnerHTML={{__html:"window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11044015265');"}}></script>
 </Head>
 <DefaultSeo
 openGraph={{
