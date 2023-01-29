@@ -7,6 +7,7 @@ import LogoGrid from '../components/LogoGrid';
 import styles from '../styles/Home.module.css'
 import ContactForm from '../components/ContactForm';
 import FAQ from '../components/FAQ';
+import {useRouter} from 'next/router'
 import ModernNotifications from '../components/ModernNotification';
 import CustomSelect from '../components/CustomSelect';
 import { supabase } from '../utils/supabaseClient';
@@ -33,7 +34,7 @@ function Placements(){
               setMobile(3)
             }
       }
-
+const router = useRouter();
 
 async function SubmitContact(){
 
@@ -49,6 +50,7 @@ async function SubmitContact(){
 
     if(data){
         setLoader(false);
+        router.push('/thank-you')
         setNotification('Submitted Successfully');
     }
 else if(error){
