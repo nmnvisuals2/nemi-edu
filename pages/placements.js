@@ -12,10 +12,11 @@ import ModernNotifications from '../components/ModernNotification';
 import CustomSelect from '../components/CustomSelect';
 import { supabase } from '../utils/supabaseClient';
 import Loader from '../components/Loader';
-
+import Link from 'next/link'
 function Placements(){
     const [notificationText,setNotificationText] = useState();
     const [isActive,setIsActive] = useState();
+    const phone = "7460002675";
     const [loader,setLoader] = useState(false);
     const [formData,setFormData] = useState();
     const [mobile,setMobile] = useState();
@@ -232,6 +233,13 @@ sub:"12 Lacs"}].map((i,d)=>{
         <a href='https://pdfhost.io/v/byk08C5LD_nemi_Brochure_final_v2'>Click Here to Download</a>
     </div>
 </div>
+
+{/* <div className={styles2.container}>
+    <div className={styles2.inner}>
+        
+    <Link href={`https://wa.me/91${phone}?text=Hi! Want to Enquire`} target={"_blank"} ><button> <img src="/WhatsApp.svg"/></button></Link>
+    <Link href="https://instagram.com/nemieducation"  target={"_blank"}><img src="/ig.svg" className={styles.instagram}/></Link>
+        </div></div> */}
   
   
 

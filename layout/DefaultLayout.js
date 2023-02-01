@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
+import {useRouter} from 'next/router'
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { supabase } from "../utils/supabaseClient";
@@ -168,12 +169,14 @@ async function getCourses(){
          function coursePopup(data){
            setActiveCourse(courses[data]);
          }
-
+const router = useRouter();
   useEffect(()=>{
 getPose();
     DoSet();
     getRoadMaps();
     getCourses();
+    
+    
   },[]);
 
 
@@ -230,6 +233,8 @@ useEffect(()=>{
     </Modal>
     {nottext && nottext.text.length > 2 ? <Notifications type={nottext.type} text={nottext.text}/>: ''}
 <NavBar courseClick={courseClickHandler} scrolled={scrolled} device={mobile} handleStudentLogin={props.handleStudentLogin} handleModal={ModalHandler4} handleContactPopup={ModalHandler}></NavBar>
+ 
+ {router.pathname == "/placements" ? '' : <>
  <Link href="https://instagram.com/nemieducation"  target={"_blank"}><img src="/ig.svg" className={styles.instagram}/></Link>
 
 
@@ -247,7 +252,7 @@ useEffect(()=>{
     <input value={wa} onChange={(e)=>{setWa(e.target.value)}} placeholder="Send Blank or Enter your Message"></input>
     <Link href={`https://wa.me/91${phone}?text=${wa && wa.length > 2 ? encodeURIComponent(wa) : encodeURIComponent('Hi! Want to Enquire.')}`} target={"_blank"} ><button><svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.815 12.197-7.532 1.256a.5.5 0 0 0-.386.318L2.3 20.728c-.248.64.421 1.25 1.035.943l18-9a.75.75 0 0 0 0-1.342l-18-9c-.614-.307-1.283.304-1.035.943l2.598 6.957a.5.5 0 0 0 .386.319l7.532 1.255a.2.2 0 0 1 0 .394Z" fill="white"/></svg></button></Link>
 </div>:''}
-</div>
+</div></>}
 
 <>{props.children}</>
 <Footer loader={loader} onListClick={openModalFooter} device={mobile} modal={e=>ModalHandler(true)} handleSubmit={submitter} handleModal={ModalHandler4} handleCoursePopup={coursePopup} handleContactPopup={ModalHandler}></Footer></>)
