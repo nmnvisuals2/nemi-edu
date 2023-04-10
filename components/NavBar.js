@@ -73,7 +73,7 @@ return(<li onMouseEnter={e=>{setIsHovering(true)}} key={index} onMouseOver={e=>{
     <a onClick={e=>props.handleModal(true)} >Easy Enroll</a> 
     <Link href="/#about"><a >About</a></Link> 
     <a onClick={e=>{e.preventDefault(),props.handleContactPopup(true)}} >Contact</a>
-    <a className={styles.student_login} href="/placements">Register Now</a>
+    <a className={styles.student_login} href="https://calendly.com/nemiedu/nemi-education-free-consultation">Register Now</a>
     <a className={styles.student_login} href="https://app.nemiedu.com/login">Student Login</a>
     
     </div> : <div onClick={handleNav} className={styles.nav_btn  + " " + (active ? styles.nav_active : '')}><div className={styles.menu_wrapper}>
