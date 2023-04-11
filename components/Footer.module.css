@@ -4,6 +4,7 @@
     background-color: #ddd;
     z-index: 100;
     position: relative;
+    overflow: hidden;
 }
 
 .credits {
@@ -358,7 +359,7 @@
         margin: 20px 0;
     }
     .images img {
-        width: 30%;
+        width: 20%;
         height: auto;
     }
     .credits p {
