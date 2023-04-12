@@ -248,6 +248,7 @@ function handleClose(data){
     <Switcher features={features}/>
   
   <a className={styles.btn} href=" " onClick={(e)=>{e.preventDefault(),handleSetItem(0),handleOpener()}}><button>Dive In Now</button></a>
+  <a className={styles.btn} style={{margin:"0 0 10px 0"}} href="https://calendly.com/teamnemi/careercounselling"><button>Book a FREE Call</button></a>
 
 
 
