@@ -95,7 +95,7 @@ function ContactFormSubmit(){}
 
                  {courseData && !courseData.category == "University" ?   <div className={styles.price_holder}>₹{courseData.salePrice && courseData.coursePrice > courseData.salePrice ? courseData.salePrice : courseData.coursePrice  }{courseData.salePrice && courseData.coursePrice > courseData.salePrice ? <p className={styles.original}>₹{courseData.coursePrice}</p>:''}</div>:''}
                 {courseData && courseData.category == "University"?  <div className={styles.form_holder}><ContactForm special={true} loader={loader} handleSubmitForm={ContactFormSubmiter} heading={"Get in Touch with Us!!"}></ContactForm>{/* <a className={styles.enrollNow} onClick={e=>{handleContact}}>Enquire Now</a> */}</div> : <> <h2 className={styles.checkout_info}>For Smoothest Enrollment Experience, Click the <span className={styles.yellow}>Enroll Button</span> Now and start your journey with nEmi.</h2>
-                   <Link href={`https://app.nemiedu.com/checkout/${courseData.courseSlug}`}><a className={styles.enrollNow}>Enroll Now</a></Link></>} 
+                 {courseData.isPreview? <Link href={`https://calendly.com/teamnemi/careercounselling`}><a className={styles.enrollNow}>Register Now for this Program</a></Link>:<Link href={`https://app.nemiedu.com/checkout/${courseData.courseSlug}`}><a className={styles.enrollNow}>Enroll Now</a></Link>}  </>} 
                    </div>
                </div>
                <div className={styles.bottom}><img className={styles.over} src='/inndesign.svg'/></div>
@@ -117,24 +117,24 @@ function ContactFormSubmit(){}
         </ul>:''}</div>
         
         <div className={styles.col2}>
-        {courseData && courseData.features ? <h1 className={styles.smallhead}>Course Features</h1>: ''}
+        {courseData && courseData.features ? <><h1 className={styles.smallhead}>Course Features</h1>
         <ul className={st.different}> 
         {courseData && courseData.features ? courseData.features.map((item,index)=>{
 
           return(<li>{item.text}</li>)
         }) : ''}</ul>
-       
+       </>: ''}
         <h1 className={styles.smallhead}>Course Description</h1>
 
         <p className={styles.overview}><span dangerouslySetInnerHTML={{ __html:courseData.overview}}></span></p>
-        <h1 className={styles.smallhead}>Course Keywords</h1>
+      {/*   <h1 className={styles.smallhead}>Course Keywords</h1>
         <div className={styles.specs}>
 
             {courseData && courseData.keywords ? courseData.keywords.split(",").map((item,index)=>{
 
                 return(<p>{item}</p>)
             }) : ''}
-        </div>
+        </div> */}
         </div>
         </div>
         </div>    

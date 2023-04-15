@@ -358,6 +358,34 @@ In Certification Courses students are provided with a wide variety of profession
 </div>
   </a></div>
 
+
+{/* Addons of Grid */}
+
+
+<div onClick={e=>{handleSetItem(3),handleOpener()}} className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/advanced.jpg')"}}><a >
+<div className={styles.inner_grid_content}>
+
+<h2>
+  Advanced Diploma in Full Stack Development
+</h2><p>
+An advanced diploma in full stack development is a comprehensive program that aims to equip students with the knowledge and skills required to become proficient full stack developers.
+</p>
+</div>
+  
+  </a></div>
+  <div onClick={e=>{handleSetItem(4),handleOpener()}} className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/placement_banner.jpg')"}}><a >
+<div className={styles.inner_grid_content}>
+
+<h2>
+  Placements
+</h2><p>
+Placement courses are designed to help students improve their skills and increase their chances of getting placed in their desired job roles. These courses typically cover topics such as resume writing, interview skills, communication skills, and overall personality development.
+</p>
+</div>
+  
+  </a></div>
+  
+
 </div>
 
 

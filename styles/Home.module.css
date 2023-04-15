@@ -1214,7 +1214,7 @@
     }
     .grid {
         width: 100%;
-        height: 65vw;
+        height: auto;
     }
     .grid:first-child {
         height: auto;

@@ -7,7 +7,7 @@ function CourseSelector(props){
 
 const [activeBtn,setActiveBtn] = useState(0);
 const [activeCourse,setActiveCourse] = useState(0);
-const [categories,setCategories] = useState(["Certification Course","E-Diploma","University"])
+const [categories,setCategories] = useState(["Certification Course","E-Diploma","University",'Advance Diploma in Full Stack Development','Placements'])
 const [predicted,setPredicted]= useState();
 const [age,setAge]= useState();
 const [mode,setMode]= useState();
@@ -27,6 +27,7 @@ const qualifications =[
     value:"PostGraduate"},
     {title:"Diploma Holder",
     value:"Diploma Holder"},
+    
     
 
 ];
@@ -227,10 +228,10 @@ return(<div className={styles.toggler_button + " " + (activeCourse == i ? styles
 
 
         <div className={styles.course_container}>
-
+        
         {props.courseData ? props.courseData.map((item,index)=>{
 if(item.category == categories[activeCourse] && (item.isActive || item.isPreview)){
-return(<Link href={`/courses/${item.courseSlug}`}><div key={index} onClick={props.handleClose} className={styles.courseCard}><img className={styles.imageLink} src={item.imageLink}/>{item.courseName}</div></Link>)}
+return(<Link href={`/courses/${item.courseSlug}`}><div key={index} onClick={props.handleClose} className={styles.courseCard}><img className={styles.imageLink} src={item.imageLink}/><p>{item.courseName}</p></div></Link>)}
             }) : ''}
         </div></>:''}
 

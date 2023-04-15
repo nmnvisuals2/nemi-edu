@@ -14,8 +14,9 @@
 
 .modal {
     background-color: white;
-    margin: 0em 15em;
+    margin: 0em 0em;
     min-width: 600px;
+    max-width: 1340px;
     border-radius: 20px;
     min-height: 30vh;
     height: auto;
@@ -75,11 +76,11 @@
 @media only screen and (max-width:968px) {
     .modal {
         background-color: white;
-        margin: 0em 1em;
-        width: 100%;
-        padding: 2em;
+        margin: 0em 0em;
+        width: 97%;
+        padding: 1em;
         width: auto;
         min-width: 50vw;
-        max-width: 92vw;
+        max-width: 1340px;
     }
 }
