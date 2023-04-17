@@ -177,6 +177,7 @@
     border: 1px solid transparent;
     cursor: pointer;
     margin: 20px 0;
+    z-index: 9;
 }
 
 .btn:hover,
@@ -1018,6 +1019,66 @@
     }
 }
 
+.recognized {
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-between;
+    padding: 40px 40px;
+}
+
+.recognized img {
+    width: 110px;
+    flex-shrink: 0;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.recognized_inner h2 {
+    font-size: 1.6rem;
+    letter-spacing: normal;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.recognized_item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    align-items: center;
+    align-content: center;
+}
+
+.accredit {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: -20px;
+    margin-bottom: 40px;
+}
+
+.rec {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.recognized_inner h3 {
+    line-height: 2.2rem;
+    color: var(--brand-col1);
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.recognized_inner {
+    flex: 1 1 50%;
+}
+
 .panel img {
     animation: pulse 2s alternate infinite cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -1095,8 +1156,15 @@
     }
     .acc {
         width: 100%;
-        min-height: 100%;
         height: 300px;
+    }
+    .accredit {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .recognized {
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
     .acc_content {
         width: 100%;
@@ -1176,6 +1244,21 @@
 }
 
 @media only screen and (max-width:768px) {
+    .recognized img {
+        width: 20vw;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .recognized_item {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .recognized h3 {
+        font-size: 1rem;
+        margin: 10px 0;
+        line-height: 1.2rem;
+    }
     .grid_four {
         margin: 0px;
     }

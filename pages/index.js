@@ -305,7 +305,10 @@ On our platform we are trying to bring revolutionary features which will not onl
 </div>
 
 </Section>
-<Section minus={true} id={"accredited"}  full={false} blue={true}>
+<Section minus={false} id={"accredited"}  full={false} blue={true}>
+
+ <div className={styles.rec}>
+  <div className={styles.accredit}>
 <img src='/bbp.svg' className={styles.acc_bgb}/>
 <img src='/tbp.svg' className={styles.acc_bgt}/>
   <div className={styles.acc}></div>
@@ -314,7 +317,36 @@ On our platform we are trying to bring revolutionary features which will not onl
     <p>{accredited}</p>
     <a className={styles.acc_btn} onClick={(e)=>{e.preventDefault(),ModalHandler2(true)}}><button>Learn More</button></a>
   </div>
+  </div>
+  <div className={styles.recognized}>
+
+<div className={styles.recognized_inner}>
+
+  <h2>Recognised by</h2>
+  <div className={styles.recognized_item}>
+  <img src='/moc.svg'/>
+  <img src='/upgov.png'/>
+  </div>
+</div>
+<div className={styles.recognized_inner}>
+
+  <h2>Backed by</h2>
+  <div className={styles.recognized_item}>
+<img src='/aktu.png'/>
+<h3>Dr. A.P.J Abdul Kalam Technical University</h3>
+  </div>
+  <div className={styles.recognized_item}>
+<img src='/drishti_logo.png'/>
+<h3>IIT Indore DRISHTI CPS Foundation</h3>
+  </div>
+</div>
+
+</div>
+
+  </div> 
+  
 </Section>
+
 <section className={styles.custom} style={{top:topper}}><img className={styles.ballholder} style={{top:toppos,right:rightpos}} src="/ball.png"></img></section>
 <Section id={"courses"} full={true} marginned={true}>
 
