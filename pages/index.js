@@ -524,7 +524,7 @@ Placement courses are designed to help students improve their skills and increas
     </div>
 {/*     <Footer device={mobile} handleSubmit={submitter} handleStudentLogin={handleStudentLogin} handleContactPopup={e=>ModalHandler(true)}></Footer> */}
     </DefaultLayout>
-    {nottext && nottext.text.length > 2 ? <Notifications type={nottext.type} text={nottext.text}/>: ''}
+    {nottext && nottext.text.length > 3 ? <Notifications type={nottext.type} text={nottext.text}/>: ''}
     </>
   )
 }
