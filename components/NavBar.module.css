@@ -18,7 +18,7 @@
 }
 
 .links {
-    width: 800px;
+    width: 900px;
     display: flex;
     gap: 10px;
     flex-wrap: nowrap;
@@ -42,6 +42,7 @@
 .active_links {
     background-color: white;
     border-radius: 200px;
+    width: 990px;
     padding: 10px 50px;
     box-shadow: 5px 5px 12px -5px #00000044;
 }
