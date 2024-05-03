@@ -462,7 +462,7 @@ Placement courses are designed to help students improve their skills and increas
   <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Akshay Bajpayee'} role="Founder & CEO" image="/team01.jpg" badge="/badge.svg"></ProfileCard>
   <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Akanksha Bajpayee'} role="Co-Founder" image="/co-founder.jpeg" badge="/badge3.svg"></ProfileCard>
   <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Colonel(Retd.) Niraj Nayan Bajpayee'} role="Chief Mentor" image="/team02.jpg" badge="/badge2.svg"></ProfileCard>
-  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Diwakar Pratap Singh'} role="Executive Director" image="/image2.jpg" badge="/badge3.svg"></ProfileCard>
+  {/* <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Diwakar Pratap Singh'} role="Executive Director" image="/image2.jpg" badge="/badge3.svg"></ProfileCard> */}
   
   <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Mr. Mahendra Dwivedi'} role="Subject & Personality Development Expert" image="/mahendra.jpeg" badge="/badge3.svg"></ProfileCard>
   <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Mr. Amit Mishra'} role="Personality Developement & Placement Expert" image="/ed.jpeg" badge="/badge3.svg"></ProfileCard>
