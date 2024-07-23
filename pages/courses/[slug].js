@@ -3,8 +3,6 @@ import {useRouter} from 'next/router'
 import { useEffect, useState } from 'react';
 import { supabase } from '../../utils/supabaseClient';
 import DefaultLayout from '../../layout/DefaultLayout';
-import useRazorpay from "react-razorpay";
-import { useCallback } from "react";
 import Loader from '../../components/Loader';
 import Link from 'next/link';
 import ContactForm from '../../components/ContactForm';
@@ -95,7 +93,7 @@ function ContactFormSubmit(){}
 
                  {courseData && !courseData.category == "University" ?   <div className={styles.price_holder}>₹{courseData.salePrice && courseData.coursePrice > courseData.salePrice ? courseData.salePrice : courseData.coursePrice  }{courseData.salePrice && courseData.coursePrice > courseData.salePrice ? <p className={styles.original}>₹{courseData.coursePrice}</p>:''}</div>:''}
                 {courseData && courseData.category == "University"?  <div className={styles.form_holder}><ContactForm special={true} loader={loader} handleSubmitForm={ContactFormSubmiter} heading={"Get in Touch with Us!!"}></ContactForm>{/* <a className={styles.enrollNow} onClick={e=>{handleContact}}>Enquire Now</a> */}</div> : <> <h2 className={styles.checkout_info}>For Smoothest Enrollment Experience, Click the <span className={styles.yellow}>Enroll Button</span> Now and start your journey with nEmi.</h2>
-                 {courseData.isPreview? <Link href={`https://calendly.com/teamnemi/careercounselling`}><a className={styles.enrollNow}>Register Now for this Program</a></Link>:<Link href={`https://app.nemiedu.com/checkout/${courseData.courseSlug}`}><a className={styles.enrollNow}>Enroll Now</a></Link>}  </>} 
+                 {courseData.isPreview? <Link href={`https://calendly.com/teamnemi/careercounselling`} legacyBehavior><a className={styles.enrollNow}>Register Now for this Program</a></Link>:<Link href={`https://app.nemiedu.com/checkout/${courseData.courseSlug}`} legacyBehavior><a className={styles.enrollNow}>Enroll Now</a></Link>}  </>} 
                    </div>
                </div>
                <div className={styles.bottom}><img className={styles.over} src='/inndesign.svg'/></div>

@@ -68,10 +68,10 @@ return(<li onMouseEnter={e=>{setIsHovering(true)}} key={index} onMouseOver={e=>{
 <Link href="/"><img src='/nemi_registered.svg' className={styles.logo + " " + (props.scrolled? styles.logo_active : '')} /></Link>
 {props.device > 2 ? 
 <div className={styles.links + " " + (props.scrolled? styles.active_links : '')}>
-<Link href="/"><a>Home</a></Link> 
+<Link href="/" legacyBehavior><a>Home</a></Link> 
     <a className={styles.sub_item_button} onClick={e=>{props.courseClick(0)}} >Courses</a>
     <a onClick={e=>props.handleModal(true)} >Easy Enroll</a> 
-    <Link href="/#about"><a >About</a></Link> 
+    <Link href="/#about" legacyBehavior><a >About</a></Link> 
     <a onClick={e=>{e.preventDefault(),props.handleContactPopup(true)}} >Contact</a>
     <a className={styles.student_login} href="https://calendly.com/teamnemi/careercounselling">Book a FREE Career Counselling Call</a>
     <a className={styles.student_login} href="https://app.nemiedu.com/login">Student Login</a>
@@ -80,7 +80,7 @@ return(<li onMouseEnter={e=>{setIsHovering(true)}} key={index} onMouseOver={e=>{
         
         
         {active && loaded == true ? <>
-    <Link href="/"><a>Home</a></Link> 
+    <Link href="/" legacyBehavior><a>Home</a></Link> 
     <a className={styles.sub_item_button} onClick={e=>{props.courseClick(0)}}>Courses{/* <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.293 8.293a1 1 0 0 1 1.414 0L12 14.586l6.293-6.293a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414Z" fill="#000"/></svg> */}</a> 
    {/*  <ul className={styles.toggler+ " " + (visible? styles.active_toggle : '')}>{data && data.categories ? data.categories.map((item,index)=>{
 return(<><li className={styles.sub_sub_item + " "+(activeSubItem === index ?styles.active_item : '')} onMouseEnter={e=>{setIsHovering(true)}} key={index} onClick={e=>{setActiveSubItem(index)}}>{item.title} <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.293 8.293a1 1 0 0 1 1.414 0L12 14.586l6.293-6.293a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414Z" fill="#000"/></svg></li>
@@ -94,7 +94,7 @@ return(<><li className={styles.sub_sub_item + " "+(activeSubItem === index ?styl
 }) : ""}</ul> */}
    
     <a onClick={e=>props.handleModal(true)} >Easy Enroll</a>
-    <Link href="/#about"><a>About</a></Link> 
+    <Link href="/#about" legacyBehavior><a>About</a></Link> 
     <a onClick={e=>{e.preventDefault(),props.handleContactPopup(true)}} >Contact</a>
     <a style={{textAlign:"right",fontSize:"12px"}} className={styles.student_login} href="https://calendly.com/teamnemi/careercounselling">Book a FREE Career Counselling Call</a>
     <a style={{textAlign:"right",fontSize:"12px"}} className={styles.student_login} href="https://app.nemiedu.com/login">Student Login</a></>
