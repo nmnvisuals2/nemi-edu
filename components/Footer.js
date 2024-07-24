@@ -21,7 +21,7 @@ const [email,setEmail] = useState()
                     <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(2)}}>University Tie-Up Programs</a></li>
                     </ul>                                                                                                                                                                      
     </div>
-    <div className={styles.sec2}>
+   {/*  <div className={styles.sec2}>
         
 <h3>
 Subscribe to our <br/>
@@ -32,7 +32,7 @@ Subscribe to our <br/>
 <input placeholder='Enter your E-mail
 ' name='email' type='email' value={email}  onChange={(e)=>{setEmail(e.target.value)}} className={styles.email_input}/>
 <button className={styles.submit} type="submit" onClick={()=>props.handleSubmit(email)}>SUBSCRIBE{props.loader ? <div className={styles.loader}><span className={styles.p1}></span><span className={styles.p2}></span></div>:''}</button>
-    </div>
+    </div> */}
     <div className={styles.sec3}>
 
 <ul className={styles.main_nav}>
@@ -48,7 +48,12 @@ Subscribe to our <br/>
 <li><svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m7.772 2.439 1.076-.344c1.01-.322 2.087.199 2.52 1.217l.859 2.028c.374.883.167 1.922-.514 2.568L9.819 9.706c.116 1.076.478 2.135 1.084 3.177a8.678 8.678 0 0 0 2.271 2.595l2.275-.76c.863-.287 1.802.044 2.33.821l1.233 1.81c.615.904.505 2.15-.258 2.916l-.818.821c-.814.817-1.977 1.114-3.052.778-2.539-.792-4.873-3.143-7.003-7.053-2.133-3.916-2.886-7.24-2.258-9.968.264-1.148 1.081-2.063 2.149-2.404Z" fill="var(--brand-col1)"/></svg><a href="tel:+917460002675">7460002675 </a></li>
 {/* <li> <a onClick={e=>props.handleModal(true)} >Roadmap</a></li> */}
 <li><svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 8.608v8.142a3.25 3.25 0 0 1-3.066 3.245L18.75 20H5.25a3.25 3.25 0 0 1-3.245-3.066L2 16.75V8.608l9.652 5.056a.75.75 0 0 0 .696 0L22 8.608ZM5.25 4h13.5a3.25 3.25 0 0 1 3.234 2.924L12 12.154l-9.984-5.23a3.25 3.25 0 0 1 3.048-2.919L5.25 4h13.5-13.5Z" fill="var(--brand-col1)"/></svg> <a href="mailto:info@nemiedu.com">info@nemiedu.com</a> </li>
-<li><h6><a href="/privacy-policy">• Privacy Policy</a></h6><h6><a href="/terms_and_conditions">• Terms & Conditions</a></h6> <h6><a href="/shipping-policy">• Shipping Policy</a></h6></li>
+<div className='flex flex-row items-center flex-wrap'>
+<li><h6 className=' !flex-shrink-0'><a href="/privacy-policy">• Privacy Policy</a></h6>
+<h6 className=' !flex-shrink-0'><a href="/terms_and_conditions">• Terms & Conditions</a></h6> 
+<h6 className=' !flex-shrink-0'><a href="/shipping-policy">• Shipping Policy</a></h6>
+<h6 className=' !flex-shrink-0'><a href="/refund-cancellation">• Refund & Cancellation Policy</a></h6>
+</li></div>
                     
     
 </ul>
@@ -64,7 +69,7 @@ Subscribe to our <br/>
     <img src="/Skill-India-Color.svg" style={{filter:"grayscale(1)"}} width={300}/>
     <img src="/drishti_logo.png" style={{filter:"grayscale(1)", mixBlendMode:"multiply"}} width={200}/>
     </div>
-    <p>2022 © nEmi Education | All Rights Reserved</p>
+    <p>2024 © nEmi Education | All Rights Reserved</p>
 </div>
 
         </footer>

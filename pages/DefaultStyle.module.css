@@ -13,13 +13,19 @@
 }
 
 .enc {
-    font-size: 12px;
+    font-size: 14px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 20px;
     padding: 40px;
 }
-
+.enc p{
+    margin: 5px 0;
+}
+.enc a{
+    color: var(--brand-col1);
+    font-weight: 600;
+}
 @media only screen and (max-width:968px) {
     .mainbox {
         width: 90%;

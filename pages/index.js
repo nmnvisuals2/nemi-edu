@@ -11,7 +11,6 @@ import ProfileCard from '../components/ProfileCard'
 import LogoGrid from '../components/LogoGrid'
 import StatNumber from '../components/StatNumber'
 import Modal from '../components/Modal'
-
 import IconGrid from '../components/IconGrid'
 import { supabase } from '../utils/supabaseClient'
 import Switcher from '../components/Switcher'
@@ -183,6 +182,10 @@ function handleAuth(){
   }
 }
 
+const usps=[
+  'Upskill','Socialize','Network','Placements'
+]
+
   useEffect(()=>{
 
 DoSet();
@@ -244,11 +247,16 @@ function handleClose(data){
   
   <div className={styles.hero}>
 
-    <h2 className={styles.hero_heading}>India's first research based <br/><span>&nbsp; &nbsp; Edtech company <circ>™</circ></span></h2>
-    <Switcher features={features}/>
+    <h2 className={styles.hero_heading + " relative"}>Welcome to the<br/><span className='relative'><div className={styles.verse + " inline-block"}>NemiVerse</div><div className="absolute top-4 -right-8 z-[1] w-8 h-8 text-black rounded-full border-4 border-primary text-sm flex flex-col items-center justify-center p-0"><p className='text-black z-10 relative !m-0 leading-[12px] pt-1'>™</p></div></span></h2>
+   {/*  <Switcher features={features}/> */}
+   <div className='flex flex-row items-center justify-center my-2'>
+    {usps && usps.map((i,d)=>{
+      return <div className='mx-1'> • {i}</div>
+    })}
+   </div>
   
-  <a className={styles.btn} href=" " onClick={(e)=>{e.preventDefault(),handleSetItem(0),handleOpener()}}><button>Dive In Now</button></a>
-  <a className={styles.btn} style={{margin:"0 0 10px 0"}} href="https://calendly.com/teamnemi/careercounselling"><button>Book a FREE Career Counselling Call</button></a>
+ 
+    {/*<a className={styles.btn} style={{margin:"0 0 10px 0"}} href="https://calendly.com/teamnemi/careercounselling"><button>Book a FREE Career Counselling Call</button></a> */}
 
 
 
