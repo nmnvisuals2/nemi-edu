@@ -2,6 +2,8 @@ import Head from 'next/head'
 import '../styles/globals.css'
 import {DefaultSeo} from 'next-seo';
 import {NextUIProvider} from "@nextui-org/react";
+import { Toaster } from 'react-hot-toast';
+import { NMNContextProvider } from '../components/NMNContext';
 
 function MyApp({ Component, pageProps }) {
  
@@ -42,8 +44,10 @@ openGraph={{
 }}
 
 />
-<NextUIProvider>
-  <Component {...pageProps} /></NextUIProvider></> )
+<Toaster position="bottom-right" toastOptions={{className:'font-sans'}}></Toaster>
+
+<NextUIProvider><NMNContextProvider>
+  <Component {...pageProps} /></NMNContextProvider></NextUIProvider></> )
 }
 
 export default MyApp

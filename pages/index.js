@@ -1,8 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { useEffect, useState, useRef } from 'react'
-
-
 import Notifications from '../components/Notifications'
 import Section from '../components/Section'
 import styles from '../styles/Home.module.css'
@@ -12,10 +9,9 @@ import LogoGrid from '../components/LogoGrid'
 import StatNumber from '../components/StatNumber'
 import Modal from '../components/Modal'
 import IconGrid from '../components/IconGrid'
-import { supabase } from '../utils/supabaseClient'
-import Switcher from '../components/Switcher'
 import DefaultLayout from '../layout/DefaultLayout'
-import { loadGetInitialProps } from 'next/dist/shared/lib/utils'
+import { Button, Card, Link, Spacer } from '@nextui-org/react'
+
 export default function Home() {
 
 
@@ -37,7 +33,33 @@ export default function Home() {
     index:null,
     isOpen:false,
   });
-
+const whos = [
+  {
+    title:'Upskill',
+    action:()=>{},
+    
+  },
+  {
+    title:'Find Training',
+    action:()=>{},
+    
+  },
+  {
+    title:'Get into Placement Drives',
+    action:()=>{},
+    
+  },
+  {
+    title:'Find a coursemate or a coworker',
+    action:()=>{},
+    
+  },
+  {
+    title:'Find the right course for you',
+    action:()=>{},
+    
+  }
+]
 
   const features = [<>Courses with<span className={styles.blue}>&nbsp;Job Assurance</span></>,<>Mentoring by<span className={styles.blue}>&nbsp;Military Veterans</span></>,<><span className={styles.blue}>AI Powered</span>&nbsp;Career Guidance</>,<><span className={styles.blue}>Blockchain</span>&nbsp;integrated Certification</>,<>Recognised by<span className={styles.blue}>&nbsp;Ministry of Commerce</span></>,<>Backed by<span className={styles.blue}>&nbsp;Dr. Abdul Kalam Technical University</span></>]
 
@@ -245,78 +267,55 @@ function handleClose(data){
         <div className={styles.overlay + " " + (overlay? styles.activeoverlay : '')}></div>
 <Section id={'hero'} full={true}>
   
-  <div className={styles.hero}>
+  <div className={'w-full h-screen flex flex-row justify-center items-center'}>
 
-    <h2 className={styles.hero_heading + " relative"}>Welcome to the<br/><span className='relative'><div className={styles.verse + " inline-block"}>NemiVerse</div><div className="absolute top-4 -right-8 z-[1] w-8 h-8 text-black rounded-full border-4 border-primary text-sm flex flex-col items-center justify-center p-0"><p className='text-black z-10 relative !m-0 leading-[12px] pt-1'>™</p></div></span></h2>
+
+<div className='flex-1 text-left flex flex-col justify-start items-start'>
+    <h2 className={styles.hero_heading + " relative !text-left !font-normal !leading-none"}>Welcome to the<br/><span className='relative'><div className={styles.verse + " inline-block"}>NemiVerse</div><div className="absolute top-4 -right-8 z-[1] w-8 h-8 text-black rounded-full border-4 border-primary text-sm flex flex-col items-center justify-center p-0"><p className='text-lg z-10 relative leading-none text-primary font-bold '>R</p></div></span></h2>
    {/*  <Switcher features={features}/> */}
-   <div className='flex flex-row items-center justify-center my-2'>
+   <div className='flex flex-col lg:flex-row text-sm lg:text-lg items-center justify-center my-2'>
     {usps && usps.map((i,d)=>{
       return <div className='mx-1'> • {i}</div>
     })}
    </div>
-  
- 
-    {/*<a className={styles.btn} style={{margin:"0 0 10px 0"}} href="https://calendly.com/teamnemi/careercounselling"><button>Book a FREE Career Counselling Call</button></a> */}
+  <div className='w-full flex flex-row items-center justify-start my-2'>
+    <Button as={Link} href='https://app.nemiedu.com/login' variant="flat" color='primary'>Join Now</Button>
+    <Spacer x={2}></Spacer>
+    <Button as={Link} href='https://app.nemiedu.com/login' variant="light" color='primary'>Sign In</Button>
+  </div>
+   </div>
+   <div className='flex-1'>
 
-
-
-<div className={styles.markey}>
-  <Marquee gradient={false}>
-  &nbsp;Uniting Youth with Careers&nbsp;Uniting Youth with Careers &nbsp; Uniting Youth with Careers&nbsp;Uniting Youth with Careers &nbsp; Uniting Youth with Careers
-</Marquee></div>
-
-<div className={styles.chords}>
-<div className={styles.line}></div>
-<div className={styles.line}></div>
-<div className={styles.line}></div>
-</div>
+    <img src='/hero_artwork.svg' className='w-full h-full object-contain'/>
+   </div>
 
   </div>
   
 </Section>
-<Section  id={"about"} full={true} marginned={true}>
-<div className={styles.about_wrapper}><div className={styles.about_image}></div><div className={styles.about_content}>
+<Section background="#0754c011">
+  <div className='flex flex-row font-sans min-h-[30vh] items-center py-12'>
 
-  <h2>About <span className={styles.blue}>nEmi</span></h2>
-  <p><b>nEmi</b> is a word that emerged from <y>Sanskrit language</y> which means <b>‘Cord’</b> in English. It was chosen by the founders itself keeping the vision of developing <y>educational harmony</y> in mind for which nEmi turned out to be the perfect word. Now nEmi is recognized by various <y>government organizations</y> as an emerging <b>Edtech company</b>. It is being mentored by <b>Military Veterans</b> and a lot of more experienced personalities. We at nEmi strive to utilize the best technologies in an educational manner for a better ecosystem of <y>learning & skill development.</y></p>
-  <h2>How are we solving<span className={styles.blue}> Real World Edtech Problems?</span></h2>
-
-  <p>We have thoroughly observed problems in the current Edtech Industry. The Edtech Industry is growing rapidly and is very beneficial for our country but it lacks a <b>research driven education model</b> with <b>Job Assurance</b> which we are going to solve with our innovative Modern Tech based learning platform bundled with <b>Job Assurance</b> and <b>Seamless Experience</b>.
-<br/><br/>
-On our platform we are trying to bring revolutionary features which will not only shape <b>Student’s Personality & Skills</b> but also help trainers or guides to interact with students. Involving <b>AI & Machine Learning</b> to develop an automated model for serving required knowledge to students.
-</p>
-  {/* <ul className={styles.journey}>
-<li>Founded in <rv>December 2020</rv></li>
-<li>Students started Enrolling in <rv>April 2021</rv></li>
-<li>E-Diploma course batch started in <rv>June 2021</rv></li>
-<li>More than 50% of them secured a job in <rv>November 2021</rv></li>
-<li>Website & App deployed during <rv>2022 Q2 & Q3</rv> </li>
-<li>More to come..... will be available on our <rv>Roadmap shortly</rv></li>
-
-
-  </ul> */}
-  <h2>What makes us <span className={styles.blue}>different?</span></h2>
+<div className='flex-1 flex-col items-start justify-start'>
+<h2 className='text-5xl font-medium text-primary'>Who's nemi for?</h2>
+<Spacer y={4}></Spacer>
+{whos && whos.map((i,d)=>{
+  return <div className='px-4 group py-2 mb-2 flex flex-row items-center justify-between cursor-pointer hover:bg-blue-50 shadow-sm rounded-md bg-white'>{i.title}
   
-    <ul className={styles.different}>
-    <li>Job Assurance in well known brands across the country</li>
-      <li>Mentoring sessions by Military Veterans</li>
-      <li>AI powered Career Guidance and Education Ecosystem</li>
-      <li>Blockchain integrated Certification System</li>
-      <li>Utilizing Modern Education Technology for Seamless Learning Experience</li>
-      <li>Recognized by Ministry of Commerce, MSME , Startup India and many more renowned government organizations </li>
-      <li>Research based Evaluation & Learning Pipeline</li>
-      <li>Internationally recognised certification , Backed by Skill Development Council Canada</li>
-      
-    </ul>
-  
+  <svg className='group-hover:mr-2 transition-all' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 24 24" height="24" width="24" id="Chevron-Forward--Streamline-Rounded----Material-Symbols">
+  <path fill="#000" d="M12.697916666666668 11.475945833333334L8.457291666666666 7.235320833333334C8.313541666666667 7.091570833333333 8.245643750000001 6.9238625 8.253645833333334 6.732195833333333C8.261647916666668 6.540529166666667 8.3375 6.372820833333333 8.48125 6.229070833333334C8.625 6.085320833333333 8.796685416666667 6.013445833333333 8.996354166666666 6.013445833333333C9.196022916666667 6.013445833333333 9.367708333333335 6.085320833333333 9.511458333333334 6.229070833333334L14.255208333333334 10.972820833333333C14.335085416666667 11.052697916666668 14.39095625 11.132527083333335 14.422916666666667 11.212404166666667C14.454877083333333 11.29228125 14.470833333333333 11.380112500000001 14.470833333333333 11.475945833333334C14.470833333333333 11.571779166666667 14.454877083333333 11.659610416666668 14.422916666666667 11.739487500000001C14.39095625 11.819364583333334 14.335085416666667 11.899193750000002 14.255208333333334 11.979070833333335L9.4875 16.74677916666667C9.34375 16.890529166666667 9.176041666666666 16.958427083333333 8.984375 16.950425C8.792708333333334 16.94242291666667 8.625 16.866570833333334 8.48125 16.722820833333333C8.3375 16.579070833333336 8.265625 16.407385416666667 8.265625 16.20771666666667C8.265625 16.008047916666666 8.3375 15.8363625 8.48125 15.692612500000001L12.697916666666668 11.475945833333334Z" stroke-width="1"></path>
+</svg>
+  </div>
+})}
 </div>
-</div>
+<div className='flex-1 flex-col items-start justify-start'>
 
+</div>
+  </div>
 </Section>
 <Section minus={false} id={"accredited"}  full={false} blue={true}>
 
  <div className={styles.rec}>
-  <div className={styles.accredit}>
+  {/* <div className={styles.accredit}>
 <img src='/bbp.svg' className={styles.acc_bgb}/>
 <img src='/tbp.svg' className={styles.acc_bgt}/>
   <div className={styles.acc}></div>
@@ -325,7 +324,7 @@ On our platform we are trying to bring revolutionary features which will not onl
     <p>{accredited}</p>
     <a className={styles.acc_btn} onClick={(e)=>{e.preventDefault(),ModalHandler2(true)}}><button>Learn More</button></a>
   </div>
-  </div>
+  </div> */}
   <div className={styles.recognized}>
 
 <div className={styles.recognized_inner}>
@@ -355,81 +354,8 @@ On our platform we are trying to bring revolutionary features which will not onl
   
 </Section>
 
-<section className={styles.custom} style={{top:topper}}><img className={styles.ballholder} style={{top:toppos,right:rightpos}} src="/ball.png"></img></section>
-<Section id={"courses"} full={true} marginned={true}>
+{/* <section className={styles.custom} style={{top:topper}}><img className={styles.ballholder} style={{top:toppos,right:rightpos}} src="/ball.png"></img></section> */}
 
-<div className={styles.grid_four}>
-
-<div className={styles.grid}><div className={styles.line_two}></div><h1>Range of <span className={styles.blue}>Courses</span></h1><p>Our wide variety of courses are divided into categories to cater everyone with their choice of course category. We have Diploma courses , Certification courses and University Tie-Up Programs etc. at the moment and more special categories are likely to be added in upcoming months. <br/> Each course includes International & Blockchain based Certification , Full Assistance, Seamless Course Completion Experience, AI based Career Guidance and a lot  more.</p></div>
-<div className={styles.grid + " " + styles.blue} onClick={e=>{handleSetItem(1),handleOpener()}} style={{backgroundImage:"url('/courses03.jpg')"}}>
-  
- 
-  <a> <div className={styles.inner_grid_content}>
-
-<h2>
-  Diploma Courses
-</h2><p>
-Diploma Courses are very well known for their demand in the industry for getting placed along with a good package. It is suitable for students who are willing to gain a skill along with a Diploma. 
-
-</p>
-</div></a></div>
-<div onClick={e=>{handleSetItem(2),handleOpener()}} className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/courses01.jpg')"}}><a >
-<div className={styles.inner_grid_content}>
-
-<h2>
-  University Tie-Up Programs
-</h2><p>
-University Tip-Up Programs consist of Bachelors/Masters Degree Courses such as B.Tech/M.Tech , B.Com/M.Com etc. When you enroll using nEmi platform you get all the benefits which nEmi claims to provide and access to exclusive content/learning platform for better personality development.
-</p>
-</div>
-  
-  </a></div>
-  <div className={styles.line_two + " " + styles.two}></div>
-<div className={styles.grid + " " + styles.blue} onClick={e=>{handleSetItem(0),handleOpener()}} style={{backgroundImage:"url('/courses02.jpg')"}}><a >
-  
-<div className={styles.inner_grid_content}>
-
-<h2>
-  Certification Courses
-</h2><p>
-  
-In Certification Courses students are provided with a wide variety of professional courses to choose from. Students receive a Blockchain Minted & Internationally recognised Certificate.
-</p>
-</div>
-  </a></div>
-
-
-{/* Addons of Grid */}
-
-
-<div onClick={e=>{handleSetItem(3),handleOpener()}} className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/advanced.jpg')"}}><a >
-<div className={styles.inner_grid_content}>
-
-<h2>
-  Advanced Diploma in Full Stack Development
-</h2><p>
-An advanced diploma in full stack development is a comprehensive program that aims to equip students with the knowledge and skills required to become proficient full stack developers.
-</p>
-</div>
-  
-  </a></div>
-  <div onClick={e=>{handleSetItem(4),handleOpener()}} className={styles.grid + " " + styles.blue} style={{backgroundImage:"url('/placement_banner.jpg')"}}><a >
-<div className={styles.inner_grid_content}>
-
-<h2>
-  Placements
-</h2><p>
-Placement courses are designed to help students improve their skills and increase their chances of getting placed in their desired job roles. These courses typically cover topics such as resume writing, interview skills, communication skills, and overall personality development.
-</p>
-</div>
-  
-  </a></div>
-  
-
-</div>
-
-
-</Section>
 <Section id={"stats"} full={false} marginned={true}>
 <div className={styles.line6}></div>
 <div className={styles.grid_icon}>
@@ -447,7 +373,7 @@ Placement courses are designed to help students improve their skills and increas
 </div>
 
 </Section>
-<Section id={"enroll"} full={false} blue={true}>
+<Section id={"enroll"} background="var(--brand-col1)" full={false} blue={true}>
 <img src='/dots.svg' className={styles.dots} width="50" height="50"/>
 <img src='/dots.svg' className={styles.dots} width="50" height="50"/>
 
@@ -462,24 +388,10 @@ Placement courses are designed to help students improve their skills and increas
 </Section>
 
 
-<Section id={"team"} full={false} marginned={true}>
-  <h1 className={styles.team_heading}>SuperHuman Team <br/>behind <span className={styles.blue}>nEmi</span></h1>
-  <div className={styles.team_content}><p>nEmi is being operated by team of superhumans who have years of Experience in various fields.<br/>With an Innovative Mindset, nEmi team tries to achieve limitless solutions for modern edtech and bring a revolutionary change</p></div>
-<div className={styles.columns + " " + styles.extraresp}>
 
-  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Akshay Bajpayee'} role="Founder & CEO" image="/team01.jpg" badge="/badge.svg"></ProfileCard>
-  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Akanksha Bajpayee'} role="Co-Founder" image="/co-founder.jpeg" badge="/badge3.svg"></ProfileCard>
-  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Colonel(Retd.) Niraj Nayan Bajpayee'} role="Chief Mentor" image="/team02.jpg" badge="/badge2.svg"></ProfileCard>
-  {/* <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Diwakar Pratap Singh'} role="Executive Director" image="/image2.jpg" badge="/badge3.svg"></ProfileCard> */}
-  
-  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Mr. Mahendra Dwivedi'} role="Subject & Personality Development Expert" image="/mahendra.jpeg" badge="/badge3.svg"></ProfileCard>
-  <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Mr. Amit Mishra'} role="Personality Developement & Placement Expert" image="/ed.jpeg" badge="/badge3.svg"></ProfileCard>
-</div>
-
-</Section>
 <Section id={"hiring_partners"} full={false} marginned={true}>
 <h1 className={styles.team_heading}>Our <span className={styles.blue}>Placements</span></h1>
-  <div className={styles.team_content}><p>Some of the brands where our students secured placements.</p></div>
+  <div className={'text-xs max-w-[800px] w-full mx-auto text-center my-4 text-gray-500'}><p>Some of the brands where our students secured placements.</p></div>
   <Marquee gradient={true} pauseOnClick={true} gradientWidth={mobile < 3 ? 50 : 200}>
 
     <LogoGrid image1={'/1.jpg'} image2={'/2.jpg'} image3={'/3.jpg'} image4={'/4.jpg'}></LogoGrid>
@@ -507,7 +419,7 @@ Placement courses are designed to help students improve their skills and increas
 
 <div className={styles.media_container}>
 <h1 className={styles.team_heading}>Media <span className={styles.blue}>Exposure</span></h1>
-  <div className={styles.team_content}><p>National News Channels where nEmi is featured. nEmi has been gaining media exposure for so long for its flawless work in the education industry. Despite being in a competitive market, nEmi managed to conquer with its research driven Education Technology which is helping students to get better opportunities from global brands.</p></div>
+  <div className={'text-xs max-w-[800px] w-full mx-auto text-center my-4 text-gray-500'}><p>National News Channels where nEmi is featured. nEmi has been gaining media exposure for so long for its flawless work in the education industry. Despite being in a competitive market, nEmi managed to conquer with its research driven Education Technology which is helping students to get better opportunities from global brands.</p></div>
   <Marquee gradient={true}>
   <div className={styles.media_grid}><img src='/big-news-network.png'/><img src='/maharashtra_news.png'/></div>
   <div className={styles.media_grid}><img src='/default-logo.png'/><img src='/MP-Chronicle.png'/></div>

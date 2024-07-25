@@ -12,7 +12,16 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+
+    extend: {
+      fontFamily:{
+        "sans":['Modernist','sans-serif']
+      },
+colors:{
+  primary:"#0b4290",
+  secondary:"#fbb03b"
+}
+    },
   },
   plugins: [nextui()],
 }

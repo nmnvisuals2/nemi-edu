@@ -9,24 +9,41 @@ import ContactForm from "../components/ContactForm";
 import styles from './DefaultLayout.module.css'
 import CourseSelector from "../components/CourseSelector";
 import Link from 'next/link'
+import { toast } from "react-hot-toast";
 
 function DefaultLayout(props){
 
     const [mobile,setMobile] = useState();
-  const [nottext,setNotText] = useState();
+
   const [loader,setLoader] = useState();
   const [scrolled,setScrolled] = useState(false);
   const [isModalOpen,setModalOpen] = useState(false);
-  const [roadmaps,setRoadMaps] = useState(false);
+  
   const phone = "7460002675";
   const [wa,setWa] = useState();
   const [active,setActive] = useState('');
-  const [activeCourse,setActiveCourse]= useState();
-  const [submitterLoading,setSubmitterLoad] = useState(false);
-  const [modalOpenFour,setModalOpenFour] = useState(false);
-  const [modalOpenFive,setModalOpenFive] = useState(false);
+
+  
   const [courseData,setCourseData] = useState();
   const [selector,setSelector] = useState();
+  const [isAnimating, setIsAnimating] = useState(false);
+
+
+
+  const handleRouteChangeStart = () => {
+    setIsAnimating(true);
+  };
+
+  const handleRouteChangeComplete = () => {
+   setTimeout(()=>{
+    setIsAnimating(false);
+   },1000)
+  };
+
+ useEffect(()=>{
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+ },[])
   function DoSet(){
     if(window.innerWidth < 768){
       setMobile(1)
@@ -76,30 +93,12 @@ async function getCourses(){
   function ModalHandler(data){
     setModalOpen(data);
     }
-    function ModalHandler2(data){
-      setModalTwoOpen(data);
-      }
-      function ModalHandler3(data){
-       
-        }
-
+   
         function ModalHandler4(data){
        setModalOpenFour(data)
         }
-        function ModalHandler5(data){
-          setModalOpenFive(data)
-           }
-        async function getRoadMaps(){
-    
-          await supabase
-          .from('roadmap')
-          .select('*')
-          .order('serial',{ascending:true})
-          .then(response=>{if(!response.error && response.status === 200){
-           
-            setRoadMaps(response.data);
-          }})
-        }  
+      
+        
     async function ContactFormSubmit(name,email,phone,message){
     setLoader(true);
       await supabase
@@ -107,32 +106,17 @@ async function getCourses(){
       .insert([
         { name : name, email : email , phone : phone , message: message },
       ]).then(response=>{if(!response.error && response.status === 201){
-        setNotification('Thanks , You will be contacted shortly','success')
+        toast.success('Thanks , You will be contacted shortly','success')
         ModalHandler(false);
         setLoader(false);
       }})
     }
-    function setNotification(text,type){
-         
-        setNotText({text:text,type:type});
-        setTimeout(()=>{setNotText({text:""})},2000)
-      
-      }
+   
       function ModalHandler(data){
         setModalOpen(data);
         }
 
-     /*    async function ContactFormSubmit(name,email,phone,message){
-
-          await supabase
-          .from('contact_requests')
-          .insert([
-            { name : name, email : email , phone : phone , message: message },
-          ]).then(response=>{if(!response.error && response.status === 201){
-            setNotification('Thanks , You will be contacted shortly','success')
-            ModalHandler(false);
-          }})
-        } */
+     
         const validateEmail = (email) => {
           return String(email)
             .toLowerCase()
@@ -150,30 +134,28 @@ async function getCourses(){
              { email: data, subscribed: true },
            ]).then(response=>{
              if(!response.error && response.status === 201){
-               setNotification('Thanks, Successfully Subscribed to Newsletters','success');
+               toast.success('Thanks, Successfully Subscribed to Newsletters','success');
                setSubmitterLoad(false);
                setLoader(false);
              }else{
-              setNotification('An Unknown Error Occured','error')
+              toast.error('An Unknown Error Occured','error')
               setSubmitterLoad(false);
               setLoader(false);
              }
            })}else{
              
 
-              setNotification('Email is not valid','error')
+              toast.error('Email is not valid','error')
              
            }
          }
 
-         function coursePopup(data){
-           setActiveCourse(courses[data]);
-         }
+       
 const router = useRouter();
   useEffect(()=>{
 getPose();
     DoSet();
-    getRoadMaps();
+    
     getCourses();
     
     
@@ -185,54 +167,21 @@ setModalOpen(props.contactPop)
 
   },[props.contactPop])
 
-function courseClickHandler(data){
-
-setActiveCourse(data);
-setModalOpenFive(true);
-}
-  function openModalFooter(data){
-setActiveCourse(data);
-setModalOpenFive(true);
 
 
-  }
-useEffect(()=>{
-
-  setModalOpenFive(props.opener);
-},[props.opener])
-useEffect(()=>{
-   setActiveCourse(props.activatedItem);
-   
-  
-},[props.activatedItem])
 
     return(<>
 
-<Modal closeable={true} open={modalOpenFive} handleModal={e=>{ModalHandler5(),setModalOpenFive(false)}}>
-
-
-<CourseSelector courseData={courseData} handleClose={e=>setModalOpenFive(false)} selector={activeCourse}></CourseSelector>
-
-</Modal>
-<Modal closeable={true} open={modalOpenFour} handleModal={ModalHandler4}>
-<h1 className={styles.head}>Easy Enrollment Process</h1>
-{modalOpenFour ?<div className={styles.roadmap_scroller}>
-
-{roadmaps ? roadmaps.map((item,index)=>{
-
-  return(<div className={styles.roadmap_list} style={{animationDelay:`${index}00ms`}}><span className={styles.indicator + " " + (item.status == "done" ? styles.done : item.status === "progress" ? styles.progress : styles.upcoming)}></span><div className={styles.road_cont}><h1>{item.title}</h1><p>{item.description}</p></div></div>)
-}) : ''}
-
-</div> :''}
-
-</Modal>
 <Modal closeable={true} open={isModalOpen} handleModal={ModalHandler}>
       
 
       <ContactForm loader={loader} handleSubmitForm={ContactFormSubmit} heading={"Get in Touch with Us!!"}></ContactForm>
     </Modal>
-    {nottext && nottext.text.length > 2 ? <Notifications type={nottext.type} text={nottext.text}/>: ''}
-<NavBar courseClick={courseClickHandler} scrolled={scrolled} device={mobile} handleStudentLogin={props.handleStudentLogin} handleModal={ModalHandler4} handleContactPopup={ModalHandler}></NavBar>
+    
+<NavBar scrolled={scrolled} device={mobile} handleStudentLogin={props.handleStudentLogin} handleModal={ModalHandler4} handleContactPopup={ModalHandler}></NavBar>
+{isAnimating ?  <div className={styles.loader}>
+        <div className={styles.loading}><div className={styles.thumb}></div></div>
+        Loading...</div>:''}
  
  {router.pathname == "/placements" ? '' : <>
  <Link href="https://instagram.com/nemieducation"  target={"_blank"}><img src="/ig.svg" className={styles.instagram}/></Link>
@@ -255,7 +204,7 @@ useEffect(()=>{
 </div></>}
 
 <>{props.children}</>
-<Footer loader={loader} onListClick={openModalFooter} device={mobile} modal={e=>ModalHandler(true)} handleSubmit={submitter} handleModal={ModalHandler4} handleCoursePopup={coursePopup} handleContactPopup={ModalHandler}></Footer></>)
+<Footer loader={loader} modal={e=>ModalHandler(true)} handleSubmit={submitter} handleModal={ModalHandler4} handleContactPopup={ModalHandler}></Footer></>)
 }
 
 export default DefaultLayout;

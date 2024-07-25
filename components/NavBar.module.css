@@ -4,11 +4,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 2em 8vw;
+    
     z-index: 9999;
 }
 
 .nav_inner {
+    max-width: 1128px;
+    margin: 0 auto;
+    padding: 1rem 0rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -41,9 +44,9 @@
 
 .active_links {
     background-color: white;
-    border-radius: 200px;
-    width: 990px;
-    padding: 10px 50px;
+    border-radius: 15px;
+   
+    padding: 5px 5px;
     box-shadow: 5px 5px 12px -5px #00000044;
 }
 
@@ -200,7 +203,7 @@
 
 @media only screen and (max-width:1000px) {
     .nav_wrapper {
-        padding: 1em 1em;
+        padding: 0em 1em;
     }
     .logo {
         width: 70px;

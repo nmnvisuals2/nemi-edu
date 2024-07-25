@@ -1,0 +1,121 @@
+.maincard {
+    max-width: calc(25% - 20px);
+    width: 100%;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px -1px #00000022;
+    margin: 10px;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: white;
+}
+
+.readmore {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--brand-col2);
+    border: 0;
+    margin: 10px 0;
+    font-weight: 600;
+    border: 1px solid white;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.readmore svg {
+    margin-left: 5px;
+    width: 14px;
+    height: 14px;
+}
+
+
+
+.maincard:hover {
+    box-shadow: 6px 6px 0px -1px var(--brand-col2);
+    transform: translate(-6px, -6px);
+}
+
+.cardcontent {
+    padding: 15px 20px 20px 20px;
+}
+
+.datetime {
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.datetime span {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+.datetime span svg {
+    margin-right: 10px;
+}
+
+.datetime span svg path {
+    fill: var(--brand-col2);
+}
+
+.cardcontent p {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.cardcontent h2 {
+    margin: 0;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 18px;
+    display: inline;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.cardcontent h2:hover {
+    color: var(--brand-col2);
+}
+
+.maincard img {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+@media only screen and (max-width:1340px) {
+    .maincard {
+        max-width: calc(33% - 20px);
+    }
+}
+
+@media only screen and (max-width:968px) {
+    .maincard {
+        max-width: calc(50% - 20px);
+    }
+    .readmore{
+        font-size: 14px;
+        padding: 5px 10px;
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width:548px) {
+    .maincard {
+        max-width: 100%;
+    }
+   
+}

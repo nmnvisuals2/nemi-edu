@@ -1,7 +1,12 @@
-import styles from './Courses.module.css'
+import DefaultLayout from "../../layout/DefaultLayout";
+
 
 function Courses() {
-    return <div>Main</div>
+    return <DefaultLayout> <div className="w-full h-screen">
+
+
+
+    </div></DefaultLayout>
 }
 
 
