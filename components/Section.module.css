@@ -38,7 +38,11 @@
     padding: 0 8vw;
     overflow: hidden;
 }
-
+@media only screen and (max-width:1200px) {
+    .section{
+        padding: 0 15px;
+    }
+}
 @media only screen and (max-width:968px) {
     .blue_inner {
         flex-wrap: wrap;

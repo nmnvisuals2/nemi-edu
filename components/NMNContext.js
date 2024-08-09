@@ -12,7 +12,7 @@ export const NMNContextProvider = ({ children }) => {
 
  async function getCategories(){
 
-    const {data,error} = await supabase.from('categories').select('*');
+    const {data,error} = await supabase.from('categories').select('*').eq('type','parent');
     if(data){
         setCategories(data)
     }

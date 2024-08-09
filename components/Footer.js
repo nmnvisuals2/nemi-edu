@@ -62,9 +62,9 @@ const items = [
 <div className={' flex flex-row p-0 bg-gray-50'}>
 {/* <img src='/ytb.svg' className={styles.ytb}/>
 <img src='/bbb.svg' className={styles.bbb}/> */}
-<div className='max-w-[1128px] mx-auto w-full py-8'>
+<div className='max-w-[1128px] mx-auto px-[15px] lg:px-0 w-full py-8'>
     
-    <div className={styles.btt + " hidden lg:flex"}><div className={styles.inner_btt}><img onClick={()=>{ window.scrollTo({top: 0, left: 0, behavior: 'smooth' });}} src='/bta.svg'/></div></div>
+    {/* <div className={styles.btt + " hidden lg:flex"}><div className={styles.inner_btt}><img onClick={()=>{ window.scrollTo({top: 0, left: 0, behavior: 'smooth' });}} src='/bta.svg'/></div></div> */}
 
     <div className={styles.sec1}>
 {/* <h2>Explore<span className={styles.bro}>.</span></h2> */}
@@ -77,19 +77,19 @@ const items = [
   
     <div className={styles.sec3}>
 
-<ul className={styles.main_nav}>
+<ul className={styles.main_nav + ""}>
 {items && items.map((i,d)=>{
-    return <li className='flex flex-row !items-center !justify-start'>{i.icon}<p className='text-xs'><strong>{i.title}</strong>:<br/>{i.content}</p></li>
+    return <li className='flex flex-[50%] flex-row !items-center !justify-start'>{i.icon}<p className='text-xs'><strong>{i.title}</strong>:<br/>{i.content}</p></li>
 })}
 
 {/* <li> <a onClick={e=>props.handleModal(true)} >Roadmap</a></li> */}
 
-<div className='flex flex-row items-center flex-wrap'>
-<li><h6 className=' !flex-shrink-0'><Link href="/privacy-policy">• Privacy Policy</Link></h6>
-<h6 className=' !flex-shrink-0'><Link href="/terms_and_conditions">• Terms & Conditions</Link></h6> 
-<h6 className=' !flex-shrink-0'><Link href="/shipping-policy">• Shipping Policy</Link></h6>
-<h6 className=' !flex-shrink-0'><Link href="/refund-cancellation">• Refund & Cancellation Policy</Link></h6>
-</li></div>
+<div className='flex flex-row w-full items-center lg:items-start justify-center lg:justify-left text-center lg:text-left flex-wrap text-xs'>
+<h6 className=' !flex-shrink-0 mr-2'><Link href="/privacy-policy">• Privacy Policy</Link></h6>
+<h6 className=' !flex-shrink-0 mr-2'><Link href="/terms_and_conditions">• Terms & Conditions</Link></h6> 
+<h6 className=' !flex-shrink-0 mr-2'><Link href="/shipping-policy">• Shipping Policy</Link></h6>
+<h6 className=' !flex-shrink-0 mr-2'><Link href="/refund-cancellation">• Refund & Cancellation Policy</Link></h6>
+</div>
                     
     
 </ul>
