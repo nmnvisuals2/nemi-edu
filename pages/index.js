@@ -477,7 +477,7 @@ key={activeWho}
 {/* <div className='absolute left-0 top-0 w-full h-full bg-primary-100 animate-ping rounded-full -z-[1]'></div> */}
 
   </div>
-    <h2 className='text-yellow-700 my-12 max-w-[1200px] font-normal text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-center'>nemi is the exclusive skilling partner of IIT Indore through its skilling using Drishti CPS</h2>
+    <h2 className='text-yellow-700 my-12 max-w-[1200px] font-normal text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-center'>nemi is the exclusive skilling partner of IIT Indore through its skilling wing Drishti CPS</h2>
  
  <img src='/iitindore.png' className=' left-0 bottom-0 w-full object-contain h-auto grayscale'/>
   
@@ -520,7 +520,7 @@ key={activeWho}
     <div className='absolute left-1/2 -translate-x-1/2 bottom-4 lg:bottom-12 bg-secondary text-center text-black py-2 w-full lg:w-auto rounded-full text-xs lg:text-sm  px-8 '>
       I AM OPEN TO WORK
     </div>
-   <img src='/corp.jpg' className="w-full h-full"/>
+   <img src='/mainp.png' className="w-full object-cover object-top h-full"/>
    </div></div>
    
   </div>
@@ -623,7 +623,34 @@ key={activeWho}
 <div className={"flex flex-col lg:flex-row items-center justify-center my-12 lg:my-[150px]"}>
 <div className='flex-1 text-left'>
 <h1 className={'font-normal text-left text-5xl text-black'}>Media <span className={" text-primary"}>Exposure</span></h1>
-  <div className={'text-xs max-w-[800px] w-full mx-auto text-left my-4 text-gray-500'}><p>National News Channels where nEmi is featured. nEmi has been gaining media exposure for so long for its flawless work in the education industry. Despite being in a competitive market, nEmi managed to conquer with its research driven Education Technology which is helping students to get better opportunities from global brands.</p></div>
+  <div className={'text-xs max-w-[800px] w-full mx-auto text-left my-4 text-gray-500'}><p>National news channel featuring Nemi for its path breaking work in skill development and job creation sector. As a unique platform, Nemi offers students the opportunity to empower, to socialize, acquire essential skills, network with industry professionals, connect with peers, build valuable skills and stand out in the competitive job market.
+</p></div>
+</div>
+<div className='flex-1 w-full my-6 lg:my-0 lg:w-[50%]'>
+  <Marquee gradient={true}>
+  <div className={styles.media_grid}><img src='/big-news-network.png'/><img src='/maharashtra_news.png'/></div>
+  <div className={styles.media_grid}><img src='/default-logo.png'/><img src='/MP-Chronicle.png'/></div>
+  <div className={styles.media_grid}><img src='/logo.png'/><img src='/INN_rVm3TwN.png'/></div>
+  <div className={styles.media_grid}><img src='/ZEE5_logo.png'/><img src='/unnamed.jpg'/></div>
+  <div className={styles.media_grid}><img src='/South_India_news.png'/><img src='/dailyhunt_logo.svg'/></div>
+  <div className={styles.media_grid}><img src='/Haryana_Today.png'/><img src='/IEO.png'/></div>
+  <div className={styles.media_grid}><img src='/Kashmir_Breaking_News.png'/><img src='/logo (1).png'/></div>
+  <div className={styles.media_grid}><img src='/logo_800x149_transp-1.webp'/><img src='/lokmattimes-logo-mobile-v0.2.png'/></div>
+  <div className={styles.media_grid}><img src='/logo.webp'/><img src='/JioNewsAppIcon.png'/></div>
+  <div className={styles.media_grid}><img src='/ZEE5_logo.png'/><img src='/unnamed.jpg'/></div>
+  <div className={styles.media_grid}><img src='/Haryana_Today.png'/><img src='/IEO.png'/></div>
+</Marquee></div>
+</div>
+
+</Section>
+<Divider></Divider>
+<Section id={"media"} full={false} marginned={true}>
+
+<div className={"flex flex-col  items-center justify-center my-12 lg:my-[80px]"}>
+<div className='flex-1 text-center'>
+<h1 className={'font-normal text-center w-full text-5xl text-black'}>Our Events and <br/><span className={" text-primary"}>captivating moments.</span></h1>
+  <div className={'text-xs max-w-[800px] w-full mx-auto text-left my-4 text-gray-500'}><p>
+</p></div>
 </div>
 <div className='flex-1 w-full my-6 lg:my-0 lg:w-[50%]'>
   <Marquee gradient={true}>
