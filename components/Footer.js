@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './Footer.module.css'
 import Link from 'next/link';
+import { Divider, Spacer } from '@nextui-org/react';
 function Footer(props){
 
 const [email,setEmail] = useState()
@@ -66,34 +67,40 @@ const items = [
     
     {/* <div className={styles.btt + " hidden lg:flex"}><div className={styles.inner_btt}><img onClick={()=>{ window.scrollTo({top: 0, left: 0, behavior: 'smooth' });}} src='/bta.svg'/></div></div> */}
 
-    <div className={styles.sec1}>
-{/* <h2>Explore<span className={styles.bro}>.</span></h2> */}
-                {/* <ul className={styles.navlist}>
-                <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(1)}}>Diploma Courses</a></li>
-                <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(0)}}>Certification Courses</a></li>
-                    <li><a href="" onClick={(e)=>{e.preventDefault(),props.onListClick(2)}}>University Tie-Up Programs</a></li>
-                    </ul>  */}                                                                                                                                                                     
-    </div>
+   
   
     <div className={styles.sec3}>
 
-<ul className={styles.main_nav + ""}>
+<div className='flex flex-col-reverse lg:flex-row items-start justify-between w-full'>
+<ul className={styles.main_nav + " flex-1"}>
 {items && items.map((i,d)=>{
     return <li className='flex flex-[50%] flex-row !items-center !justify-start'>{i.icon}<p className='text-xs'><strong>{i.title}</strong>:<br/>{i.content}</p></li>
 })}
 
 {/* <li> <a onClick={e=>props.handleModal(true)} >Roadmap</a></li> */}
 
-<div className='flex flex-row w-full items-center lg:items-start justify-center lg:justify-left text-center lg:text-left flex-wrap text-xs'>
+
+                    
+    
+</ul>
+<Spacer x={2} y={2}></Spacer>
+<Divider className='my-2 flex lg:hidden'></Divider>
+<div className='flex flex-1 flex-col justify-start items-start'>
+<h2 className='text-primary text-xl font-semibold'>Quick Links</h2> 
+              <ul className={'flex text-sm flex-col items-start justify-start'}>
+                <Link href={'/about'} className='my-1'>About Us</Link>
+                <Link href={'/courses'} className='my-1'>Courses</Link>
+               
+                    </ul>    </div>                                                                                                                                                                 
+    
+</div>
+<Divider className='my-4'></Divider>
+<div className='flex flex-row w-full items-center mt-2 lg:items-start justify-center lg:justify-left text-center lg:text-left flex-wrap text-xs'>
 <h6 className=' !flex-shrink-0 mr-2'><Link href="/privacy-policy">• Privacy Policy</Link></h6>
 <h6 className=' !flex-shrink-0 mr-2'><Link href="/terms_and_conditions">• Terms & Conditions</Link></h6> 
 <h6 className=' !flex-shrink-0 mr-2'><Link href="/shipping-policy">• Shipping Policy</Link></h6>
 <h6 className=' !flex-shrink-0 mr-2'><Link href="/refund-cancellation">• Refund & Cancellation Policy</Link></h6>
 </div>
-                    
-    
-</ul>
-
 
     </div>
 </div></div>

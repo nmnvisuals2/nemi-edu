@@ -57,9 +57,17 @@ export default function Category({data}){
 export async function getServerSideProps(context){
     const {data,error} = await supabase
     .from('courses')
-    .select('*,category!inner(*)')
-    .eq('category.slug',context.query.slug).eq('isActive',true)
-console.log(data,error)
+    .select('*,category(*)')
+    .eq('category.slug',context.query.slug)
+    
+    if (data[0]?.type == "parent") {
+      return {
+        redirect: {
+          destination: `/categories/${data[0].slug}`, // Redirect to the login page
+          permanent: false, // If false, it's a temporary redirect (307). If true, it's a permanent redirect (308).
+        },
+      };
+    }
    
 if(error || data?.length ==0){
   return {notFound:true}

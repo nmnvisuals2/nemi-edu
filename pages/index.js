@@ -247,6 +247,166 @@ function handleClose(data){
 
   setIsOpen(false)
 }
+const images = [
+  [
+    {
+      title: "Image 1",
+      image: "/gallery/gl1.jpg"
+    },
+    {
+      title: "Image 2",
+      image: "/gallery/gl2.jpg"
+    },
+    {
+      title: "Image 3",
+      image: "/gallery/gl3.jpg"
+    },
+    {
+      title: "Image 4",
+      image: "/gallery/gl4.jpg"
+    },
+    {
+      title: "Image 5",
+      image: "/gallery/gl5.jpg"
+    },
+    {
+      title: "Image 6",
+      image: "/gallery/gl6.jpg"
+    },
+    {
+      title: "Image 7",
+      image: "/gallery/gl7.jpg"
+    },
+    {
+      title: "Image 8",
+      image: "/gallery/gl8.jpg"
+    },
+    {
+      title: "Image 9",
+      image: "/gallery/gl9.jpg"
+    },
+    {
+      title: "Image 10",
+      image: "/gallery/gl10.jpg"
+    },
+    {
+      title: "Image 11",
+      image: "/gallery/gl11.jpg"
+    },
+    {
+      title: "Image 12",
+      image: "/gallery/gl12.jpg"
+    },
+    {
+      title: "Image 13",
+      image: "/gallery/gl13.jpg"
+    },
+    {
+      title: "Image 14",
+      image: "/gallery/gl14.jpg"
+    },
+    {
+      title: "Image 15",
+      image: "/gallery/gl15.jpg"
+    },
+    {
+      title: "Image 16",
+      image: "/gallery/gl16.jpg"
+    },
+    {
+      title: "Image 17",
+      image: "/gallery/gl17.jpg"
+    },
+    {
+      title: "Image 18",
+      image: "/gallery/gl18.jpg"
+    },
+    {
+      title: "Image 19",
+      image: "/gallery/gl19.jpg"
+    }
+  ],
+  [
+    {
+      title: "Image 20",
+      image: "/gallery/gl20.jpg"
+    },
+    {
+      title: "Image 21",
+      image: "/gallery/gl21.jpg"
+    },
+    {
+      title: "Image 22",
+      image: "/gallery/gl22.jpg"
+    },
+    {
+      title: "Image 23",
+      image: "/gallery/gl23.jpg"
+    },
+    {
+      title: "Image 24",
+      image: "/gallery/gl24.jpg"
+    },
+    {
+      title: "Image 25",
+      image: "/gallery/gl25.jpg"
+    },
+    {
+      title: "Image 26",
+      image: "/gallery/gl26.jpg"
+    },
+    {
+      title: "Image 27",
+      image: "/gallery/gl27.jpg"
+    },
+    {
+      title: "Image 28",
+      image: "/gallery/gl28.jpg"
+    },
+    {
+      title: "Image 29",
+      image: "/gallery/gl29.jpg"
+    },
+    {
+      title: "Image 30",
+      image: "/gallery/gl30.jpg"
+    },
+    {
+      title: "Image 31",
+      image: "/gallery/gl31.jpg"
+    },
+    {
+      title: "Image 32",
+      image: "/gallery/gl32.jpg"
+    },
+    {
+      title: "Image 33",
+      image: "/gallery/gl33.jpg"
+    },
+    {
+      title: "Image 34",
+      image: "/gallery/gl34.jpg"
+    },
+    {
+      title: "Image 35",
+      image: "/gallery/gl35.jpg"
+    },
+    {
+      title: "Image 36",
+      image: "/gallery/gl36.jpg"
+    },
+    {
+      title: "Image 37",
+      image: "/gallery/gl37.jpg"
+    },
+    {
+      title: "Image 38",
+      image: "/gallery/gl38.jpg"
+    }
+  ]
+];
+
+
 
 const backed = [
   {
@@ -373,14 +533,14 @@ key={activeWho}
   <AvatarGroup isBordered renderCount={(count) => (
         <p className="text-small text-gray-400 font-medium ms-2">100k+ others</p>
       )} size="lg" >
-      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="https://i.pravatar.cc/250?u=a042581f4e29026024d" />
-      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="https://i.pravatar.cc/250?u=a04258a2462d826712d" />
-      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="https://i.pravatar.cc/250?u=a042581f4e29026704d" />
-      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="https://i.pravatar.cc/250?u=a04258114e29026302d" />
-      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="https://i.pravatar.cc/250?u=a04258114e29026702d" />
-      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="https://i.pravatar.cc/250?u=a04258114e29026708c" />
-      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="https://i.pravatar.cc/250?u=a04258114e29026708c" />
-      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="https://i.pravatar.cc/250?u=a04258114e29026708c" />
+      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im1.jpg" />
+      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im2.jpg" />
+      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im3.jpg" />
+      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im4.jpg" />
+      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im5.jpg" />
+      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im1.jpg" />
+      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im1.jpg" />
+      <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im1.jpg" />
     </AvatarGroup>   
   </div>
   
@@ -399,7 +559,7 @@ key={activeWho}
   <div className='flex-1 flex flex-col'>
     <div className='flex flex-row items-center justify-start flex-wrap'>
     {categories && categories.slice(0,(showAll ? categories.length : 10)).map((i,d)=>{
-      return <Button as={Link} href={`/category/${i.slug}`} variant="bordered" 
+      return <Button as={Link} href={`/categories/${i.slug}`} variant="bordered" 
       className='rounded-full m-1 hover:bg-neutral-200 hover:text-black px-2 lg:px-8 py-3 lg:py-6 text-xs lg:text-sm'
       
       >{i.title}</Button>
@@ -575,10 +735,10 @@ key={activeWho}
     <h2 className='text-yellow-700 font-light my-8 lg:my-0 text-4xl md:text-3xl lg:text-4xl  xl:text-5xl'>Join your <strong className='text-black'>coursemates, classmates & friends</strong> on NemiVerse </h2>
   </div>
   <div className='flex-1 flex flex-row items-center justify-center'>
- <div className='flex-1 mr-2 rounded-xl overflow-hidden hover:-translate-y-4 transition-all'>
-  <img className='h-full w-full' src='/t1.jpg'/></div>
-  <div className='flex-1 mr-2 rounded-xl overflow-hidden hover:-translate-y-4 transition-all'> <img className='h-full w-full' src='/t2.jpg'/></div>
-  <div className='flex-1 mr-2 rounded-xl overflow-hidden hover:-translate-y-4 transition-all'> <img className='h-full w-full' src='/t3.jpg'/> </div>
+ <div className='flex-1 mr-2 rounded-xl aspect-[9/16] overflow-hidden hover:-translate-y-4 transition-all'>
+  <img className='h-full w-full object-cover' src='/ceo.avif'/></div>
+  <div className='flex-1 mr-2 rounded-xl aspect-[9/16] overflow-hidden hover:-translate-y-4 transition-all'> <img className='h-full object-cover w-full' src='/bw.jpg'/></div>
+  <div className='flex-1 mr-2 rounded-xl aspect-[9/16] overflow-hidden hover:-translate-y-4 transition-all'> <img className='h-full object-cover w-full' src='/wm.avif'/> </div>
   
   </div>
   
@@ -652,20 +812,20 @@ key={activeWho}
   <div className={'text-xs max-w-[800px] w-full mx-auto text-left my-4 text-gray-500'}><p>
 </p></div>
 </div>
-<div className='flex-1 w-full my-6 lg:my-0 lg:w-[50%]'>
-  <Marquee gradient={true}>
-  <div className={styles.media_grid}><img src='/big-news-network.png'/><img src='/maharashtra_news.png'/></div>
-  <div className={styles.media_grid}><img src='/default-logo.png'/><img src='/MP-Chronicle.png'/></div>
-  <div className={styles.media_grid}><img src='/logo.png'/><img src='/INN_rVm3TwN.png'/></div>
-  <div className={styles.media_grid}><img src='/ZEE5_logo.png'/><img src='/unnamed.jpg'/></div>
-  <div className={styles.media_grid}><img src='/South_India_news.png'/><img src='/dailyhunt_logo.svg'/></div>
-  <div className={styles.media_grid}><img src='/Haryana_Today.png'/><img src='/IEO.png'/></div>
-  <div className={styles.media_grid}><img src='/Kashmir_Breaking_News.png'/><img src='/logo (1).png'/></div>
-  <div className={styles.media_grid}><img src='/logo_800x149_transp-1.webp'/><img src='/lokmattimes-logo-mobile-v0.2.png'/></div>
-  <div className={styles.media_grid}><img src='/logo.webp'/><img src='/JioNewsAppIcon.png'/></div>
-  <div className={styles.media_grid}><img src='/ZEE5_logo.png'/><img src='/unnamed.jpg'/></div>
-  <div className={styles.media_grid}><img src='/Haryana_Today.png'/><img src='/IEO.png'/></div>
-</Marquee></div>
+<div className='flex-1 w-full my-6 lg:my-0 lg:w-[100%]'>
+ 
+    <div className='flex flex-col'>
+  {images && images.map((i,d)=>{
+    return  <Marquee pauseOnHover pauseOnClick  gradient={true} speed={50} direction={d%2 == 0 ? "left":"right"}>
+      {i.map((z,v)=>{
+        return <div className='aspect-video rounded-xl my-4 mx-4 p-0 h-32 bg-gray-100 relative overflow-hidden'><img className='w-full h-full object-cover' src={z.image}/>
+        <p className='z-[1] max-w-[20ch] text-ellipsis absolute left-0 bottom-0 m-2 px-2 py-1 text-black rounded-full  text-xs bg-white'>{z.title}</p>
+        </div>
+      })}
+    </Marquee>
+  })}</div>
+  
+</div>
 </div>
 
 </Section>
