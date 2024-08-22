@@ -559,7 +559,7 @@ key={activeWho}
   <div className='flex-1 flex flex-col'>
     <div className='flex flex-row items-center justify-start flex-wrap'>
     {categories && categories.slice(0,(showAll ? categories.length : 10)).map((i,d)=>{
-      return <Button as={Link} href={`/categories/${i.slug}`} variant="bordered" 
+      return <Button as={Link} href={`/course/?pc=${i.slug}`} variant="bordered" 
       className='rounded-full m-1 hover:bg-neutral-200 hover:text-black px-2 lg:px-8 py-3 lg:py-6 text-xs lg:text-sm'
       
       >{i.title}</Button>
