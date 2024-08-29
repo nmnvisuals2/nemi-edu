@@ -6,49 +6,57 @@ import ProfileCard from "../components/ProfileCard";
 export default function About(){
 
     return <DefaultLayout>
-        <Spacer y={16}></Spacer>
+        <Spacer y={32}></Spacer>
         <Section  id={"about"} full={true} marginned={true}>
-<div className={styles.about_wrapper}><div className={styles.about_image}></div><div className={styles.about_content}>
 
-  <h2>About <span className={styles.blue}>nEmi</span></h2>
-  <p>
-  <strong>Nemi</strong> a brand of <strong>Amskills Ecademy Pvt Ltd</strong> is
-  recognized by{" "}
-  <strong>
-    Ministry of Commerce, Government of India, Uttar Pradesh Government,
-  </strong>{" "}
-  &nbsp;and backed by{" "}
-  <strong>
-    DR. A.P.J Abdul Kalam Technical University &amp; IIT INDORE DRISTHI CPS
-    FOUNDATION, AMSKILL ECADEMY PVT. LTD (NEMI)
-  </strong>{" "}
-  is a leading Skill Tech Company, dedicated to empowering individuals with the
-  knowledge and skills they need, to thrive in the ever- evolving professional
-  environment. We understand that in today's fast-paced world, conventional
-  education alone is not enough to stay ahead. The goals are to bridge the gaps
-  between academic learning and real-world skills through our innovative
-  programs and courses.
-  <br />
-  <br />
-  <strong>Nemi</strong> is the first skill Technology startup funded by{" "}
-  <strong>IIT Indore</strong> and is the only startup giving joint
-  certifications with <strong>IIT Indore through Drishti CPS</strong>
+<div className={"w-full mx-auto"}><div className={"w-full"}>
+
+  <h2 className="text-5xl font-semibold">About <span className={"gradtext"}>nemi</span></h2>
+  <Spacer y={4}></Spacer>
+  <p className="text-sm">
+  Welcome to <strong>Nemi</strong>, a dynamic force in the world of <strong>skill technology</strong> and <strong>professional networking</strong>. We are on a mission to empower individuals across India, particularly in <strong>Tier 2, 3, and 4 cities</strong>, by providing a platform integrated with <strong>top notch technologies</strong> that goes beyond conventional learning. <strong>Nemi</strong> is where <strong>skills meet opportunities</strong>, <strong>connections turn into collaborations</strong>, and <strong>ambitions transform into achievements</strong>.
 </p>
+<Spacer y={4}></Spacer>
+<p className="text-sm">
+<strong>Nemi</strong>, a brand of <strong>Amskills Ecademy Pvt Ltd</strong>, is the first skill tech startup supported by premier institutions like <strong>Dr APJ Abdul Kalam University</strong> & <strong>IIT Indore Drishti CPS</strong>. Nemi offers a unique blend of upskilling, socializing, and employability enhancement with the integra. We understand that in today’s rapidly changing professional landscape, it’s not just what you know, but who you connect with and how you apply your skills that truly matters. Our innovative programs are designed to equip you with the tools, networks, and confidence to navigate and succeed in the professional world.
 
-  <h2>What makes us <span className={styles.blue}>different?</span></h2>
+</p>
+<Spacer y={4}></Spacer>
+<p className="text-sm"><strong>Nemi</strong> is more than a platform—it's a vibrant community where learners become leaders, and every connection is a step closer to your goals. Whether you're looking to upskill, expand your professional network, or enhance your employability, <strong>Nemi</strong> provides the pathway to your next big opportunity.</p>
+<Spacer y={4}></Spacer>
   
-    <ul className={styles.different}>
-    <li>Job Assurance in well known brands across the country</li>
-      <li>Mentoring sessions by Military Veterans</li>
-      <li>AI powered Career Guidance and Education Ecosystem</li>
-      <li>Blockchain integrated Certification System</li>
-      <li>Utilizing Modern Education Technology for Seamless Learning Experience</li>
-      <li>Recognized by Ministry of Commerce, MSME , Startup India and many more renowned government organizations </li>
-      <li>Research based Evaluation & Learning Pipeline</li>
-      <li>Internationally recognised certification , Backed by Skill Development Council Canada</li>
-      
-    </ul>
+<h2 className="text-5xl font-semibold">Vision</h2>
+<Spacer y={4}></Spacer>
+<p className="text-sm">To create a <strong>connected and skilled community</strong> that empowers individuals to turn their aspirations into reality, transforming India’s professional landscape one city at a time.</p>
+<Spacer y={4}></Spacer>
+<h2 className="text-5xl font-semibold">Mission</h2>
+<Spacer y={4}></Spacer>
+<p  className="text-sm">Our mission is to revolutionize the way individuals learn, connect, and grow. By offering <strong>cutting-edge programs</strong> and fostering <strong>meaningful connections</strong>, we aim to empower the youth of India, especially in <strong>Tier 2, 3, and 4 cities</strong>, to unlock their full potential and achieve professional success.</p>
+<Spacer y={16}></Spacer>
   
+
+<div className="flex flex-col  lg:flex-row items-start justify-between">
+  <div className="w-[400px]">
+    <img src="/founder.png" className="aspect-square w-full rounded-full bg-transparent"/>
+  </div>
+  <Spacer x={12} y={12}></Spacer>
+  <div className="flex-1">
+  <h2 className="text-5xl font-semibold gradtext pb-4">Founder's Message</h2>
+  <p  className="text-sm">Dear Future Leaders,</p>
+<br/>
+<p className="text-sm">Welcome to <strong>Nemi</strong>, a place where your journey to success begins. In a world where the professional landscape is constantly evolving, having the right skills is crucial—but so is having the right connections. That’s why we created <strong>Nemi</strong>, a platform that not only helps you upskill but also connects you with like-minded professionals, mentors, and opportunities.</p>
+<br/>
+<p className="text-sm">At <strong>Nemi</strong>, we believe that everyone deserves the chance to shine, no matter where they come from. We are committed to empowering individuals in <strong>Tier 2, 3, and 4 cities of India</strong>, providing them with the tools and networks to compete on a global stage. Our programs are designed to be more than just courses—they are gateways to new opportunities, new connections, and a brighter future.</p>
+<br/>
+<p className="text-sm">Imagine a place where every interaction brings you closer to your dream job, every course makes you more confident, and every connection opens a new door. That’s what we aim to offer at <strong>Nemi</strong>. We’re here to support you, inspire you, and help you turn your aspirations into reality.</p>
+
+<p className="text-sm">Join us on this exciting journey, and together, we will create a future where everyone has the opportunity to succeed.</p>
+
+
+  </div>
+</div>
+
+
 </div>
 
 
@@ -58,20 +66,6 @@ export default function About(){
 </div>
 
 </Section>
-<Section id={"team"} full={false} marginned={true}>
-  <h1 className={styles.team_heading}>SuperHuman Team <br/>behind <span className={styles.blue}>nEmi</span></h1>
-  <div className={'text-xs max-w-[800px] w-full mx-auto text-center my-4 text-gray-500'}><p>nEmi is being operated by team of superhumans who have years of Experience in various fields.<br/>With an Innovative Mindset, nEmi team tries to achieve limitless solutions for modern edtech and bring a revolutionary change</p></div>
-<div className={styles.columns + " " + styles.extraresp}>
-
-  <ProfileCard link={"#"} name={'Akshay Bajpayee'} role="Founder & CEO" image="/team01.jpg" badge="/badge.svg"></ProfileCard>
-  <ProfileCard link={"#"} name={'Akanksha Bajpayee'} role="Co-Founder" image="/co-founder.jpeg" badge="/badge3.svg"></ProfileCard>
-  <ProfileCard link={"#"} name={'Colonel(Retd.) Niraj Nayan Bajpayee'} role="Chief Mentor" image="/team02.jpg" badge="/badge2.svg"></ProfileCard>
-  {/* <ProfileCard link={"#"} handleMouseOver={setOverlayActive} name={'Diwakar Pratap Singh'} role="Executive Director" image="/image2.jpg" badge="/badge3.svg"></ProfileCard> */}
-  
-  <ProfileCard link={"#"} name={'Mr. Mahendra Dwivedi'} role="Subject & Personality Development Expert" image="/mahendra.jpeg" badge="/badge3.svg"></ProfileCard>
-  <ProfileCard link={"#"} name={'Mr. Amit Mishra'} role="Personality Developement & Placement Expert" image="/ed.jpeg" badge="/badge3.svg"></ProfileCard>
-</div>
-
-</Section>
+<Spacer y={32}></Spacer>
     </DefaultLayout>
 }

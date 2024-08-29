@@ -735,9 +735,11 @@ key={activeWho}
     <h2 className='text-yellow-700 font-light my-8 lg:my-0 text-4xl md:text-3xl lg:text-4xl  xl:text-5xl'>Join your <strong className='text-black'>coursemates, classmates & friends</strong> on NemiVerse </h2>
   </div>
   <div className='flex-1 flex flex-row items-center justify-center'>
- <div className='flex-1 mr-2 rounded-xl aspect-[9/16] overflow-hidden hover:-translate-y-4 transition-all'>
-  <img className='h-full w-full object-cover' src='/ceo.avif'/></div>
-  <div className='flex-1 mr-2 rounded-xl aspect-[9/16] overflow-hidden hover:-translate-y-4 transition-all'> <img className='h-full object-cover w-full' src='/bw.jpg'/></div>
+
+  <div className='flex-1 mr-2 rounded-xl aspect-[9/16] overflow-hidden hover:-translate-y-4 transition-all'> <img className='h-full object-cover w-full' src='/em2.jpg'/></div>
+
+  <div className='flex-1 mr-2 rounded-xl aspect-[9/16] overflow-hidden hover:-translate-y-4 transition-all'>
+  <img className='h-full w-full object-cover object-center bg-secondary' src='/em1.jpg'/></div>
   <div className='flex-1 mr-2 rounded-xl aspect-[9/16] overflow-hidden hover:-translate-y-4 transition-all'> <img className='h-full object-cover w-full' src='/wm.avif'/> </div>
   
   </div>
