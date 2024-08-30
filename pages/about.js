@@ -1,8 +1,9 @@
-import { Spacer } from "@nextui-org/react";
+import { Button, Spacer } from "@nextui-org/react";
 import Section from "../components/Section";
 import DefaultLayout from "../layout/DefaultLayout";
 import styles from '../styles/Home.module.css'
 import ProfileCard from "../components/ProfileCard";
+import Link from "next/link";
 export default function About(){
 
     return <DefaultLayout>
@@ -37,7 +38,7 @@ export default function About(){
 
 <div className="flex flex-col  lg:flex-row items-start justify-between">
   <div className="w-[400px]">
-    <img src="/founder.png" className="aspect-square w-full rounded-full bg-transparent"/>
+    <img src="/founder2.jpg" className="aspect-square w-full rounded-full bg-transparent"/>
   </div>
   <Spacer x={12} y={12}></Spacer>
   <div className="flex-1">
@@ -55,7 +56,15 @@ export default function About(){
 
   </div>
 </div>
+<Spacer y={12}></Spacer>
+<div className="w-full p-8 rounded-3xl from-primary to-secondary bg-gradient-to-r min-h-[120px] flex flex-col lg:flex-row items-center justify-center">
+  <div className="flex flex-col mr-4 justify-center text-left items-start w-full lg:w-auto">
+    <h2 className="text-3xl font-semibold text-white w-full text-left">Explore our Courses and start your journey</h2>
+  </div>
+  <Spacer y={4} className="flex lg:hidden"></Spacer>
+<Button as={Link} href="/course" className="bg-white mr-auto lg:mr-0 rounded-full">Explore Now</Button>
 
+</div>
 
 </div>
 
