@@ -112,6 +112,7 @@ async function getCourses() {
 
     setLoading(true)
     // Execute the query and handle the results
+    query = query.eq('isActive',true)
     const { data, error } = await query;
 
     if (error) {
