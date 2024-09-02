@@ -107,8 +107,9 @@ async function getCourses() {
         query = query.order(sortBy,{ascending:ascending})
     }
 
-    if(courses?.length > countPerPage + 5){
-    query = query.range(getRange().from,getRange().to)}
+    /* if(courses?.length > countPerPage + 1){
+        console.log('offset called'+getRange().from ,getRange().to)
+    query = query.range(getRange().from,getRange().to)} */
 
     setLoading(true)
     // Execute the query and handle the results

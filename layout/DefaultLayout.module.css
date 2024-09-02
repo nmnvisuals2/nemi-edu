@@ -265,6 +265,14 @@
 }
 
 @media only screen and (max-width:768px) {
+    .instagram, .waicon {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+    }
+    .instagram{
+        right: 60px;
+    }
     .ai {
         font-size: 12px;
     }
