@@ -12,6 +12,7 @@ import {today, getLocalTimeZone,isWeekend} from "@internationalized/date";
 import {useLocale} from "@react-aria/i18n";
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
+import { useRouter } from 'next/router';
 
 function CourseSingle({data}){
 
@@ -42,6 +43,7 @@ else{
 
     }
 
+    const router = useRouter()
 
     const handleDownload = async (fileUrl) => {
      
@@ -205,8 +207,28 @@ className='bg-white rounded-full text-xs md:text-sm px-4 md:px-8 py-4 md:py-6 up
 <div className='flex flex-col-reverse md:flex-row items-start justify-between w-full mb-4'>
 
   <div className='flex-1 w-full md:w-auto'>
-    
-<h2 className='font-sans text-2xl w-full font-bold'>Book a FREE Consultation</h2>
+    {c?.course_content && c?.course_content?.length > 0 ? <>
+    <h2 className='gradtext text-3xl font-semibold'>Course Content</h2>
+    <Spacer y={4}></Spacer>
+    <div className='w-full relative flex flex-col items-start justify-start overflow-hidden rounded-xl'>
+   {c?.course_content?.length > 2?    <div className='absolute left-0 bottom-0 from-[#000a] to-transparent bg-gradient-to-t w-full h-[40%] z-[1]  backdrop-blur-[2px] flex flex-col items-center justify-center'>
+<Button size='lg' endContent={<svg className='group-hover:ml-2 transition-all' width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.704 4.284a1 1 0 1 0-1.403 1.424L17.67 11H4a1 1 0 1 0 0 2h13.665L12.3 18.285a1 1 0 0 0 1.403 1.424l6.925-6.822a1.25 1.25 0 0 0 0-1.78l-6.925-6.823Z" fill="currentColor"/></svg>} className='rounded-full bg-gradient-to-r from-primary to-primary-400 text-white border-1 border-white shadow-primary-300 shadow-md group'>Enroll Now</Button>
+
+      </div>:''}
+      {c?.course_content && c?.course_content?.map((i,d)=>{
+        return <div className='text-sm w-full bg-white flex flex-row items-center justify-start shadow-sm rounded-md border-1 border-gray-50 mb-2 px-4 py-3'>
+          <div className='flex flex-row items-center justify-start'>
+          <svg width="20" height="20" className='mr-2' fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.293 4.293a1 1 0 0 0 0 1.414L14.586 12l-6.293 6.293a1 1 0 1 0 1.414 1.414l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0Z" fill="currentColor"/></svg>
+          <h2>{i.title}</h2>
+          </div>
+          <div className='flex flex-row items-center justify-end flex-1'>
+            <Button as={Link} isDisabled={d > 0} target="_blank" href={`https://app.nemiedu.com/checkout/${c?.slug}`} size='sm' color='secondary' className='text-black' endContent={<svg width="16" height="16" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.001a4 4 0 0 1 3.771 2.666 1 1 0 0 1-1.84.774l-.045-.107a2 2 0 0 0-3.88.517L10.002 6v1.999h7.749a2.25 2.25 0 0 1 2.245 2.097l.005.154v9.496a2.25 2.25 0 0 1-2.096 2.245l-.154.005H6.25A2.25 2.25 0 0 1 4.005 19.9L4 19.746V10.25a2.25 2.25 0 0 1 2.096-2.245L6.25 8l1.751-.001v-2A3.999 3.999 0 0 1 12 2.002Zm0 11.498a1.499 1.499 0 1 0 0 2.998 1.499 1.499 0 0 0 0-2.998Z" fill="currentColor"/></svg>}>Unlock</Button>
+          </div>
+          </div>
+      })}
+    </div></>:''}
+    <Spacer y={4}></Spacer>
+<h2 className='font-sans text-3xl gradtext w-full font-bold'>Book a FREE Consultation</h2>
 
 
 <Spacer y={4}></Spacer>
@@ -304,8 +326,8 @@ export async function getServerSideProps(context){
 
    const {data,error} = await supabase
     .from('courses')
-    .select('*,category(*,parent(*))')
-    .eq('slug',context.query.slug).eq('isActive',true)
+    .select('*,category(*,parent(*)),course_content(*)')
+    .eq('slug',context.query.slug).eq('isActive',true).order('seq',{ascending:true,referencedTable:"course_content"})
 if(error || data?.length ==0){
   return {notFound:true}
 }
