@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
         <title>Nemi Education</title>
         <meta name="description" content="#1 Education Platform" />
         <link rel="icon" href="/nemi-favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11044015265"></script>
         <script dangerouslySetInnerHTML={{__html:"gtag('event', 'conversion', {'send_to': 'AW-11044015265/7TgHCPjIqYkYEKGZmZIp'});"}}>
   

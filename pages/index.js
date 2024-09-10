@@ -10,7 +10,7 @@ import StatNumber from '../components/StatNumber'
 import Modal from '../components/Modal'
 import IconGrid from '../components/IconGrid'
 import DefaultLayout from '../layout/DefaultLayout'
-import { Avatar, AvatarGroup, Button, Card, Divider, Link, Spacer } from '@nextui-org/react'
+import { Avatar, AvatarGroup, Button, Card, Divider, Image, Link, Spacer } from '@nextui-org/react'
 import { useNMNContext } from '../components/NMNContext'
 import useMousePosition from '../components/CursorPosition'
 import { useMediaQuery } from 'react-responsive'
@@ -456,7 +456,7 @@ const recognitions = [
       <Head>
       
         <title>Nemi Education</title>
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
        
       </Head>
    
@@ -513,7 +513,7 @@ initial={{scale:0.95,opacity:0,rotate:-5,filter:'blur(10px)'}}
 animate={{scale:1,opacity:1,rotate:0,filter:'blur(0px)'}}
 exit={{scale:0.95,opacity:0,rotate:5,filter:'blur(10px)'}}
 transition={{duration:0.25,bounce:0.2,type:"spring"}}
-className='w-full aspect-square rounded-full h-auto overflow-hidden'
+className='w-full aspect-square rounded-full overflow-hidden'
 key={activeWho}
 
 >
@@ -529,10 +529,10 @@ key={activeWho}
   <div className='w-full lg:w-auto flex-0 lg:flex-1 mb-4 lg:mb-0'>
     <h2 className='text-blue-900 font-light  text-3xl md:text-4xl lg:text-5xl xl:text-6xl '>Find a coursemate or coworker</h2>
   </div>
-  <div className='flex-1 w-full lg:w-auto flex flex-col justify-start lg:justify-center items-start lg:items-center'>
-  <AvatarGroup isBordered renderCount={(count) => (
+  <div className='flex-1 w-full lg:w-auto flex overflow-hidden flex-col justify-start lg:justify-center items-start lg:items-center'>
+  <AvatarGroup key={isMobile+isTablet} isBordered renderCount={(count) => (
         <p className="text-small text-gray-400 font-medium ms-2">100k+ others</p>
-      )} size="lg" >
+      )} size={isMobile ? "sm":"lg"} >
       <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im1.jpg" />
       <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im2.jpg" />
       <Avatar classNames={{base:(isMobile ? "w-12 h-12" : isTablet ? "w-16 h-16" : "w-24 h-24")}} src="/im3.jpg" />
