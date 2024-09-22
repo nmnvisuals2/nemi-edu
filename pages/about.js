@@ -19,7 +19,7 @@ export default function About(){
 </p>
 <Spacer y={4}></Spacer>
 <p className="text-sm">
-<strong>Nemi</strong>, a brand of <strong>Amskills Ecademy Pvt Ltd</strong>, is the first skill tech startup supported by premier institutions like <strong>Dr APJ Abdul Kalam University</strong> & <strong>IIT Indore Drishti CPS</strong>. Nemi offers a unique blend of upskilling, socializing, and employability enhancement with the integra. We understand that in today’s rapidly changing professional landscape, it’s not just what you know, but who you connect with and how you apply your skills that truly matters. Our innovative programs are designed to equip you with the tools, networks, and confidence to navigate and succeed in the professional world.
+<strong>Nemi</strong>, a brand of <strong>Amskills Ecademy Pvt Ltd</strong>, is the first skill tech company supported by premier institutions like <strong>Dr APJ Abdul Kalam University</strong> & <strong>IIT Indore Drishti CPS</strong>. Nemi offers a unique blend of upskilling, socializing, and employability enhancement with the integral. We understand that in today’s rapidly changing professional landscape, it’s not just what you know, but who you connect with and how you apply your skills that truly matters. Our innovative programs are designed to equip you with the tools, networks, and confidence to navigate and succeed in the professional world.
 
 </p>
 <Spacer y={4}></Spacer>
@@ -37,8 +37,13 @@ export default function About(){
   
 
 <div className="flex flex-col  lg:flex-row items-start justify-between">
-  <div className="w-[400px]">
+  <div className="w-full sm:w-[400px] relative">
+    <div className="w-full p-0 absolute bottom-0 flex flex-row items-center justify-center  left-0 bg-primary rounded-xl overflow-hidden text-white text-center font-semibold">
+      <p className="p-4 text-lg">Akshay Bajpayee</p>
+      <p className="font-normal text-black p-1 text-xs px-4 bg-secondary rounded-full">CEO @ Nemi</p>
+    </div>
     <img src="/founder2.jpg" className="aspect-square w-full rounded-full bg-transparent"/>
+
   </div>
   <Spacer x={12} y={12}></Spacer>
   <div className="flex-1">
@@ -59,10 +64,10 @@ export default function About(){
 <Spacer y={12}></Spacer>
 <div className="w-full p-8 rounded-3xl from-primary to-secondary bg-gradient-to-r min-h-[120px] flex flex-col lg:flex-row items-center justify-center">
   <div className="flex flex-col mr-4 justify-center text-left items-start w-full lg:w-auto">
-    <h2 className="text-3xl font-semibold text-white w-full text-left">Explore our Courses and start your journey</h2>
+    <h2 className="text-3xl font-semibold text-white w-full text-left">Join your Professional Community Now</h2>
   </div>
   <Spacer y={4} className="flex lg:hidden"></Spacer>
-<Button as={Link} href="/course" className="bg-white mr-auto lg:mr-0 rounded-full">Explore Now</Button>
+<Button as={Link} href="https://app.nemiedu.com/" className="bg-white mr-auto lg:mr-0 rounded-full">Join Now</Button>
 
 </div>
 

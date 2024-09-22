@@ -820,8 +820,8 @@ key={activeWho}
   {images && images.map((i,d)=>{
     return  <Marquee pauseOnHover pauseOnClick  gradient={true} speed={50} direction={d%2 == 0 ? "left":"right"}>
       {i.map((z,v)=>{
-        return <div className='aspect-video rounded-xl my-4 mx-4 p-0 h-32 bg-gray-100 relative overflow-hidden'><img className='w-full h-full object-cover' src={z.image}/>
-        <p className='z-[1] max-w-[20ch] text-ellipsis absolute left-0 bottom-0 m-2 px-2 py-1 text-black rounded-full  text-xs bg-white'>{z.title}</p>
+        return <div className='aspect-video rounded-xl my-4 mx-4 p-0 h-40 bg-gray-100 relative overflow-hidden'><img className='w-full h-full object-cover' src={z.image}/>
+        {/* <p className='z-[1] max-w-[20ch] text-ellipsis absolute left-0 bottom-0 m-2 px-2 py-1 text-black rounded-full  text-xs bg-white'>{z.title}</p> */}
         </div>
       })}
     </Marquee>
