@@ -13,6 +13,7 @@ import {useLocale} from "@react-aria/i18n";
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import { useRouter } from 'next/router';
+import FeatureRenderer from '../../components/Featrues';
 
 function CourseSingle({data}){
 
@@ -203,6 +204,8 @@ className='bg-white rounded-full text-xs md:text-sm px-4 md:px-8 py-4 md:py-6 up
 <h2 className=' flex-1 text-3xl md:text-3xl lg:text-3xl xl:text-4xl text-black gradtext font-semibold w-full text-left'>{c.title}</h2>
 <p className='text-black text-sm mt-3'>{c.description}</p>
 </div>
+<Spacer y={6}></Spacer>
+<FeatureRenderer features={c?.features ?? []}></FeatureRenderer>
 <Spacer y={6}></Spacer>
 <div className='flex flex-col-reverse md:flex-row items-start justify-between w-full mb-4'>
 
