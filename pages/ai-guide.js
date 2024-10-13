@@ -10,6 +10,7 @@ import Section from '../components/Section'
 import {router} from 'next/router'
 import { uuid} from 'uuidv4';
 import { toast } from 'react-hot-toast'
+import StatsCounter from '../components/StatsCounter'
 export default function IQScoreCalculatorPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -73,7 +74,7 @@ export default function IQScoreCalculatorPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <Section>
-      <div className="relative from-primary to-primary-300 bg-gradient-to-r h-[20vh] mt-24 rounded-xl">
+      <div className="relative from-primary to-primary-300 bg-gradient-to-r h-[20vh] mt-6 rounded-xl">
       {/*   <Image
           src="/placeholder.svg?height=600&width=1200"
           alt="IQ Test Hero Image"
@@ -83,7 +84,7 @@ export default function IQScoreCalculatorPage() {
         /> */}
         <div className="absolute container mx-auto inset-0  flex items-center justify-center">
           <h1 className="text-3xl md:text-4xl font-bold  text-white pb-2 text-center">
-            Get your FREE IQ Score and AI Based Course Suggestions
+            Get your FREE IQ Score &<br/> AI Based Course Suggestions
           </h1>
         </div>
       </div></Section>
@@ -103,6 +104,7 @@ export default function IQScoreCalculatorPage() {
               <li>Explore career paths aligned with your strengths</li>
               <li>Gain insights into your learning style</li>
             </ul>
+            <StatsCounter></StatsCounter>
           </div>
 
           {/* Right side form */}

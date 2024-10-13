@@ -149,7 +149,7 @@ async function submitForm(a){
       }}
     />
           
-            <Spacer y={isMobile? 20:28}></Spacer>
+            <Spacer y={isMobile? 6:12}></Spacer>
             <div className={"flex flex-col  items-center justify-center px-4 lg:px-0  max-w-[1128px] mx-auto"}>
 
 <div className=' max-h-[70vh] aspect-video w-full relative rounded-[10px] sm:rounded-[30px] overflow-hidden flex flex-col items-start justify-end flex-1'>

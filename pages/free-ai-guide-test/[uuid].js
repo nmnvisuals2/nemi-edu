@@ -16,6 +16,7 @@ import { useTimer } from 'react-timer-hook';
 
 import { serversupabase, supabase } from '../../utils/supabaseClient';
 import { CtoLocal } from '../../utils/DateUtil';
+import { X } from 'lucide-react';
 
 
 const QuestionCard = ({answered, question,onSelect,index }) => {
@@ -72,7 +73,7 @@ if(question == undefined){
     );
   };
 
-const MockTest = ({userDetails}) => {
+const MockTest = ({userDetails,allowed}) => {
  
   const [level, setLevel] = useState(0);
   const [currentQ,setCurrentQ] = useState(0)
@@ -539,7 +540,14 @@ if(questions == undefined && questions?.length < 1  ){
 }
 
 
+if(allowed ==false){
+    return <div className='w-full h-full fixed z-[9999] bg-white left-0 top-0 flex flex-col items-center justify-center'>
 
+        <h2 className='flex flex-row items-center justify-center text-red-500'>
+            <X></X>
+            You cannot attempt this test again!</h2>
+    </div>
+}
 
   return (<div className='w-full relative font-sans h-screen p-0 justify-center align-middle items-center overflow-hidden max-h-[100vh] flex flex-col bg-gray-200'>
     
@@ -738,21 +746,37 @@ onSaveNext={()=>{}}></FooterMock>:''}
 
 export default MockTest;
 
-export async function getServerSideProps(context){
-
-
-const {data,error} = await serversupabase.from('leads').select('*').eq('uuid',context.query.uuid).single()
-
-console.log(data,error)
-
-
-if(error || data?.length == 0){
-  return {notFound:true}
-}
-if(data){}
-
-
-
-  return {props:{userDetails:data}}
-}
+export async function getServerSideProps(context) {
+    // Extract UUID from context
+    const { uuid } = context.query;
+  
+    // Run both queries in parallel using Promise.all
+    const [leadResult, submissionResult] = await Promise.all([
+      serversupabase.from('leads').select('*').eq('uuid', uuid).single(),
+      serversupabase.from('ai_guide_submissions').select('*').eq('lead_id', uuid).single()
+    ]);
+  
+    const { data: leadData, error: leadError } = leadResult;
+    const { data: submissionData, error: submissionError } = submissionResult;
+  
+    // Log any errors (optional)
+    console.log(leadData, leadError, submissionData, submissionError);
+  
+    // Handle the case where there is an error or no lead data found
+    if (leadError || !leadData) {
+      return { notFound: true };
+    }
+  
+    // Determine the allowed status based on the submission query
+    const allowed = submissionData != undefined ? false : true;
+  
+    // Return props with lead data and allowed status
+    return {
+      props: {
+        userDetails: leadData,
+        allowed,
+      },
+    };
+  }
+  
 
