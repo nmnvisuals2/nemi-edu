@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import DefaultLayout from "../../../layout/DefaultLayout";
 import { serversupabase, supabase } from "../../../utils/supabaseClient";
-import { Card, CardBody, CardFooter, Button, Image } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Button, Image,CircularProgress } from "@nextui-org/react";
 import Link from 'next/link'
 
 import Realistic from "react-canvas-confetti/dist/presets/realistic";
@@ -13,6 +13,16 @@ export default function Result({data}) {
     const [displayScore, setDisplayScore] = useState(0)
     
     const [conductor, setConductor] = useState();
+    const [sections,setSections] = useState()
+    const [modules,setModules] = useState();
+    const [questions,setQuestions] = useState()
+
+
+    useEffect(()=>{
+        if(data?.test_id){
+            getSections(data?.test_id)
+        }
+    },[])
 
     const duration = 600; // 2 seconds for animation
     const onOnce = () => {
@@ -59,7 +69,47 @@ export default function Result({data}) {
     }, [data?.score])
 
    
+    async function getSections(a){
 
+        const {data,error} = await supabase.from('mock_groups').select('*,subject(*)').eq('test',a).order('seq',{ascending:true})
+      if(data){
+        
+        setSections(data)
+       getModules(data)
+      }
+      else{
+       
+        /* router.push('/login') */
+      }
+      }
+      
+  async function getModules(a){
+  
+    const {data,error} = await supabase.from('mock_groups').select('*,module(*)').in('parent_sub',a.map(i=>i.id))
+  if(data){
+    
+    setModules(data)
+   getQuestions(data)
+  }
+  else{
+   
+    /* router.push('/login') */
+  }
+  }
+  async function getQuestions(a){
+
+    const {data,error} = await supabase.from('mock_questions').select('*').in('parent',a.map(i=>i.module.id)).order('seq',{ascending:true})
+if(data){
+    
+    setQuestions(data)
+    /* if(data.length == 0){
+        router.push('/404')
+    } */
+}
+else{
+  
+}
+}
     
 
     async function getCoursesRecommendations() {
@@ -72,7 +122,19 @@ export default function Result({data}) {
     useEffect(() => {
         getCoursesRecommendations()
     }, [])
-
+    const getColorByScore = (totalScore, maxPossibleScore) => {
+        if (maxPossibleScore === 0) return "stroke-gray-400"; // Return a neutral color if no possible score
+      
+        const percentage = (totalScore / maxPossibleScore) * 100;
+      
+        if (percentage >= 80) {
+          return "stroke-green-500"; // High score: Green
+        } else if (percentage >= 50) {
+          return "stroke-yellow-500"; // Medium score: Yellow
+        } else {
+          return "stroke-red-500"; // Low score: Red
+        }
+      };
     return (
         <DefaultLayout>
             <Realistic  key={"index"} className=" fixed left-0 top-0 w-full h-full bg-transparent pointer-events-none z-[9999]"  onInit={onInit} />
@@ -82,6 +144,67 @@ export default function Result({data}) {
                     <div className="text-8xl font-extrabold text-blue-600" aria-live="polite">
                         {displayScore}
                     </div>
+
+<div className="flex flex-row my-12 items-center justify-center">
+                    {sections && sections.map((section) => {
+  // Filter modules for the current section
+  const filteredModules = modules && modules.filter(module => module.parent_sub === section.id);
+
+  return (
+    <div key={section.id} className="section-container flex flex-row items-center justify-center flex-wrap">
+      
+
+      {/* Map through filtered modules in the current section */}
+      {filteredModules && filteredModules.map((module) => {
+        // Filter questions for the current module
+        const filteredQuestions = questions && questions.filter(question => question.parent === module.module.id);
+
+        // Calculate the total score for the current module
+        const totalScore = filteredQuestions?.reduce((sum, question) => {
+          const reportItem = data?.report.find(report => report.id === question.id);
+          if (!reportItem) return sum; // Skip if no matching report item
+
+          const reportValue = reportItem.value - 1;
+          const isCorrect = question.type === "options"
+            ? question.options.findIndex(option => option.isCorrect) === reportValue
+            : question.options.answer.trim() === reportItem.value.trim();
+
+          return isCorrect ? sum + 1 : sum;
+        }, 0);
+
+        // Calculate the total possible score for the module (number of questions)
+        const maxPossibleScore = filteredQuestions?.length || 0;
+
+        // Calculate the percentage
+        const percentageScore = maxPossibleScore > 0 ? (totalScore / maxPossibleScore) * 100 : 0;
+
+        return (
+          <div key={module.module.id} className="module-container text-white flex-[20%] flex-grow-0 text-center flex flex-col justify-center items-center">
+            {/* Circular Progress displaying the accumulated score for the module */}
+            <CircularProgress
+              label={module.module.title}
+              strokeWidth={3}
+              color="red-500"
+              classNames={{
+                svg: "w-16 md:w-24 h-16 md:h-24 drop-shadow-md",
+                indicator: getColorByScore(totalScore,maxPossibleScore),
+                label: "text-xs text-black",
+              }}
+              value={percentageScore}
+            />
+
+            {/* Render total score over max possible score for the module */}
+            <div className="text-black">
+              {totalScore} / {maxPossibleScore}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+})}</div>
+
+
                     <p className="mt-2 text-xl text-gray-600">Great job! Here are some courses we recommend:</p>
                 </div>
 
