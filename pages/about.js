@@ -48,7 +48,7 @@ export default function About(){
   <Spacer x={12} y={12}></Spacer>
   <div className="flex-1">
   <h2 className="text-5xl font-semibold gradtext pb-4">Founder's Message</h2>
-  <p  className="text-sm">Dear Future Leaders,</p>
+  <p  className="text-sm">Dear Future Leaders,</p> 
 <br/>
 <p className="text-sm">Welcome to <strong>Nemi</strong>, a place where your journey to success begins. In a world where the professional landscape is constantly evolving, having the right skills is crucial—but so is having the right connections. That’s why we created <strong>Nemi</strong>, a platform that not only helps you upskill but also connects you with like-minded professionals, mentors, and opportunities.</p>
 <br/>
