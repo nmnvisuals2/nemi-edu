@@ -676,8 +676,8 @@ key={activeWho}
 </svg>
 
   Pharmacy Specialist</div>
-   <div className='w-48 lg:w-48 xl:w-96 h-48 lg:h-48 xl:h-96 bg-white shadow-md border-1 rounded-full overflow-hidden'>
-    <div className='absolute left-1/2 -translate-x-1/2 bottom-4 lg:bottom-12 bg-secondary text-center text-black py-2 w-full lg:w-auto rounded-full text-xs lg:text-sm  px-8 '>
+   <div className='w-48 lg:w-96 xl:w-96 h-48 lg:h-96 xl:h-96 bg-white shadow-md border-1 rounded-full overflow-hidden'>
+    <div className='absolute left-1/2 -translate-x-1/2 bottom-4 lg:bottom-6 bg-secondary text-center text-black py-2 w-full lg:w-auto rounded-full text-xs lg:text-sm  px-8 '>
       I AM OPEN TO WORK
     </div>
    <img src='/mainp.png' className="w-full object-cover object-top h-full"/>
