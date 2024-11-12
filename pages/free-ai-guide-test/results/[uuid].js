@@ -5,6 +5,7 @@ import { Card, CardBody, CardFooter, Button, Image,CircularProgress } from "@nex
 import Link from 'next/link'
 
 import Realistic from "react-canvas-confetti/dist/presets/realistic";
+import ScoreIQ from "../../../components/ScoreIQ";
 
 
 
@@ -16,6 +17,7 @@ export default function Result({data}) {
     const [sections,setSections] = useState()
     const [modules,setModules] = useState();
     const [questions,setQuestions] = useState()
+    const [moduleScores,setModuleScores] = useState()
 
 
     useEffect(()=>{
@@ -82,6 +84,8 @@ export default function Result({data}) {
         /* router.push('/login') */
       }
       }
+
+      
       
   async function getModules(a){
   
@@ -102,6 +106,7 @@ export default function Result({data}) {
 if(data){
     
     setQuestions(data)
+  
     /* if(data.length == 0){
         router.push('/404')
     } */
@@ -110,18 +115,81 @@ else{
   
 }
 }
+useEffect(() => {
+  calculateScores();
+}, [sections, modules, questions, data]);
+
+const calculateScores = () => {
+ 
+  const scores = sections?.map((section) => {
+    // Filter modules for the current section
+    const filteredModules = modules?.filter(module => module.parent_sub === section.id);
+
+    // Process each module to calculate its score
+    const moduleData = filteredModules?.map((module) => {
+      // Filter questions for the current module
+      const filteredQuestions = questions?.filter(question => question.parent === module.module.id);
+
+      // Calculate the total score for the current module
+      const totalScore = filteredQuestions?.reduce((sum, question) => {
+        const reportItem = data?.report.find(report => report.id === question.id);
+        if (!reportItem) return sum; // Skip if no matching report item
+
+        const reportValue = reportItem.value - 1;
+        const isCorrect = question.type === "options"
+          ? question.options.findIndex(option => option.isCorrect) === reportValue
+          : question.options.answer.trim() === reportItem.value.trim();
+
+        return isCorrect ? sum + 1 : sum;
+      }, 0);
+
+      // Calculate the total possible score for the module (number of questions)
+      const maxPossibleScore = filteredQuestions?.length || 0;
+
+      // Calculate the percentage
+      const percentageScore = maxPossibleScore > 0 ? (totalScore / maxPossibleScore) * 100 : 0;
+
+      return {
+        moduleId: module.module.id,
+        title: module.module.title,
+        totalScore,
+        maxPossibleScore,
+        percentageScore,
+      };
+    });
+
+    return moduleData
+  });
+
+  
+  setModuleScores(scores && scores[0]);
+  getCoursesRecommendations(scores && scores[0])
+  
+};
     
 
-    async function getCoursesRecommendations() {
-        const {data, error} = await supabase.from('courses').select('*').limit(20);
+
+
+    async function getCoursesRecommendations(scores) {
+        
+      
+      
+        const {data, error} = await supabase.rpc('get_recommended_courses',{
+          quantitative_score :scores?.find(item=>item.title == 'Quantitative Aptitude')?.totalScore,
+          logical_score :scores?.find(item=>item.title == 'Logical Reasoning')?.totalScore,
+          verbal_score :scores?.find(item=>item.title == 'Verbal Ability')?.totalScore,
+          finance_score :scores?.find(item=>item.title == 'Finance')?.totalScore,
+          analytics_score :scores?.find(item=>item.title == 'Analytics')?.totalScore,
+          tech_score :scores?.find(item=>item.title == 'Tech')?.totalScore,
+          marketing_score :scores?.find(item=>item.title == 'Marketing')?.totalScore,
+          pharmacy_score :scores?.find(item=>item.title == 'Pharmacy')?.totalScore
+        })
         if(data) {
             setCourses(data)
         }
     }
 
-    useEffect(() => {
-        getCoursesRecommendations()
-    }, [])
+    
     const getColorByScore = (totalScore, maxPossibleScore) => {
         if (maxPossibleScore === 0) return "stroke-gray-400"; // Return a neutral color if no possible score
       
@@ -140,10 +208,12 @@ else{
             <Realistic  key={"index"} className=" fixed left-0 top-0 w-full h-full bg-transparent pointer-events-none z-[9999]"  onInit={onInit} />
             <div className="container max-w-6xl mx-auto px-4 py-8">
                 <div className="text-center mb-12">
-                    <h1 className="text-4xl font-bold mb-4">Your IQ Score</h1>
+                    {/* <h1 className="text-4xl font-bold mb-4">Your IQ Score</h1>
                     <div className="text-8xl font-extrabold text-blue-600" aria-live="polite">
                         {displayScore}
-                    </div>
+                    </div> */}
+
+                    <ScoreIQ score={displayScore} totalScore={50}></ScoreIQ>
 
 <div className="flex flex-row my-12 items-center justify-center">
                     {sections && sections.map((section) => {
@@ -184,18 +254,20 @@ else{
             <CircularProgress
               label={module.module.title}
               strokeWidth={3}
+              showValueLabel={true}
               color="red-500"
               classNames={{
-                svg: "w-16 md:w-24 h-16 md:h-24 drop-shadow-md",
+                svg: "w-24 md:w-24 h-16 md:h-24 drop-shadow-md",
                 indicator: getColorByScore(totalScore,maxPossibleScore),
                 label: "text-xs text-black",
+                value:'text-black text-sm'
               }}
               value={percentageScore}
             />
 
             {/* Render total score over max possible score for the module */}
             <div className="text-black">
-              {totalScore} / {maxPossibleScore}
+              {totalScore} / {maxPossibleScore} 
             </div>
           </div>
         );
